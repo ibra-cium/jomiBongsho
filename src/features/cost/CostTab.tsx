@@ -124,35 +124,35 @@ export const CostTab: React.FC<CostTabProps> = ({
     dag.recordedAreaDecimal > 0 ? Math.round(declaredPriceBdt / dag.recordedAreaDecimal) : 0;
 
   return (
-    <div className={`space-y-5 ${className}`}>
+    <div className={`space-y-3 ${className}`}>
       {/* 1. Header with Title & Demo Rates Chip */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 pb-1">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-0.5">
         <div>
-          <h3 className="font-serif text-lg sm:text-xl font-bold text-ink flex items-center gap-2">
-            <Calculator className="w-5 h-5 text-accent" />
+          <h3 className="font-serif text-base sm:text-lg font-bold text-ink flex items-center gap-1.5">
+            <Calculator className="w-4 h-4 text-accent" />
             <span>{t('costTitle')}</span>
           </h3>
-          <p className="text-xs text-ink-2 mt-0.5">{t('costSubtitle')}</p>
+          <p className="text-[11px] text-ink-2">{t('costSubtitle')}</p>
         </div>
 
         {/* Demo Rates Chip with Sources Popover */}
         <button
           type="button"
           onClick={() => setShowSourcesModal(true)}
-          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-paper-3/70 hover:bg-paper-3 border border-line text-xs font-semibold text-ink-2 hover:text-ink transition-colors cursor-pointer self-start sm:self-auto shadow-xs"
+          className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-paper-3/70 hover:bg-paper-3 border border-line text-[11px] font-semibold text-ink-2 hover:text-ink transition-colors cursor-pointer self-start sm:self-auto shadow-xs"
           title={t('demoRatesLabel')}
           aria-label={t('sourcesModalTitle')}
         >
-          <span className="w-2 h-2 rounded-full bg-accent/80" />
+          <span className="w-1.5 h-1.5 rounded-full bg-accent/80" />
           <span>{t('demoRatesChip')}</span>
-          <Info className="w-3.5 h-3.5 text-accent ml-0.5" />
+          <Info className="w-3 h-3 text-accent ml-0.5" />
         </button>
       </div>
 
       {/* 2. Declared Price Input Section */}
-      <div className="bg-paper-2 border border-line rounded-2xl p-4 sm:p-5 shadow-paper space-y-3.5">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
-          <label htmlFor="declared-price-input" className="text-xs sm:text-sm font-bold text-ink">
+      <div className="bg-paper-2 border border-line rounded-2xl p-3 sm:p-3.5 shadow-paper space-y-2.5">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+          <label htmlFor="declared-price-input" className="text-xs font-bold text-ink">
             {t('declaredPriceLabel')}
           </label>
           <span className="text-[11px] text-ink-3">{t('declaredPriceHint')}</span>
@@ -160,14 +160,14 @@ export const CostTab: React.FC<CostTabProps> = ({
 
         {/* Input with Quick Stepper Controls */}
         <div className="flex flex-wrap items-center gap-2">
-          <div className="relative flex-1 min-w-[200px]">
+          <div className="relative flex-1 min-w-[170px]">
             <input
               id="declared-price-input"
               type="text"
               value={priceInputStr}
               onChange={(e) => setPriceInputStr(e.target.value)}
               placeholder="0"
-              className="w-full bg-paper border border-line focus:border-accent focus:ring-1 focus:ring-accent rounded-xl px-3.5 py-2.5 text-base sm:text-lg font-bold text-ink tabular-nums transition-colors"
+              className="w-full bg-paper border border-line focus:border-accent focus:ring-1 focus:ring-accent rounded-xl px-3 py-2 text-base font-bold text-ink tabular-nums transition-colors"
             />
             <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-semibold text-ink-3 pointer-events-none">
               {lang === 'bn' ? 'টাকা' : 'BDT'}
@@ -179,7 +179,7 @@ export const CostTab: React.FC<CostTabProps> = ({
             <button
               type="button"
               onClick={() => handleStepPrice(-50_000)}
-              className="px-2.5 py-2 text-xs font-semibold bg-paper hover:bg-paper-3 border border-line rounded-xl text-ink transition-colors cursor-pointer"
+              className="px-2 py-1.5 text-xs font-semibold bg-paper hover:bg-paper-3 border border-line rounded-xl text-ink transition-colors cursor-pointer"
               title="-50,000"
             >
               {t('stepDown50k')}
@@ -187,7 +187,7 @@ export const CostTab: React.FC<CostTabProps> = ({
             <button
               type="button"
               onClick={() => handleStepPrice(50_000)}
-              className="px-2.5 py-2 text-xs font-semibold bg-paper hover:bg-paper-3 border border-line rounded-xl text-ink transition-colors cursor-pointer"
+              className="px-2 py-1.5 text-xs font-semibold bg-paper hover:bg-paper-3 border border-line rounded-xl text-ink transition-colors cursor-pointer"
               title="+50,000"
             >
               {t('stepUp50k')}
@@ -196,7 +196,7 @@ export const CostTab: React.FC<CostTabProps> = ({
               <button
                 type="button"
                 onClick={handleResetPrice}
-                className="p-2 text-xs font-semibold bg-paper hover:bg-paper-3 border border-line rounded-xl text-accent transition-colors cursor-pointer flex items-center gap-1"
+                className="p-1.5 text-xs font-semibold bg-paper hover:bg-paper-3 border border-line rounded-xl text-accent transition-colors cursor-pointer flex items-center gap-1"
                 title={t('resetEstimatePrice')}
                 aria-label={t('resetEstimatePrice')}
               >
@@ -226,14 +226,14 @@ export const CostTab: React.FC<CostTabProps> = ({
       {calculation.isUnderDeclared && priceEstimate.perDecimal?.mid && (
         <div
           role="alert"
-          className="p-4 bg-warn-wash/40 border-2 border-warn/50 rounded-2xl flex items-start gap-3 shadow-xs animate-in fade-in duration-200"
+          className="p-3 bg-warn-wash/40 border-2 border-warn/50 rounded-2xl flex items-start gap-2.5 shadow-xs animate-in fade-in duration-200"
         >
-          <AlertTriangle className="w-5 h-5 text-warn shrink-0 mt-0.5" />
-          <div className="space-y-1">
-            <h4 className="font-serif font-bold text-xs sm:text-sm text-warn">
+          <AlertTriangle className="w-4 h-4 text-warn shrink-0 mt-0.5" />
+          <div className="space-y-0.5">
+            <h4 className="font-serif font-bold text-xs text-warn">
               {t('underDeclaredWarningTitle')}
             </h4>
-            <p className="text-xs text-ink-2 leading-relaxed">
+            <p className="text-[11px] text-ink-2 leading-relaxed">
               {t('underDeclaredWarningDesc', {
                 marketMid: formatTaka(priceEstimate.perDecimal.mid, lang),
                 enteredMid: formatTaka(perDecimalRateBdt, lang),
@@ -244,19 +244,17 @@ export const CostTab: React.FC<CostTabProps> = ({
       )}
 
       {/* 4. Buyer Pays Source Tax Switch */}
-      <div className="bg-paper-2 border border-line rounded-2xl p-4 shadow-paper space-y-2">
-        <label className="flex items-start gap-3 cursor-pointer select-none">
+      <div className="bg-paper-2 border border-line rounded-2xl p-3 shadow-paper space-y-1.5">
+        <label className="flex items-start gap-2.5 cursor-pointer select-none">
           <input
             type="checkbox"
             checked={buyerPaysSourceTax}
             onChange={(e) => setBuyerPaysSourceTax(e.target.checked)}
-            className="mt-1 w-4 h-4 rounded border-line text-accent focus:ring-accent cursor-pointer accent-accent"
+            className="mt-0.5 w-4 h-4 rounded border-line text-accent focus:ring-accent cursor-pointer accent-accent"
           />
-          <div className="space-y-1">
-            <div className="text-xs sm:text-sm font-bold text-ink">
-              {t('buyerPaysSourceTaxLabel')}
-            </div>
-            <p className="text-xs text-ink-3 leading-relaxed">{t('buyerPaysSourceTaxNote')}</p>
+          <div className="space-y-0.5">
+            <div className="text-xs font-bold text-ink">{t('buyerPaysSourceTaxLabel')}</div>
+            <p className="text-[11px] text-ink-3 leading-snug">{t('buyerPaysSourceTaxNote')}</p>
           </div>
         </label>
       </div>
