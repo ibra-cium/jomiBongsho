@@ -61,9 +61,13 @@ export const bn = {
   owners: 'মালিকগণ',
   ownershipShare: 'অংশ',
 
-  // Map overlay
+  // Map overlay & controls
   oldMap: 'পুরনো নকশা',
   digitalMap: 'মানচিত্র',
+  riskColors: 'ঝুঁকির রঙ',
+  loadingData: 'মৌজা ও খতিয়ান ডেটা লোড হচ্ছে...',
+  dataLoadError: 'ডেটা লোড করতে সমস্যা হয়েছে',
+  retry: 'আবার চেষ্টা করুন',
 
   // Feedback & Toasts
   copied: 'কপি করা হয়েছে',

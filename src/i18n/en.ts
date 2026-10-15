@@ -62,9 +62,13 @@ export const en: Record<TranslationKey, string> = {
   owners: 'Owners',
   ownershipShare: 'Share',
 
-  // Map overlay
+  // Map overlay & controls
   oldMap: 'Old Mouza Map',
   digitalMap: 'Digital Map',
+  riskColors: 'Risk colours',
+  loadingData: 'Loading mouza and land records...',
+  dataLoadError: 'Failed to load land data',
+  retry: 'Retry',
 
   // Feedback & Toasts
   copied: 'Copied to clipboard',

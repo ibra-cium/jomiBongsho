@@ -58,3 +58,10 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* Position MapLibre attribution above peek sheet on mobile */
+@media (max-width: 1023px) {
+  .maplibregl-ctrl-bottom-right {
+    bottom: 116px !important;
+  }
+}

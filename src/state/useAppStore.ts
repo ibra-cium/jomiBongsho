@@ -17,6 +17,7 @@ interface AppState {
   sheetSnap: SheetSnap;
   sheetOpacity: number;
   demo: DemoFlags;
+  showRiskColors: boolean;
 
   // Actions
   setLang: (lang: SupportedLang) => void;
@@ -24,6 +25,7 @@ interface AppState {
   setSelectedDagId: (dagId: string | null) => void;
   setSheetSnap: (snap: SheetSnap) => void;
   setSheetOpacity: (opacity: number) => void;
+  setShowRiskColors: (show: boolean) => void;
   setDemoFlags: (flags: Partial<DemoFlags>) => void;
 }
 
@@ -53,6 +55,7 @@ export const useAppStore = create<AppState>((set) => ({
     simulatedLocation: false,
     tamperMode: false,
   },
+  showRiskColors: false,
 
   setLang: (lang) => {
     storage.set(STORAGE_KEY_LANG, lang);
@@ -77,6 +80,7 @@ export const useAppStore = create<AppState>((set) => ({
   setSelectedDagId: (selectedDagId) => set({ selectedDagId }),
   setSheetSnap: (sheetSnap) => set({ sheetSnap }),
   setSheetOpacity: (sheetOpacity) => set({ sheetOpacity }),
+  setShowRiskColors: (showRiskColors) => set({ showRiskColors }),
   setDemoFlags: (flags) =>
     set((state) => ({
       demo: { ...state.demo, ...flags },
