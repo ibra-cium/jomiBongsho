@@ -3,7 +3,7 @@ import { Segmented } from '@/ui/Segmented';
 import { useT } from '@/i18n/useT';
 import { SummaryTab } from './SummaryTab';
 import { Timeline } from './Timeline';
-import { PriceTabSkeleton } from './PriceTabSkeleton';
+import { PriceCard } from './PriceCard';
 import { CostTabSkeleton } from './CostTabSkeleton';
 import type { DagAnalysis } from '@/engine';
 import type { LandEvent, Person } from '@/engine/types';
@@ -87,7 +87,9 @@ export const PlotCard: React.FC<PlotCardProps> = ({
           />
         )}
 
-        {currentTab === 'price' && <PriceTabSkeleton />}
+        {currentTab === 'price' && (
+          <PriceCard estimate={analysis.priceEstimate} dag={analysis.dag} />
+        )}
 
         {currentTab === 'cost' && <CostTabSkeleton />}
       </div>

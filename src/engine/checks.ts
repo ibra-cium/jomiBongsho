@@ -10,8 +10,19 @@
  *   UNDER_DECLARED (P1-T09), AREA_MISMATCH (P5-T03), ACQUISITION (P5-T02)
  */
 
-import type { CaseEvent, DagProps, DeedEvent, Issue, LandEvent, LandTaxEvent } from './types';
+import type {
+  CaseEvent,
+  DagProps,
+  DeedEvent,
+  FeatureCollection,
+  GeoPolygon,
+  Issue,
+  LandEvent,
+  LandTaxEvent,
+} from './types';
 import type { LedgerResult } from './ledger';
+import { sumShares } from './fraction';
+import { estimatePrice } from './price';
 
 // ---------------------------------------------------------------------------
 // Helper — days between two ISO date strings
@@ -19,6 +30,22 @@ import type { LedgerResult } from './ledger';
 
 function daysBetween(a: string, b: string): number {
   return (new Date(b).getTime() - new Date(a).getTime()) / (1000 * 60 * 60 * 24);
+}
+
+function getMonthsCutoffDate(todayStr: string, months: number): string {
+  const parts = todayStr.split('-').map(Number);
+  const y = parts[0];
+  const m = parts[1];
+  const d = parts[2];
+  if (!y || !m || !d) return '1900-01-01';
+
+  const date = new Date(Date.UTC(y, m - 1 - months, d));
+  return date.toISOString().slice(0, 10);
+}
+
+export interface RunChecksContext {
+  allDags?: FeatureCollection<GeoPolygon, DagProps>;
+  allEvents?: LandEvent[];
 }
 
 // ---------------------------------------------------------------------------
@@ -36,6 +63,7 @@ export function runChecks(
   events: LandEvent[],
   ledger: LedgerResult,
   today: string,
+  context?: RunChecksContext,
 ): Issue[] {
   const issues: Issue[] = [];
 
@@ -177,7 +205,51 @@ export function runChecks(
     }
   }
 
-  // ── Skipped (later tickets): UNDER_DECLARED, AREA_MISMATCH, ACQUISITION ──
+  // ── 7. UNDER_DECLARED ─────────────────────────────────────────────────────
+  // Valid sale deed in the last 36 months with price per decimal < 50% of the
+  // area estimate (mid) for this dag, computed without that deed — DOMAIN_RULES §4
+  if (context?.allDags && context?.allEvents) {
+    const cutoff36m = getMonthsCutoffDate(today, 36);
+
+    for (const [deedNo, eventId] of ledger.validDeedNos.entries()) {
+      const deedEvent = deedEvents.get(eventId);
+      if (!deedEvent || deedEvent.kind !== 'sale' || deedEvent.declaredPriceBdt <= 0) continue;
+      if (deedEvent.date > today || deedEvent.date < cutoff36m) continue;
+
+      const holdings = deedEvent.sellers.length > 0 ? deedEvent.sellers : deedEvent.buyers;
+      const soldFrac = sumShares(holdings.map((s) => s.share)).valueOf();
+      const soldArea = soldFrac * dag.recordedAreaDecimal;
+      if (soldArea <= 0) continue;
+
+      const pricePerDecimal = deedEvent.declaredPriceBdt / soldArea;
+
+      // Compute estimate for this dag without this deed
+      const estimate = estimatePrice(dag, context.allDags, context.allEvents, {
+        today,
+        excludeEventId: deedEvent.id,
+      });
+
+      if (estimate.status === 'ok' && estimate.perDecimal) {
+        const mid = estimate.perDecimal.mid;
+        if (pricePerDecimal < 0.5 * mid) {
+          const pct = Math.round((pricePerDecimal / mid) * 100);
+          issues.push({
+            code: 'UNDER_DECLARED',
+            severity: 'warning',
+            eventIds: [deedEvent.id],
+            params: {
+              marketPrice: mid,
+              declaredPrice: Math.round(pricePerDecimal),
+              pct,
+            },
+          });
+        }
+      }
+      void deedNo;
+    }
+  }
+
+  // ── Skipped (later tickets): AREA_MISMATCH (P5-T03), ACQUISITION (P5-T02) ──
 
   return issues;
 }

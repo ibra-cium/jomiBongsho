@@ -4,7 +4,7 @@
  */
 
 import { describe, expect, it } from 'vitest';
-import type { DagProps, LandEvent } from './types';
+import type { DagProps, GeoPolygon, LandEvent } from './types';
 import { runChecks } from './checks';
 import type { LedgerResult } from './ledger';
 import Fraction from 'fraction.js';
@@ -464,5 +464,90 @@ describe('Clean dag produces no check issues', () => {
     });
     const issues = runChecks(dag, [], ledger, '2026-10-01');
     expect(issues).toHaveLength(0);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// UNDER_DECLARED check tests
+// ---------------------------------------------------------------------------
+
+describe('UNDER_DECLARED check', () => {
+  const d = 0.001;
+  const targetPolygon: GeoPolygon = {
+    type: 'Polygon',
+    coordinates: [
+      [
+        [90.05 - d, 23.87 - d],
+        [90.05 + d, 23.87 - d],
+        [90.05 + d, 23.87 + d],
+        [90.05 - d, 23.87 + d],
+        [90.05 - d, 23.87 - d],
+      ],
+    ],
+  };
+
+  it('detects sale deed declared at < 50% of comparable market estimate', () => {
+    const targetDag = makeDagProps({ id: '106', landClass: 'vita', recordedAreaDecimal: 10 });
+    const targetFeature = {
+      type: 'Feature' as const,
+      properties: targetDag,
+      geometry: targetPolygon,
+    };
+
+    // 4 comp dags with market price ~100k/dec
+    const compFeatures = ['101', '102', '103', '104'].map((id) => ({
+      type: 'Feature' as const,
+      properties: makeDagProps({ id, landClass: 'vita', recordedAreaDecimal: 10 }),
+      geometry: targetPolygon,
+    }));
+
+    const allDags = {
+      type: 'FeatureCollection' as const,
+      features: [targetFeature, ...compFeatures],
+    };
+
+    const compEvents: LandEvent[] = compFeatures.map((f, idx) => ({
+      id: `ev-comp-${f.properties.id}`,
+      dagId: f.properties.id,
+      date: `2025-0${idx + 1}-01`,
+      type: 'deed',
+      kind: 'sale',
+      deedNo: `D-comp-${f.properties.id}`,
+      sellers: [{ personId: 'p1', share: '1/1' }],
+      buyers: [{ personId: 'p2', share: '1/1' }],
+      declaredPriceBdt: 1_000_000, // 100,000 / dec
+      subRegistryBn: 'মানিকগঞ্জ সদর',
+    }));
+
+    // Target dag deed declared at 30k/dec (< 50% of 100k)
+    const targetDeed: LandEvent = {
+      id: 'ev-106-sale',
+      dagId: '106',
+      date: '2026-05-18',
+      type: 'deed',
+      kind: 'sale',
+      deedNo: 'D-2026-106',
+      sellers: [{ personId: 'p1', share: '1/1' }],
+      buyers: [{ personId: 'p2', share: '1/1' }],
+      declaredPriceBdt: 300_000, // 30,000 / dec
+      subRegistryBn: 'মানিকগঞ্জ সদর',
+    };
+
+    const ledger = makeEmptyLedger({
+      validDeedNos: new Map([['D-2026-106', 'ev-106-sale']]),
+      mutatedDeedNos: new Set(['D-2026-106']),
+    });
+
+    const issues = runChecks(targetDag, [targetDeed], ledger, '2026-10-01', {
+      allDags,
+      allEvents: [...compEvents, targetDeed],
+    });
+
+    const issue = issues.find((i) => i.code === 'UNDER_DECLARED');
+    expect(issue).toBeDefined();
+    expect(issue?.severity).toBe('warning');
+    expect(issue?.eventIds).toEqual(['ev-106-sale']);
+    expect(issue?.params.declaredPrice).toBe(30_000);
+    expect(issue?.params.pct).toBe(30);
   });
 });

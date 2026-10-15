@@ -50,12 +50,6 @@ describe('analyseDag — scenario verdict tests', () => {
   }
 
   for (const scenario of scenarios) {
-    if (scenario.dagId === '106') {
-      // UNDER_DECLARED check comes in P1-T09
-      it.todo(`dag 106 — UNDER_DECLARED (implemented in P1-T09)`);
-      continue;
-    }
-
     it(`dag ${scenario.dagId} (${scenario.key}) → ${scenario.expected}`, () => {
       const result = analyseDag(scenario.dagId, data);
       expect(result.verdict).toBe(scenario.expected);

@@ -78,6 +78,25 @@ describe('P1-T08 Acceptance Criteria — Plot Sheet Data & Analysis', () => {
     expect(analysis.issues.some((i) => i.code === 'RAPID_RESALE')).toBe(true);
   });
 
+  it('Dag 106: yellow verdict (UNDER_DECLARED) with market vs declared price params', () => {
+    const analysis = analyseDag('106', data);
+    expect(analysis.verdict).toBe('yellow');
+    const underDeclared = analysis.issues.find((i) => i.code === 'UNDER_DECLARED');
+    expect(underDeclared).toBeDefined();
+    expect(underDeclared?.severity).toBe('warning');
+    expect(underDeclared?.params.declaredPrice).toBe(78_140);
+    expect(Number(underDeclared?.params.pct)).toBeLessThan(50);
+  });
+
+  it('Dag 101: price estimate is calculated and populated on DagAnalysis', () => {
+    const analysis = analyseDag('101', data);
+    expect(analysis.priceEstimate).toBeDefined();
+    expect(analysis.priceEstimate.status).toBe('ok');
+    expect(analysis.priceEstimate.perDecimal?.mid).toBeGreaterThan(0);
+    expect(analysis.priceEstimate.total?.mid).toBeGreaterThan(0);
+    expect(analysis.priceEstimate.comps.length).toBeGreaterThan(0);
+  });
+
   it('All 48 dags execute analyseDag and build owner rows in < 1 ms average', () => {
     const start = performance.now();
     for (const f of data.dags.features) {

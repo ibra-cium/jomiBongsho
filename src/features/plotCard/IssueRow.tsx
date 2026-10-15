@@ -12,7 +12,7 @@ import {
 import Fraction from 'fraction.js';
 import { useT } from '@/i18n/useT';
 import type { TranslationKey } from '@/i18n/bn';
-import { formatDate, toBanglaDigits, formatTaka } from '@/lib/format';
+import { formatDate, toBanglaDigits, formatTaka, formatNumber } from '@/lib/format';
 import { FamilyTree } from './FamilyTree';
 import type {
   Issue,
@@ -91,8 +91,7 @@ export const IssueRow: React.FC<IssueRowProps> = ({
     } else if (k === 'share' || k === 'owned' || k === 'selling') {
       formattedParams[k] = lang === 'bn' ? toBanglaDigits(String(v)) : String(v);
     } else if (k === 'marketPrice' || k === 'declaredPrice' || k === 'arrearsBdt') {
-      formattedParams[k] =
-        typeof v === 'number' ? formatTaka(v, lang, { short: false }) : String(v);
+      formattedParams[k] = typeof v === 'number' ? formatNumber(v, lang) : String(v);
     } else {
       formattedParams[k] = v;
     }

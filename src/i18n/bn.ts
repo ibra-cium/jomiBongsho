@@ -275,6 +275,39 @@ export const bn = {
   costComingSoon: 'রেজিস্ট্রেশন ফি ও মোট খরচের হিসাব',
   costComingSoonDesc:
     'স্ট্যাম্প শুল্ক, উৎসে কর, স্থানীয় কর ও নামজারি ফিসহ জমি কেনার সম্পূর্ণ ও নির্ভুল সরকারি খরচ ক্যালকুলেটর পরবর্তী ধাপে আসছে।',
+
+  // Price Tab & Comparable Sales
+  priceTitle: 'আনুমানিক বাজারমূল্য',
+  priceDisclaimer: 'কাছাকাছি একই শ্রেণির জমির সাম্প্রতিক রেজিস্ট্রি দলিলের ভিত্তিতে আনুমানিক হিসাব',
+  pricePerDecimal: 'প্রতি শতাংশ',
+  priceTotalPlot: 'পুরো দাগ ({area} শতাংশ)',
+  priceRulerLow: 'সর্বনিম্ন',
+  priceRulerMid: 'গড় দর',
+  priceRulerHigh: 'সর্বোচ্চ',
+  priceRulerRange: 'বাজারমূল্য সীমা',
+  priceRoadAdjustment: 'রাস্তার পাশে হওয়ায় +১৫% মূল্য সমন্বয়',
+  priceCompsCount: '{n}টি বিক্রির তথ্যের ভিত্তিতে',
+  priceCompsToggleShow: 'বিক্রির তুলনামূলক তালিকা দেখুন',
+  priceCompsToggleHide: 'তালিকা বন্ধ করুন',
+  priceCompsTitle: 'কাছাকাছি সাম্প্রতিক রেজিস্ট্রি দলিল',
+  priceInsufficientTitle: 'পর্যাপ্ত সাম্প্রতিক বিক্রির তথ্য নেই',
+  priceInsufficientDesc:
+    'এই দাগের ৫০০–১০০০ মিটারের মধ্যে একই শ্রেণির জমির প্রয়োজনীয় সংখ্যক সাম্প্রতিক বিক্রয় দলিল পাওয়া যায়নি।',
+  compHeaderDag: 'দাগ',
+  compHeaderDeed: 'দলিল নং',
+  compHeaderDate: 'তারিখ',
+  compHeaderDistance: 'দূরত্ব',
+  compHeaderPrice: 'দর (প্রতি শতাংশ)',
+  compHeaderStatus: 'অবস্থা',
+  compStatusUsed: 'ব্যবহৃত',
+  compStatusExcluded: 'বাদ দেওয়া',
+  compExclude_underDeclared: 'অস্বাভাবিক কম দাম (কর ফাঁকির সন্দেহ)',
+  compExclude_outlier: 'গড় থেকে বেশি বিচ্যুত (আউটলায়ার)',
+  compExclude_distance: 'দূরত্ব বেশি',
+  compExclude_otherLandClass: 'ভিন্ন শ্রেণি',
+  compExclude_old: '২৪ মাসের পুরনো',
+  compExclude_self: 'একই দাগ',
+  metersUnit: '{n} মিটার',
 };
 
 export type TranslationKey = keyof typeof bn;

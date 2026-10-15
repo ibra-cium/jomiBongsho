@@ -11,9 +11,10 @@
 import { replayLedger } from './ledger';
 import { runChecks } from './checks';
 import { computeVerdict, sortIssues, buildOwnerRows } from './verdict';
+import { estimatePrice } from './price';
 import type { OwnerRow } from './verdict';
 import type { TimelineEntry } from './ledger';
-import type { DagProps, DemoData, Issue, Verdict } from './types';
+import type { DagProps, DemoData, Issue, PriceEstimate, Verdict } from './types';
 
 // ---------------------------------------------------------------------------
 // DagAnalysis — what the UI receives
@@ -30,6 +31,8 @@ export interface DagAnalysis {
   owners: OwnerRow[];
   /** Full timeline from the ledger */
   timeline: TimelineEntry[];
+  /** Comparable-sales price estimate */
+  priceEstimate: PriceEstimate;
 }
 
 // ---------------------------------------------------------------------------
@@ -86,7 +89,10 @@ export function analyseDag(dagId: string, data: DemoData, opts?: { today?: strin
   const ledger = replayLedger(dagId, dagEvents, today);
 
   // ── 4. Run non-ledger checks ─────────────────────────────────────────────
-  const checkIssues = runChecks(dag, dagEvents, ledger, today);
+  const checkIssues = runChecks(dag, dagEvents, ledger, today, {
+    allDags: data.dags,
+    allEvents: data.events,
+  });
 
   // ── 5. Merge and sort issues ─────────────────────────────────────────────
   const allIssues = sortIssues([...ledger.issues, ...checkIssues], dagEvents);
@@ -97,19 +103,25 @@ export function analyseDag(dagId: string, data: DemoData, opts?: { today?: strin
   // ── 7. Build owner rows ──────────────────────────────────────────────────
   const owners = buildOwnerRows(dag, ledger, data.people, dagEvents);
 
-  // ── 8. Assemble result ───────────────────────────────────────────────────
+  // ── 8. Calculate price estimate ──────────────────────────────────────────
+  const priceEstimate = estimatePrice(dag, data.dags, data.events, { today });
+
+  // ── 9. Assemble result ───────────────────────────────────────────────────
   const result: DagAnalysis = {
     dag,
     issues: allIssues,
     verdict,
     owners,
     timeline: ledger.timeline,
+    priceEstimate,
   };
 
   _memo.set(cacheKey, result);
   return result;
 }
 
-// Re-export types that the UI will import from the engine entry point
+// Re-export types and functions from engine
+export { estimatePrice, percentileInc } from './price';
 export type { OwnerRow } from './verdict';
 export type { TimelineEntry } from './ledger';
+export type { Comp, PriceEstimate, CompExcludeReason } from './types';

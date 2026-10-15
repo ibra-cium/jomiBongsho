@@ -230,3 +230,30 @@ export interface DemoData {
   scenarios: Scenario[];
   feeRules: FeeRules;
 }
+
+export type CompExcludeReason =
+  'distance' | 'underDeclared' | 'outlier' | 'otherLandClass' | 'old' | 'self';
+
+export interface Comp {
+  dagId: string;
+  eventId: string;
+  deedNo: string;
+  date: string;
+  distanceM: number;
+  rawPricePerDecimalBdt: number;
+  roadNeutralPricePerDecimalBdt: number;
+  isRoadFacing: boolean;
+  used: boolean;
+  excludeReason?: CompExcludeReason;
+}
+
+export interface PriceEstimate {
+  status: 'ok' | 'insufficient';
+  perDecimal?: { low: number; mid: number; high: number }; // taka, rounded to nearest 1,000
+  total?: { low: number; mid: number; high: number }; // perDecimal × recordedAreaDecimal
+  perDecimalPaisa?: { low: number; mid: number; high: number };
+  totalPaisa?: { low: number; mid: number; high: number };
+  comps: Comp[]; // used and excluded, with reason
+  radiusM: 500 | 1000;
+  adjustments: { key: 'roadFacing'; pct: 15 }[];
+}

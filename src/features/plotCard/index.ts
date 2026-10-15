@@ -3,6 +3,7 @@ export * from './IssueRow';
 export * from './OwnerRow';
 export * from './Timeline';
 export * from './PriceTabSkeleton';
+export * from './PriceCard';
 export * from './CostTabSkeleton';
 export * from './SummaryTab';
 export * from './PlotCardPeek';
