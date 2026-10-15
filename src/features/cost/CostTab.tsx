@@ -311,10 +311,6 @@ export const CostTab: React.FC<CostTabProps> = ({
                   </a>
                 ))}
               </div>
-
-              <div className="p-3 bg-paper-2 rounded-xl text-[11px] text-ink-3 italic border border-line/60">
-                {feeRules.status}
-              </div>
             </div>
 
             <div className="pt-2 text-right">
