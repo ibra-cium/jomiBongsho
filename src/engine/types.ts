@@ -257,3 +257,60 @@ export interface PriceEstimate {
   radiusM: 500 | 1000;
   adjustments: { key: 'roadFacing'; pct: 15 }[];
 }
+
+export type CostLineId =
+  | 'stampDuty'
+  | 'registrationFee'
+  | 'localGovtTax'
+  | 'sourceTax'
+  | 'fixedFees'
+  | 'mutationFee'
+  | 'landTaxArrears';
+
+export interface CostLineSubItem {
+  id: string;
+  labelBn: string;
+  labelEn: string;
+  amountBdt: number;
+}
+
+export interface CostLineItem {
+  id: CostLineId;
+  labelBn: string;
+  labelEn: string;
+  basisPoints?: number;
+  amountPaisa: number;
+  amountBdt: number;
+  noteBn?: string;
+  noteEn?: string;
+  subItems?: CostLineSubItem[];
+}
+
+export interface CostCalculation {
+  landPriceBdt: number;
+  landPricePaisa: number;
+  areaDecimal: number;
+  pricePerDecimalBdt: number;
+  buyerPaysSourceTax: boolean;
+  lines: CostLineItem[];
+  feesTotalBdt: number;
+  feesTotalPaisa: number;
+  grandTotalBdt: number;
+  grandTotalPaisa: number;
+  effectiveRatePct: number;
+  isUnderDeclared: boolean;
+  underDeclaredThresholdBdt?: number;
+  feeRulesStatus: string;
+  sources: FeeSource[];
+}
+
+export interface CostInput {
+  declaredPriceBdt: number;
+  recordedAreaDecimal: number;
+  areaClass: AreaClass;
+  sourceTaxClass: SourceTaxClass;
+  feeRules: FeeRules;
+  arrearsBdt?: number;
+  buyerPaysSourceTax?: boolean;
+  estimateMidPerDecimalBdt?: number;
+}

@@ -122,6 +122,18 @@ export function analyseDag(dagId: string, data: DemoData, opts?: { today?: strin
 
 // Re-export types and functions from engine
 export { estimatePrice, percentileInc } from './price';
+export { calculateCost } from './cost';
 export type { OwnerRow } from './verdict';
 export type { TimelineEntry } from './ledger';
-export type { Comp, PriceEstimate, CompExcludeReason } from './types';
+export type {
+  Comp,
+  PriceEstimate,
+  CompExcludeReason,
+  CostCalculation,
+  CostInput,
+  CostLineItem,
+  CostLineId,
+  CostLineSubItem,
+  FeeRules,
+  FeeSource,
+} from './types';

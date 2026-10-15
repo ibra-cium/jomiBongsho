@@ -1,17 +1,21 @@
 import React, { useState } from 'react';
 import { Segmented } from '@/ui/Segmented';
 import { useT } from '@/i18n/useT';
+import { useDataStore } from '@/data/useDataStore';
+import { CostTab } from '@/features/cost';
 import { SummaryTab } from './SummaryTab';
 import { Timeline } from './Timeline';
 import { PriceCard } from './PriceCard';
 import { CostTabSkeleton } from './CostTabSkeleton';
 import type { DagAnalysis } from '@/engine';
-import type { LandEvent, Person } from '@/engine/types';
+import type { LandEvent, Person, FeeRules, Mouza } from '@/engine/types';
 
 export interface PlotCardProps {
   analysis: DagAnalysis;
   events: LandEvent[];
   people: Person[];
+  feeRules?: FeeRules;
+  mouza?: Mouza;
   activeTab?: string;
   onTabChange?: (tab: string) => void;
   className?: string;
@@ -21,11 +25,17 @@ export const PlotCard: React.FC<PlotCardProps> = ({
   analysis,
   events,
   people,
+  feeRules: propFeeRules,
+  mouza: propMouza,
   activeTab: controlledTab,
   onTabChange,
   className = '',
 }) => {
   const { t } = useT();
+  const storeData = useDataStore((state) => state.data);
+  const feeRules = propFeeRules ?? storeData?.feeRules;
+  const mouza = propMouza ?? storeData?.mouza;
+
   const [internalTab, setInternalTab] = useState('summary');
   const [targetTimelineEventId, setTargetTimelineEventId] = useState<string | undefined>();
 
@@ -74,7 +84,10 @@ export const PlotCard: React.FC<PlotCardProps> = ({
             analysis={analysis}
             events={events}
             people={people}
+            feeRules={feeRules}
+            mouza={mouza}
             onNavigateToTimeline={handleNavigateToTimeline}
+            onNavigateToTab={setTab}
           />
         )}
 
@@ -91,7 +104,18 @@ export const PlotCard: React.FC<PlotCardProps> = ({
           <PriceCard estimate={analysis.priceEstimate} dag={analysis.dag} />
         )}
 
-        {currentTab === 'cost' && <CostTabSkeleton />}
+        {currentTab === 'cost' &&
+          (feeRules && mouza ? (
+            <CostTab
+              dag={analysis.dag}
+              priceEstimate={analysis.priceEstimate}
+              feeRules={feeRules}
+              mouza={mouza}
+              events={events}
+            />
+          ) : (
+            <CostTabSkeleton />
+          ))}
       </div>
     </div>
   );

@@ -1,5 +1,12 @@
 import { describe, expect, it } from 'vitest';
-import { formatDecimal, formatNumber, formatTaka, toBanglaDigits } from './format';
+import {
+  formatDecimal,
+  formatNumber,
+  formatTaka,
+  toBanglaDigits,
+  fromBanglaDigits,
+  parseBanglaNumber,
+} from './format';
 
 describe('format utilities', () => {
   describe('toBanglaDigits', () => {
@@ -7,6 +14,21 @@ describe('format utilities', () => {
       expect(toBanglaDigits(1234567890)).toBe('১২৩৪৫৬৭৮৯০');
       expect(toBanglaDigits('52,00,000')).toBe('৫২,০০,০০০');
       expect(toBanglaDigits('Plot 104')).toBe('Plot ১০৪');
+    });
+  });
+
+  describe('fromBanglaDigits and parseBanglaNumber', () => {
+    it('converts Bangla digits to English digits', () => {
+      expect(fromBanglaDigits('১২৩৪৫৬৭৮৯০')).toBe('1234567890');
+      expect(fromBanglaDigits('৫২,০০,০০০')).toBe('52,00,000');
+    });
+
+    it('parses numbers entered in Bangla or English digits with commas', () => {
+      expect(parseBanglaNumber('৫২,০০,০০০')).toBe(5200000);
+      expect(parseBanglaNumber('10,00,000')).toBe(1000000);
+      expect(parseBanglaNumber('৭৫০')).toBe(750);
+      expect(parseBanglaNumber('')).toBeNaN();
+      expect(parseBanglaNumber('abc')).toBeNaN();
     });
   });
 

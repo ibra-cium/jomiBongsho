@@ -1,17 +1,22 @@
-import React from 'react';
-import { CheckCircle2, ShieldAlert } from 'lucide-react';
+import React, { useMemo } from 'react';
+import { CheckCircle2, ShieldAlert, Calculator } from 'lucide-react';
 import { useT } from '@/i18n/useT';
+import { formatTaka } from '@/lib/format';
 import { Stamp, VerdictType } from '@/ui/Stamp';
+import { calculateCost } from '@/engine';
 import { IssueRow } from './IssueRow';
 import { OwnersList } from './OwnerRow';
 import type { DagAnalysis } from '@/engine';
-import type { LandEvent, Person } from '@/engine/types';
+import type { LandEvent, Person, FeeRules, Mouza, LandTaxEvent } from '@/engine/types';
 
 export interface SummaryTabProps {
   analysis: DagAnalysis;
   events: LandEvent[];
   people: Person[];
+  feeRules?: FeeRules;
+  mouza?: Mouza;
   onNavigateToTimeline?: (eventId?: string) => void;
+  onNavigateToTab?: (tab: string) => void;
   className?: string;
 }
 
@@ -19,12 +24,46 @@ export const SummaryTab: React.FC<SummaryTabProps> = ({
   analysis,
   events,
   people,
+  feeRules,
+  mouza,
   onNavigateToTimeline,
+  onNavigateToTab,
   className = '',
 }) => {
-  const { t } = useT();
+  const { t, lang } = useT();
 
-  const { verdict, issues, owners, dag } = analysis;
+  const { verdict, issues, owners, dag, priceEstimate } = analysis;
+
+  // Short cost calculation for Summary tab
+  const costSummary = useMemo(() => {
+    if (!feeRules || !mouza) return null;
+
+    const defaultPriceBdt =
+      priceEstimate.total?.mid && priceEstimate.total.mid > 0
+        ? priceEstimate.total.mid
+        : priceEstimate.perDecimal?.mid && priceEstimate.perDecimal.mid > 0
+          ? Math.round(priceEstimate.perDecimal.mid * dag.recordedAreaDecimal)
+          : 0;
+
+    if (defaultPriceBdt <= 0) return null;
+
+    const taxEvents = events.filter((e): e is LandTaxEvent => e.type === 'landTax');
+    const arrearsBdt =
+      taxEvents.length > 0
+        ? (taxEvents.reduce((best, curr) => (curr.date > best.date ? curr : best)).arrearsBdt ?? 0)
+        : 0;
+
+    return calculateCost({
+      declaredPriceBdt: defaultPriceBdt,
+      recordedAreaDecimal: dag.recordedAreaDecimal,
+      areaClass: mouza.areaClass,
+      sourceTaxClass: mouza.sourceTaxClass,
+      feeRules,
+      arrearsBdt,
+      buyerPaysSourceTax: true,
+      estimateMidPerDecimalBdt: priceEstimate.perDecimal?.mid,
+    });
+  }, [feeRules, mouza, priceEstimate, dag.recordedAreaDecimal, events]);
 
   const verdictVariant: VerdictType =
     verdict === 'red' ? 'bad' : verdict === 'yellow' ? 'warn' : 'ok';
@@ -89,6 +128,32 @@ export const SummaryTab: React.FC<SummaryTabProps> = ({
             <div className="font-serif font-bold text-xs sm:text-sm text-ok">{t('verdictOk')}</div>
             <p className="text-xs text-ink-2 leading-relaxed">{t('noIssuesFound')}</p>
           </div>
+        </div>
+      )}
+
+      {/* 2.5. Total Cost Short Summary Line (P1-T10) */}
+      {costSummary && (
+        <div className="p-3.5 bg-paper-2 border border-line rounded-2xl flex items-center justify-between text-xs gap-3 shadow-xs">
+          <div className="flex items-center gap-2.5 min-w-0">
+            <div className="w-7 h-7 rounded-lg bg-accent/10 text-accent flex items-center justify-center shrink-0">
+              <Calculator className="w-4 h-4" />
+            </div>
+            <span className="font-medium text-ink leading-tight">
+              {t('summaryCostLine', {
+                total: formatTaka(costSummary.grandTotalBdt, lang, { short: true }),
+                fees: formatTaka(costSummary.feesTotalBdt, lang, { short: true }),
+              })}
+            </span>
+          </div>
+          {onNavigateToTab && (
+            <button
+              type="button"
+              onClick={() => onNavigateToTab('cost')}
+              className="text-accent font-semibold hover:underline shrink-0 text-xs cursor-pointer ml-1 whitespace-nowrap"
+            >
+              {t('viewCostDetails')} →
+            </button>
+          )}
         </div>
       )}
 

@@ -308,6 +308,46 @@ export const bn = {
   compExclude_old: '২৪ মাসের পুরনো',
   compExclude_self: 'একই দাগ',
   metersUnit: '{n} মিটার',
+
+  // Cost Calculator (P1-T10)
+  costTitle: 'জমি ক্রয়ের মোট খরচের হিসাব',
+  costSubtitle: 'সরকারি ফি, কর এবং মোট ব্যয়ের স্বচ্ছ হিসাব',
+  declaredPriceLabel: 'দলিলে ঘোষিত জমির দাম',
+  declaredPriceHint: 'আনুমানিক বাজারদরের ভিত্তিতে প্রস্তাবিত (সম্পাদনাযোগ্য)',
+  perDecimalPrice: 'প্রতি শতাংশে {amount}',
+  buyerPaysSourceTaxLabel: 'ক্রেতা কর্তৃক উৎসে কর পরিশোধ',
+  buyerPaysSourceTaxNote:
+    'আইন অনুযায়ী এটি বিক্রেতার কর, তবে বাস্তবে অনেক সময় ক্রেতা পরিশোধ করেন; বায়নার পূর্বে লিখিতভাবে স্পষ্ট করে নিন (টিবিএস, মে ২০২৫)।',
+  demoRatesChip: 'ডেমো সরকারি হার',
+  demoRatesLabel: 'ডেমো হার — ব্যবহারের আগে সরকারি হিসাবের সাথে মিলিয়ে নিন',
+  sourcesModalTitle: 'ফি ও করের সরকারি সূত্র ও গ্যাজেট',
+  sourcesModalClose: 'বন্ধ করুন',
+  sourcesVerifiedNotice:
+    'প্রদর্শিত হারগুলো ডেমো হিসেবে ব্যবহৃত হয়েছে। জমি রেজিস্ট্রির পূর্বে জাতীয় রাজস্ব বোর্ড (NBR) ও ভূমি মন্ত্রণালয়ের হালনাগাদ সার্কুলার দেখে নিন।',
+  underDeclaredWarningTitle: 'দলিলে কম দাম দেখানো বেআইনি এবং ঝুঁকিপূর্ণ',
+  underDeclaredWarningDesc:
+    'এই দাগের গড় বাজারমূল্য প্রতি শতাংশে {marketMid} টাকা। আপনি দেখাচ্ছেন প্রতি শতাংশে {enteredMid} টাকা (বাজারদরের ৫০% এর কম)। দলিলের দাম কম দেখালে ভবিষ্যতে জমি বিক্রিতে অস্বাভাবিক বেশি মূলধনী কর দিতে হবে এবং আইনি জটিলতার ঝুঁকি তৈরি হয়।',
+  costTableItem: 'ফি ও করের খাত',
+  costTableRate: 'হার',
+  costTableAmount: 'টাকার পরিমাণ',
+  costLandPriceRow: 'জমির মূল দাম',
+  costGovtFeesTotalRow: 'মোট সরকারি ফি ও কর',
+  costGrandTotalRow: 'সর্বমোট খরচ (জমির দাম + ফি)',
+  costEffectiveRate: 'জমির মূল্যের ওপর প্রায় {rate}% সরকারি ব্যয়',
+  mutationBreakdownToggle: 'নামজারি ফি বিবরণ',
+  fixedFeesBreakdownToggle: 'নির্দিষ্ট ফি বিবরণ',
+  summaryCostLine: 'মোট খরচ প্রায় {total} (জমির দাম + {fees} ফি ও কর)',
+  viewCostDetails: 'খরচের বিস্তারিত',
+  stepDown50k: '-৫০,০০০',
+  stepUp50k: '+৫০,০০০',
+  resetEstimatePrice: 'বাজারদরে রিসেট',
+  costLine_stampDuty: 'স্ট্যাম্প শুল্ক',
+  costLine_registrationFee: 'রেজিস্ট্রেশন ফি',
+  costLine_localGovtTax: 'স্থানীয় সরকার কর',
+  costLine_sourceTax: 'উৎসে কর (মূলধনী লাভ কর)',
+  costLine_fixedFees: 'নির্দিষ্ট সরকারি ফি (ই-ফি, এন-ফি, কোর্ট ফি, স্ট্যাম্প)',
+  costLine_mutationFee: 'ই-নামজারি ফি',
+  costLine_landTaxArrears: 'বকেয়া ভূমি উন্নয়ন কর',
 };
 
 export type TranslationKey = keyof typeof bn;

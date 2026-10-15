@@ -1,7 +1,35 @@
 const BANGLA_DIGITS = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+const BANGLA_TO_EN: Record<string, string> = {
+  '০': '0',
+  '১': '1',
+  '২': '2',
+  '৩': '3',
+  '৪': '4',
+  '৫': '5',
+  '৬': '6',
+  '৭': '7',
+  '৮': '8',
+  '৯': '9',
+};
 
 export function toBanglaDigits(value: number | string): string {
   return String(value).replace(/[0-9]/g, (digit) => BANGLA_DIGITS[Number(digit)] ?? digit);
+}
+
+export function fromBanglaDigits(value: number | string): string {
+  return String(value).replace(/[০-৯]/g, (digit) => BANGLA_TO_EN[digit] ?? digit);
+}
+
+/**
+ * Parses user input that may contain Bengali or ASCII digits, commas, or spaces.
+ * Returns parsed number, or NaN if invalid.
+ */
+export function parseBanglaNumber(value: string): number {
+  if (!value) return NaN;
+  const normalized = fromBanglaDigits(value).replace(/[\s,]/g, '');
+  if (!normalized) return NaN;
+  const num = Number(normalized);
+  return isNaN(num) ? NaN : num;
 }
 
 /**

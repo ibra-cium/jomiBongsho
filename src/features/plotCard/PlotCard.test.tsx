@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 import type { DemoData } from '@/engine/types';
-import { analyseDag } from '@/engine';
+import { analyseDag, calculateCost } from '@/engine';
 
 // Load demo data
 function loadDemoData(): DemoData {
@@ -107,5 +107,82 @@ describe('P1-T08 Acceptance Criteria — Plot Sheet Data & Analysis', () => {
     const elapsed = performance.now() - start;
     const avgMs = elapsed / data.dags.features.length;
     expect(avgMs).toBeLessThan(5); // Far below 20 ms requirement
+  });
+
+  describe('P1-T10 Acceptance Criteria — Cost Calculator & Arrears', () => {
+    it('Dag 101: cost calculation has all fee lines and 0 arrears', () => {
+      const analysis = analyseDag('101', data);
+      const dag = analysis.dag;
+      const estimateMid = analysis.priceEstimate.perDecimal?.mid ?? 327_000;
+      const defaultPrice = Math.round(estimateMid * dag.recordedAreaDecimal);
+
+      const events101 = data.events.filter((e) => e.dagId === '101');
+      const taxEvents = events101.filter((e) => e.type === 'landTax');
+      const arrearsBdt = taxEvents[0]?.arrearsBdt ?? 0;
+      expect(arrearsBdt).toBe(0);
+
+      const cost = calculateCost({
+        declaredPriceBdt: defaultPrice,
+        recordedAreaDecimal: dag.recordedAreaDecimal,
+        areaClass: data.mouza.areaClass,
+        sourceTaxClass: data.mouza.sourceTaxClass,
+        feeRules: data.feeRules,
+        arrearsBdt,
+        buyerPaysSourceTax: true,
+        estimateMidPerDecimalBdt: estimateMid,
+      });
+
+      expect(cost.grandTotalBdt).toBe(cost.landPriceBdt + cost.feesTotalBdt);
+      expect(cost.isUnderDeclared).toBe(false);
+      expect(cost.lines.some((l) => l.id === 'landTaxArrears')).toBe(false);
+      expect(cost.lines.some((l) => l.id === 'stampDuty')).toBe(true);
+      expect(cost.lines.some((l) => l.id === 'registrationFee')).toBe(true);
+      expect(cost.lines.some((l) => l.id === 'localGovtTax')).toBe(true);
+      expect(cost.lines.some((l) => l.id === 'sourceTax')).toBe(true);
+      expect(cost.lines.some((l) => l.id === 'fixedFees')).toBe(true);
+      expect(cost.lines.some((l) => l.id === 'mutationFee')).toBe(true);
+    });
+
+    it('Dag 112: shows the land-tax arrears line of 18,500 BDT', () => {
+      const analysis = analyseDag('112', data);
+      const dag = analysis.dag;
+      const events112 = data.events.filter((e) => e.dagId === '112');
+      const taxEvent = events112.find((e) => e.type === 'landTax');
+      expect(taxEvent).toBeDefined();
+      expect(taxEvent?.arrearsBdt).toBe(18_500);
+
+      const cost = calculateCost({
+        declaredPriceBdt: 1_000_000,
+        recordedAreaDecimal: dag.recordedAreaDecimal,
+        areaClass: data.mouza.areaClass,
+        sourceTaxClass: data.mouza.sourceTaxClass,
+        feeRules: data.feeRules,
+        arrearsBdt: taxEvent?.arrearsBdt ?? 0,
+        buyerPaysSourceTax: true,
+      });
+
+      const arrearsLine = cost.lines.find((l) => l.id === 'landTaxArrears');
+      expect(arrearsLine).toBeDefined();
+      expect(arrearsLine?.amountBdt).toBe(18_500);
+      expect(arrearsLine?.amountPaisa).toBe(1_850_000);
+      // For 10 lakh in Notun Char (union: 2%, sourceTaxClass B: 4%): regular fees = 86,590 BDT
+      expect(cost.feesTotalBdt).toBe(86_590 + 18_500);
+    });
+
+    it('under-declared warning triggers below 50% of estimate with no savings wording', () => {
+      const cost = calculateCost({
+        declaredPriceBdt: 500_000,
+        recordedAreaDecimal: 10.0, // 50,000 / dec
+        areaClass: data.mouza.areaClass,
+        sourceTaxClass: data.mouza.sourceTaxClass,
+        feeRules: data.feeRules,
+        estimateMidPerDecimalBdt: 300_000, // 50% is 150,000
+      });
+
+      expect(cost.isUnderDeclared).toBe(true);
+      // Ensure no property contains "savings"
+      const json = JSON.stringify(cost).toLowerCase();
+      expect(json).not.toContain('saving');
+    });
   });
 });

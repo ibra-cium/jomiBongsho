@@ -361,6 +361,8 @@ export const MapScreen: React.FC = () => {
             analysis={activeAnalysis}
             events={data.events.filter((e) => e.dagId === activeDagId)}
             people={data.people}
+            feeRules={data.feeRules}
+            mouza={data.mouza}
             activeTab={activeTab}
             onTabChange={setActiveTab}
           />
