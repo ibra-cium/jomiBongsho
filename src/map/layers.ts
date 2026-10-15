@@ -1,4 +1,23 @@
-import type { LineLayerSpecification, FillLayerSpecification } from 'maplibre-gl';
+import type {
+  LineLayerSpecification,
+  FillLayerSpecification,
+  RasterLayerSpecification,
+} from 'maplibre-gl';
+
+export const MOUZA_SHEET_SOURCE_ID = 'mouza-sheet';
+export const MOUZA_SHEET_LAYER_ID = 'mouza-sheet-raster';
+
+export function getMouzaSheetLayer(opacity = 0.85): RasterLayerSpecification {
+  return {
+    id: MOUZA_SHEET_LAYER_ID,
+    type: 'raster',
+    source: MOUZA_SHEET_SOURCE_ID,
+    paint: {
+      'raster-opacity': opacity,
+      'raster-opacity-transition': { duration: 0 },
+    },
+  };
+}
 
 export const ROAD_SOURCE_ID = 'mouza-road';
 export const ROAD_LAYER_ID = 'mouza-road-line';

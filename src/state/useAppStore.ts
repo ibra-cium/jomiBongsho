@@ -50,7 +50,7 @@ export const useAppStore = create<AppState>((set) => ({
   theme: initialTheme,
   selectedDagId: null,
   sheetSnap: 'peek',
-  sheetOpacity: 0,
+  sheetOpacity: 0.85,
   demo: {
     simulatedLocation: false,
     tamperMode: false,

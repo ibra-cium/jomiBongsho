@@ -8,7 +8,11 @@ import centroid from '@turf/centroid';
 import type { DemoData } from '@/engine/types';
 import { analyseDag } from '@/engine';
 import {
+  MOUZA_SHEET_SOURCE_ID,
+  MOUZA_SHEET_LAYER_ID,
+  getMouzaSheetLayer,
   ROAD_SOURCE_ID,
+  ROAD_LAYER_ID,
   DAGS_SOURCE_ID,
   DAGS_FILL_LAYER_ID,
   roadLayer,
@@ -17,6 +21,7 @@ import {
   dagsSelectedLayer,
   getDagsFillPaint,
 } from './layers';
+import { getMouzaSheetDataUrl } from './mouzaSheet';
 import { DagLabels } from './DagLabels';
 
 interface MapViewProps {
@@ -35,7 +40,7 @@ export const MapView: React.FC<MapViewProps> = ({
   onSelectDag,
   lang,
   showRiskColors = false,
-  sheetOpacity = 0,
+  sheetOpacity = 0.85,
   className = '',
 }) => {
   const mapContainerRef = useRef<HTMLDivElement>(null);
@@ -43,6 +48,11 @@ export const MapView: React.FC<MapViewProps> = ({
   const [mapLoaded, setMapLoaded] = useState(false);
   const prevSelectedRef = useRef<string | null>(null);
   const onSelectDagRef = useRef(onSelectDag);
+  const sheetOpacityRef = useRef(sheetOpacity);
+
+  useEffect(() => {
+    sheetOpacityRef.current = sheetOpacity;
+  }, [sheetOpacity]);
 
   useEffect(() => {
     onSelectDagRef.current = onSelectDag;
@@ -85,7 +95,32 @@ export const MapView: React.FC<MapViewProps> = ({
     mapRef.current = map;
 
     map.on('load', () => {
-      // 1. Add Mouza Road Source & Layer
+      // 1. Add Mouza Sheet Image Source & Raster Layer (under roads and dags)
+      getMouzaSheetDataUrl(mouza, dags)
+        .then((sheetUrl) => {
+          if (!mapRef.current) return;
+          if (!map.getSource(MOUZA_SHEET_SOURCE_ID)) {
+            map.addSource(MOUZA_SHEET_SOURCE_ID, {
+              type: 'image',
+              url: sheetUrl,
+              coordinates: mouza.sheetCorners,
+            });
+
+            // Position raster layer directly under road or dags
+            const beforeId = map.getLayer(ROAD_LAYER_ID)
+              ? ROAD_LAYER_ID
+              : map.getLayer(DAGS_FILL_LAYER_ID)
+                ? DAGS_FILL_LAYER_ID
+                : undefined;
+
+            map.addLayer(getMouzaSheetLayer(sheetOpacityRef.current), beforeId);
+          }
+        })
+        .catch((err) => {
+          console.warn('Failed to load mouza sheet overlay', err);
+        });
+
+      // 2. Add Mouza Road Source & Layer
       if (mouza.roadLine && !map.getSource(ROAD_SOURCE_ID)) {
         map.addSource(ROAD_SOURCE_ID, {
           type: 'geojson',
@@ -244,6 +279,13 @@ export const MapView: React.FC<MapViewProps> = ({
       map.setPaintProperty(DAGS_FILL_LAYER_ID, 'fill-color', newPaint['fill-color']);
     }
   }, [showRiskColors, mapLoaded]);
+
+  // Update raster-opacity when sheetOpacity changes
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !mapLoaded || !map.getLayer(MOUZA_SHEET_LAYER_ID)) return;
+    map.setPaintProperty(MOUZA_SHEET_LAYER_ID, 'raster-opacity', sheetOpacity);
+  }, [sheetOpacity, mapLoaded]);
 
   return (
     <div className={`relative w-full h-full ${className}`}>

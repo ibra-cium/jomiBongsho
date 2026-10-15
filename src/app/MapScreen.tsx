@@ -17,10 +17,11 @@ import {
 import { useT } from '@/i18n/useT';
 import { useAppStore } from '@/state/useAppStore';
 import { useDataStore } from '@/data/useDataStore';
-import { Watermark, Slider, Sheet, Badge, VerdictStamp, Segmented, Button, Skeleton } from '@/ui';
+import { Watermark, Sheet, Badge, VerdictStamp, Segmented, Button, Skeleton } from '@/ui';
 import { formatDecimal, toBanglaDigits } from '@/lib/format';
 import { useInstallPrompt } from '@/lib/pwa';
 import { MapView } from '@/map/MapView';
+import { SheetOpacitySlider } from '@/features/map/SheetOpacitySlider';
 import { analyseDag } from '@/engine';
 
 export const MapScreen: React.FC = () => {
@@ -32,7 +33,6 @@ export const MapScreen: React.FC = () => {
     sheetSnap,
     setSheetSnap,
     sheetOpacity,
-    setSheetOpacity,
     setLang,
     selectedDagId,
     setSelectedDagId,
@@ -331,13 +331,7 @@ export const MapScreen: React.FC = () => {
 
         {/* Floating Sheet Opacity Slider */}
         <div className="absolute bottom-32 sm:bottom-36 left-1/2 -translate-x-1/2 z-20 pointer-events-auto">
-          <Slider
-            value={sheetOpacity}
-            onChange={setSheetOpacity}
-            leftLabel={t('oldMap')}
-            rightLabel={t('digitalMap')}
-            aria-label="Mouza sheet opacity"
-          />
+          <SheetOpacitySlider />
         </div>
       </main>
 
