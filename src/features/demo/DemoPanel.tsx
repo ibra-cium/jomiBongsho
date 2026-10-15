@@ -137,8 +137,8 @@ export const DemoPanel: React.FC<DemoPanelProps> = ({ isOpen, onClose, onSelectD
                 : 'Simulate standing on a specific plot to demonstrate field checks and plot mismatch warnings.'}
             </p>
 
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1">
-              <div className="flex items-center gap-2 flex-1">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 pt-1">
+              <div className="flex items-center gap-2 flex-1 min-w-0">
                 <label htmlFor="sim-dag-select" className="text-xs font-semibold text-ink shrink-0">
                   {lang === 'bn' ? 'দাগ নির্বাচন:' : 'Select Dag:'}
                 </label>
@@ -146,7 +146,7 @@ export const DemoPanel: React.FC<DemoPanelProps> = ({ isOpen, onClose, onSelectD
                   id="sim-dag-select"
                   value={simDagId}
                   onChange={(e) => setSimDagId(e.target.value)}
-                  className="flex-1 px-3 py-2 bg-paper border border-line rounded-lg text-xs font-medium text-ink outline-hidden focus:border-accent"
+                  className="flex-1 min-w-0 px-3 py-2 bg-paper border border-line rounded-lg text-xs font-medium text-ink outline-hidden focus:border-accent"
                 >
                   <option value="105">
                     দাগ ১০৫ (অল্প সময়ে বারবার হাতবদল - মিসম্যাচ পরীক্ষার জন্য প্রস্তাবিত)
@@ -165,10 +165,14 @@ export const DemoPanel: React.FC<DemoPanelProps> = ({ isOpen, onClose, onSelectD
                 </select>
               </div>
 
-              <div className="flex items-center gap-2">
-                <Button size="sm" variant="primary" onClick={() => handleStartSimulation(simDagId)}>
-                  <Navigation className="w-3.5 h-3.5 mr-1.5" />
-                  {lang === 'bn' ? 'অবস্থান অনুকরণ করুন' : 'Simulate Location'}
+              <div className="flex items-center gap-2 shrink-0">
+                <Button
+                  size="sm"
+                  variant="primary"
+                  leftIcon={<Navigation className="w-3.5 h-3.5" />}
+                  onClick={() => handleStartSimulation(simDagId)}
+                >
+                  {lang === 'bn' ? 'অনুকরণ করুন' : 'Simulate'}
                 </Button>
                 {demo.simulatedLocation && (
                   <Button size="sm" variant="secondary" onClick={handleStopSimulation}>
@@ -260,9 +264,13 @@ export const DemoPanel: React.FC<DemoPanelProps> = ({ isOpen, onClose, onSelectD
 
         {/* Footer */}
         <div className="flex items-center justify-between px-6 py-3.5 border-t border-line bg-paper-2">
-          <Button size="sm" variant="secondary" onClick={handleResetDemo}>
-            <RotateCcw className="w-3.5 h-3.5 mr-1.5" />
-            {lang === 'bn' ? 'ডেমো রিসেট' : 'Reset Demo'}
+          <Button
+            size="sm"
+            variant="secondary"
+            leftIcon={<RotateCcw className="w-3.5 h-3.5" />}
+            onClick={handleResetDemo}
+          >
+            {lang === 'bn' ? 'রিসেট' : 'Reset'}
           </Button>
 
           <Button size="sm" variant="primary" onClick={onClose}>

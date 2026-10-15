@@ -26,12 +26,12 @@ export const Button: React.FC<ButtonProps> = ({
   ...rest
 }) => {
   const baseStyles =
-    'relative inline-flex items-center justify-center font-medium transition-all select-none cursor-pointer focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:opacity-50 active:scale-[0.98]';
+    'relative inline-flex items-center justify-center font-medium whitespace-nowrap shrink-0 transition-all select-none cursor-pointer focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:opacity-50 active:scale-[0.98]';
 
   const sizeStyles: Record<ButtonSize, string> = {
     sm: 'text-sm px-3 py-1.5 min-h-[36px] rounded-[10px] gap-1.5',
-    md: 'text-base px-4 py-2.5 min-h-[44px] rounded-[10px] gap-2',
-    lg: 'text-lg px-6 py-3 min-h-[48px] rounded-[12px] gap-2.5',
+    md: 'text-base px-4 py-2 min-h-[40px] rounded-[10px] gap-2',
+    lg: 'text-lg px-6 py-2.5 min-h-[48px] rounded-[12px] gap-2.5',
   };
 
   const variantStyles: Record<ButtonVariant, string> = {
@@ -58,7 +58,7 @@ export const Button: React.FC<ButtonProps> = ({
       ) : (
         leftIcon && <span className="inline-flex shrink-0">{leftIcon}</span>
       )}
-      <span>{children}</span>
+      <span className="inline-flex items-center gap-1.5">{children}</span>
       {!loading && rightIcon && <span className="inline-flex shrink-0">{rightIcon}</span>}
     </button>
   );

@@ -80,8 +80,13 @@ export const PermissionHelpModal: React.FC<PermissionHelpModalProps> = ({
         </div>
 
         <div className="flex flex-col sm:flex-row gap-2 pt-2">
-          <Button size="sm" variant="secondary" fullWidth onClick={() => window.location.reload()}>
-            <RefreshCw className="w-3.5 h-3.5 mr-1.5" />
+          <Button
+            size="sm"
+            variant="secondary"
+            fullWidth
+            leftIcon={<RefreshCw className="w-3.5 h-3.5" />}
+            onClick={() => window.location.reload()}
+          >
             {lang === 'bn' ? 'পৃষ্ঠা রিফ্রেশ' : 'Refresh Page'}
           </Button>
 
@@ -89,13 +94,13 @@ export const PermissionHelpModal: React.FC<PermissionHelpModalProps> = ({
             size="sm"
             variant="primary"
             fullWidth
+            leftIcon={<Compass className="w-3.5 h-3.5" />}
             onClick={() => {
               onClose();
               onOpenDemo();
             }}
           >
-            <Compass className="w-3.5 h-3.5 mr-1.5" />
-            {lang === 'bn' ? 'অবস্থান অনুকরণ করুন' : 'Simulate Location'}
+            {lang === 'bn' ? 'অনুকরণ প্যানেল' : 'Simulation Panel'}
           </Button>
         </div>
       </div>
