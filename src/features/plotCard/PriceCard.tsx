@@ -271,7 +271,7 @@ export const PriceCard: React.FC<PriceCardProps> = ({ estimate, dag, className =
                 onClick={() => setCompsFilter('used')}
                 className={`px-2.5 py-1 rounded-md transition-colors ${
                   compsFilter === 'used'
-                    ? 'bg-good text-paper font-semibold'
+                    ? 'bg-ok text-paper font-semibold'
                     : 'bg-paper-2 text-ink-2 hover:text-ink border border-line'
                 }`}
               >
@@ -286,7 +286,7 @@ export const PriceCard: React.FC<PriceCardProps> = ({ estimate, dag, className =
                     : 'bg-paper-2 text-ink-2 hover:text-ink border border-line'
                 }`}
               >
-                বাদ দেওয়া (
+                বাদ দেওয়া (
                 {lang === 'bn' ? toBanglaDigits(excludedComps.length) : excludedComps.length})
               </button>
             </div>
@@ -319,12 +319,12 @@ export const PriceCard: React.FC<PriceCardProps> = ({ estimate, dag, className =
 
                       {/* Used / Excluded Badge */}
                       {comp.used ? (
-                        <span className="inline-flex items-center gap-1 text-[11px] px-2 py-0.5 rounded-full bg-good/10 text-good border border-good/20 font-medium">
+                        <span className="inline-flex items-center gap-1 text-[11px] px-2 py-0.5 rounded-full bg-ok-wash text-ok border border-ok/30 font-medium">
                           <CheckCircle2 className="w-3 h-3" aria-hidden="true" />
                           <span>{t('compStatusUsed')}</span>
                         </span>
                       ) : (
-                        <span className="inline-flex items-center gap-1 text-[11px] px-2 py-0.5 rounded-full bg-warn/10 text-warn border border-warn/20 font-medium">
+                        <span className="inline-flex items-center gap-1 text-[11px] px-2 py-0.5 rounded-full bg-warn-wash text-warn border border-warn/30 font-medium">
                           <XCircle className="w-3 h-3" aria-hidden="true" />
                           <span>{t('compStatusExcluded')}</span>
                         </span>
