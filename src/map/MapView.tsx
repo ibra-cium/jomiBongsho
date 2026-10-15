@@ -42,6 +42,11 @@ export const MapView: React.FC<MapViewProps> = ({
   const mapRef = useRef<maplibregl.Map | null>(null);
   const [mapLoaded, setMapLoaded] = useState(false);
   const prevSelectedRef = useRef<string | null>(null);
+  const onSelectDagRef = useRef(onSelectDag);
+
+  useEffect(() => {
+    onSelectDagRef.current = onSelectDag;
+  }, [onSelectDag]);
 
   // Initialize MapLibre GL map
   useEffect(() => {
@@ -162,7 +167,7 @@ export const MapView: React.FC<MapViewProps> = ({
           const feature = e.features[0];
           if (!feature) return;
           const id = String(feature.id ?? feature.properties?.id);
-          onSelectDag(id);
+          onSelectDagRef.current(id);
           e.originalEvent.stopPropagation();
         }
       });
@@ -173,7 +178,7 @@ export const MapView: React.FC<MapViewProps> = ({
           layers: [DAGS_FILL_LAYER_ID],
         });
         if (features.length === 0) {
-          onSelectDag(null);
+          onSelectDagRef.current(null);
         }
       });
 
@@ -185,7 +190,9 @@ export const MapView: React.FC<MapViewProps> = ({
       map.remove();
       mapRef.current = null;
     };
-  }, [data, onSelectDag]);
+    // Map instance should only be initialized once per mouza dataset
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [data.mouza.id]);
 
   // Update selection feature-state when selectedDagId changes
   useEffect(() => {

@@ -62,9 +62,18 @@ export const DagLabels: React.FC<DagLabelsProps> = ({ map, dags, lang, sheetOpac
 
     markersRef.current = newMarkers;
 
+    return () => {
+      markersRef.current.forEach((m) => m.remove());
+      markersRef.current = [];
+    };
+  }, [map, dags, lang]);
+
+  // Update visibility on zoom or sheetOpacity change without rebuilding markers
+  useEffect(() => {
+    if (!map) return;
+
     const updateVisibility = () => {
       const zoom = map.getZoom();
-      // Only show at zoom >= 15.5 and when old mouza sheet opacity <= 0.6
       const visible = zoom >= 15.5 && sheetOpacity <= 0.6;
       for (const m of markersRef.current) {
         const el = m.getElement();
@@ -77,10 +86,8 @@ export const DagLabels: React.FC<DagLabelsProps> = ({ map, dags, lang, sheetOpac
 
     return () => {
       map.off('zoom', updateVisibility);
-      markersRef.current.forEach((m) => m.remove());
-      markersRef.current = [];
     };
-  }, [map, dags, lang, sheetOpacity]);
+  }, [map, sheetOpacity]);
 
   return null;
 };

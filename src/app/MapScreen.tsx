@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import React, { useEffect, useCallback } from 'react';
+import { useParams, useNavigate, Link, Outlet } from 'react-router-dom';
 import {
   Search,
   Globe,
@@ -59,15 +59,18 @@ export const MapScreen: React.FC = () => {
     }
   }, [routeDagId, selectedDagId, setSelectedDagId, setSheetSnap]);
 
-  const handleSelectDag = (id: string | null) => {
-    setSelectedDagId(id);
-    if (id) {
-      setSheetSnap('half');
-      navigate(`/dag/${id}`, { replace: true });
-    } else {
-      navigate('/', { replace: true });
-    }
-  };
+  const handleSelectDag = useCallback(
+    (id: string | null) => {
+      setSelectedDagId(id);
+      if (id) {
+        setSheetSnap('half');
+        navigate(`/dag/${id}`, { replace: true });
+      } else {
+        navigate('/', { replace: true });
+      }
+    },
+    [setSelectedDagId, setSheetSnap, navigate],
+  );
 
   const toggleLanguage = () => {
     setLang(lang === 'bn' ? 'en' : 'bn');
@@ -384,6 +387,7 @@ export const MapScreen: React.FC = () => {
           </div>
         </div>
       </Sheet>
+      <Outlet />
     </div>
   );
 };

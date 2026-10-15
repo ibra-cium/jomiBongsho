@@ -10,10 +10,12 @@ export const router = createBrowserRouter([
   {
     path: '/',
     element: <MapScreen />,
-  },
-  {
-    path: '/dag/:dagId',
-    element: <MapScreen />,
+    children: [
+      {
+        path: 'dag/:dagId',
+        element: null,
+      },
+    ],
   },
   {
     path: '/report/:dagId',
