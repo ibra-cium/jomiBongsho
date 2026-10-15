@@ -9,5 +9,6 @@ export * from './Skeleton';
 export * from './Toast';
 export * from './Watermark';
 export * from './VerdictStamp';
+export * from './Stamp';
 export * from './Sheet';
 export * from './UpdateToast';

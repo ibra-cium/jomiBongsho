@@ -187,4 +187,96 @@ export const en: Record<TranslationKey, string> = {
     'Land development tax has been paid up to {paidUpToYear}. Outstanding amount: Tk {arrearsBdt}.',
   issue_TAX_ARREARS_next:
     'Pay the outstanding tax at the Union Land Office or online, or have the seller pay it before transfer.',
+
+  // Plot Sheet & Summary Tab
+  verdictDisclaimer: 'A decision aid, not a title certificate',
+  landClass_bastu: 'Homestead',
+  landClass_nal: 'Agricultural land',
+  landClass_vita: 'Highland',
+  landClass_pukur: 'Pond',
+  landClass_doba: 'Ditch',
+  landClass_karkhana: 'Factory',
+  landClass_commercial: 'Commercial',
+
+  // Owners & Claims
+  currentOwners: 'Current Legal Owners',
+  disputedClaims: 'Disputed Claims',
+  disputedClaimNotice:
+    'Transfers claimed by these individuals were invalid or unauthorized under land law.',
+  estatesInReview: 'Estates Under Legal Review',
+  estatesInReviewNotice:
+    'Special inheritance laws or heir structures apply, requiring formal legal review.',
+  acquiredRecord: 'By Survey Record',
+  acquiredDeed: 'By Purchase Deed',
+  acquiredInheritance: 'By Inheritance',
+  claimDeedRef: 'Deed Reference',
+  estateReason: 'Review Reason',
+
+  // Evidence & Actions
+  evidence: 'Evidence & Records',
+  whatToDo: 'What to do next',
+  viewInTimeline: 'View in Timeline',
+  noIssuesFound: 'No visible errors or risks were found in this plot’s records.',
+  summaryClosingClean:
+    'If records and mutation are up to date, you may proceed by inspecting original deeds at the Sub-Registry.',
+  summaryClosingWarning:
+    'Do not pay any advance or proceed with financial transactions until the above cautions are resolved.',
+  summaryClosingCritical:
+    'Critical title defects exist for this plot. Halt all transactions and advance payments immediately.',
+
+  // Timeline & History
+  filterAll: 'All',
+  filterRecord: 'Record',
+  filterDeed: 'Deed',
+  filterMutation: 'Mutation',
+  filterInheritance: 'Inheritance',
+  filterCase: 'Case',
+  invalidEventBadge: 'Invalid or Void Transaction',
+  surveyCS: 'CS (1932)',
+  surveySA: 'SA (1962)',
+  surveyRS: 'RS (1987)',
+  surveyBS: 'BS (2011)',
+  viewFamilyTree: 'View Faraiz Family Tree',
+  closeFamilyTree: 'Close Family Tree',
+  khatian: 'Khatian',
+  khatianNo: 'Khatian No.',
+  deedNo: 'Deed No.',
+  caseNo: 'Case No.',
+  sale: 'Sale',
+  gift: 'Gift',
+  landTaxPayment: 'Land Development Tax Payment',
+  paidUpTo: 'Paid up to year',
+  arrears: 'Arrears',
+  heirCount: '{n} heirs',
+  muslimLaw: 'Muslim Law',
+  hinduLaw: 'Hindu Law',
+  courtStatusPending: 'Pending',
+  courtStatusDisposed: 'Disposed',
+  statusLabel: 'Status',
+  inheritanceDistribution: 'Inheritance Distribution',
+
+  // Family Tree & Inheritance
+  deceased: 'Deceased',
+  heir: 'Heir',
+  relation: 'Relation',
+  faraizShare: 'Faraiz Share',
+  entitledArea: 'Entitled Area',
+  soldArea: 'Sold Area',
+  excessSold: 'Excess Sold',
+  faraizLegalReviewRequired: 'Complex inheritance — Legal review required',
+  faraizDisclaimer: 'Common cases calculation — Not formal legal advice',
+  relation_wife: 'Wife',
+  relation_husband: 'Husband',
+  relation_father: 'Father',
+  relation_mother: 'Mother',
+  relation_son: 'Son',
+  relation_daughter: 'Daughter',
+
+  // Skeletons / Upcoming tabs
+  priceComingSoon: 'Market Price Estimate & Comps',
+  priceComingSoonDesc:
+    'Estimated market valuation and comparative sales analysis based on nearby deeds coming in next release.',
+  costComingSoon: 'Registration Fees & Total Cost',
+  costComingSoonDesc:
+    'Complete government fee breakdown including stamp duty, source tax, and mutation fee coming in next release.',
 };

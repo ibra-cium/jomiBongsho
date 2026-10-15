@@ -120,6 +120,7 @@ export function replayLedger(
   const mutatedDeedNos = new Set<string>();
   // sellers who have appeared in a valid deed (for DOUBLE_SALE detection)
   const priorValidSellers = new Set<string>();
+  const priorValidDeedMap = new Map<string, string>();
   let lastInheritanceDate: string | null = null;
 
   // Helper to raise an issue (deduplication not required; caller decides)
@@ -204,10 +205,24 @@ export function replayLedger(
             // Seller doesn't have enough. Determine which kind of over-sale.
             if (priorValidSellers.has(seller.personId)) {
               // Seller already appeared in a previous valid deed → DOUBLE_SALE
-              addIssue('DOUBLE_SALE', 'critical', [event.id], {
+              const priorDeedId = priorValidDeedMap.get(seller.personId);
+              const priorDeed = priorDeedId
+                ? (sorted.find((e) => e.id === priorDeedId) as DeedEvent | undefined)
+                : undefined;
+              const firstDate = priorDeed?.date ?? '';
+              const firstBuyer = priorDeed?.buyers[0]?.personId ?? '';
+              const secondDate = event.date;
+              const secondBuyer = deedEv.buyers[0]?.personId ?? '';
+
+              const evIds = priorDeedId ? [priorDeedId, event.id] : [event.id];
+              addIssue('DOUBLE_SALE', 'critical', evIds, {
                 seller: seller.personId,
                 share: seller.share,
                 available: available.toFraction(),
+                firstDate,
+                firstBuyer,
+                secondDate,
+                secondBuyer,
               });
               deedIssues.push('DOUBLE_SALE');
             } else if (inheritedFrom.has(seller.personId)) {
@@ -267,6 +282,7 @@ export function replayLedger(
               balances.set(seller.personId, remaining);
             }
             priorValidSellers.add(seller.personId);
+            priorValidDeedMap.set(seller.personId, event.id);
           }
           for (const buyer of deedEv.buyers) {
             const buyShare = new Fraction(buyer.share);

@@ -17,11 +17,12 @@ import {
 import { useT } from '@/i18n/useT';
 import { useAppStore } from '@/state/useAppStore';
 import { useDataStore } from '@/data/useDataStore';
-import { Watermark, Sheet, Badge, VerdictStamp, Segmented, Button, Skeleton } from '@/ui';
-import { formatDecimal, toBanglaDigits } from '@/lib/format';
+import { Watermark, Sheet, Badge, Button, Skeleton } from '@/ui';
+import { toBanglaDigits } from '@/lib/format';
 import { useInstallPrompt } from '@/lib/pwa';
 import { MapView } from '@/map/MapView';
 import { SheetOpacitySlider } from '@/features/map/SheetOpacitySlider';
+import { PlotCard, PlotCardPeek } from '@/features/plotCard';
 import { analyseDag } from '@/engine';
 
 export const MapScreen: React.FC = () => {
@@ -76,13 +77,6 @@ export const MapScreen: React.FC = () => {
     setLang(lang === 'bn' ? 'en' : 'bn');
   };
 
-  const tabs = [
-    { value: 'summary', label: t('tabSummary') },
-    { value: 'history', label: t('tabHistory') },
-    { value: 'price', label: t('tabPrice') },
-    { value: 'cost', label: t('tabCost') },
-  ];
-
   // Selected dag metadata and analysis
   const activeDagId = selectedDagId ?? (data?.dags.features[0]?.properties.id || '101');
   const activeFeature = data?.dags.features.find(
@@ -91,9 +85,6 @@ export const MapScreen: React.FC = () => {
   const activeAnalysis = data ? analyseDag(activeDagId, data) : null;
 
   const displayDagNo = lang === 'bn' ? toBanglaDigits(activeDagId) : activeDagId;
-  const displayArea = activeFeature
-    ? formatDecimal(activeFeature.properties.recordedAreaDecimal, lang)
-    : '0';
 
   const verdictVariant =
     activeAnalysis?.verdict === 'red'
@@ -335,51 +326,45 @@ export const MapScreen: React.FC = () => {
         </div>
       </main>
 
+      {/* Screen Reader Live Announcement */}
+      <div className="sr-only" aria-live="polite" aria-atomic="true">
+        {activeAnalysis
+          ? `${t('dag')} ${displayDagNo}: ${verdictLabel}. ${
+              activeAnalysis.issues.length > 0
+                ? t('seeIssues', { n: activeAnalysis.issues.length })
+                : t('noIssuesFound')
+            }`
+          : ''}
+      </div>
+
       {/* Sheet Primitive (Phone Bottom Sheet / Desktop Left Panel) */}
       <Sheet
         snap={sheetSnap}
         onSnapChange={setSheetSnap}
         peekContent={
-          <div className="flex items-center justify-between">
-            <div className="space-y-0.5">
-              <div className="flex items-center gap-2">
-                <span className="font-serif text-xl font-bold text-ink">
-                  {t('dag')} {displayDagNo}
-                </span>
-                <Badge variant={verdictVariant} size="sm">
-                  {verdictLabel}
-                </Badge>
-              </div>
-              <div className="text-xs text-ink-2">
-                {t('area')}: {displayArea} {t('decimalUnit')}
-              </div>
+          activeFeature && activeAnalysis ? (
+            <PlotCardPeek dag={activeFeature.properties} verdict={activeAnalysis.verdict} />
+          ) : (
+            <div className="flex items-center justify-between">
+              <span className="font-serif text-lg font-bold text-ink">
+                {t('dag')} {displayDagNo}
+              </span>
+              <Badge variant={verdictVariant} size="sm">
+                {verdictLabel}
+              </Badge>
             </div>
-            <VerdictStamp
-              verdict={verdictVariant}
-              issueCount={activeAnalysis?.issues.length ?? 0}
-              className="scale-75 origin-right"
-            />
-          </div>
+          )
         }
       >
-        <div className="space-y-4 pt-2">
-          <Segmented options={tabs} value={activeTab} onChange={setActiveTab} className="w-full" />
-
-          <div className="p-4 bg-paper rounded-xl border border-line space-y-2">
-            <div className="text-sm font-semibold text-ink">{t('tabSummary')}</div>
-            <p className="text-xs text-ink-2 leading-relaxed">
-              দাগ নম্বর {displayDagNo}-এর খতিয়ান এবং ওয়ারিশ ইতিহাস যাচাই করা হয়েছে।
-              {activeAnalysis && activeAnalysis.issues.length > 0
-                ? ` ${lang === 'bn' ? toBanglaDigits(activeAnalysis.issues.length) : activeAnalysis.issues.length}টি ঝুঁকি বা সতর্কতামূলক বিষয় পাওয়া গেছে।`
-                : ' কোনো দৃশ্যমান ঝুঁকি পাওয়া যায়নি।'}
-            </p>
-            <div className="pt-2">
-              <Button size="sm" variant="secondary" fullWidth>
-                {t('details')}
-              </Button>
-            </div>
-          </div>
-        </div>
+        {activeAnalysis && data && (
+          <PlotCard
+            analysis={activeAnalysis}
+            events={data.events.filter((e) => e.dagId === activeDagId)}
+            people={data.people}
+            activeTab={activeTab}
+            onTabChange={setActiveTab}
+          />
+        )}
       </Sheet>
       <Outlet />
     </div>

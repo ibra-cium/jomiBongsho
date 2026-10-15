@@ -183,6 +183,98 @@ export const bn = {
     '{paidUpToYear} সাল পর্যন্ত কর দেওয়া হয়েছে। বকেয়া পরিমাণ {arrearsBdt} টাকা।',
   issue_TAX_ARREARS_next:
     'ইউনিয়ন ভূমি অফিস বা অনলাইনে বকেয়া কর পরিশোধ করুন অথবা বিক্রেতাকে দিয়ে পরিশোধ করিয়ে নিন।',
+
+  // Plot Sheet & Summary Tab
+  verdictDisclaimer: 'এটি সিদ্ধান্তে সহায়তা, মালিকানার সনদ নয়',
+  landClass_bastu: 'বাস্তু (ভিটা/বাড়ি)',
+  landClass_nal: 'নাল (কৃষি জমি)',
+  landClass_vita: 'ভিটা (উঁচু জমি)',
+  landClass_pukur: 'পুকুর',
+  landClass_doba: 'ডোবা/নালা',
+  landClass_karkhana: 'কারখানা',
+  landClass_commercial: 'বাণিজ্যিক',
+
+  // Owners & Claims
+  currentOwners: 'বর্তমান বৈধ মালিকগণ',
+  disputedClaims: 'বিরোধপূর্ণ দাবি',
+  disputedClaimNotice:
+    'এই ব্যক্তিদের কাছে পূর্বে বা অননুমোদিতভাবে জমি হস্তান্তরের দাবি রয়েছে, যা আইনত সিদ্ধ হয়নি।',
+  estatesInReview: 'আইনি পর্যালোচনাধীন এস্টেট',
+  estatesInReviewNotice:
+    'উত্তরাধিকার বণ্টনে বিশেষ আইন প্রযোজ্য হওয়ায় বা ওয়ারিশ জটিলতায় আইনি পর্যালোচনা প্রয়োজন।',
+  acquiredRecord: 'রেকর্ড সূত্রে',
+  acquiredDeed: 'দলিল সূত্রে',
+  acquiredInheritance: 'ওয়ারিশ সূত্রে',
+  claimDeedRef: 'দলিল রেফারেন্স',
+  estateReason: 'পর্যালোচনার কারণ',
+
+  // Evidence & Actions
+  evidence: 'নথি ও সংশ্লিষ্ট প্রমাণ',
+  whatToDo: 'কী করবেন',
+  viewInTimeline: 'ইতিহাসে দেখুন',
+  noIssuesFound: 'এই দাগের নথিপত্রে কোনো দৃশ্যমান ত্রুটি বা ঝুঁকি পাওয়া যায়নি।',
+  summaryClosingClean:
+    'রেকর্ড ও নামজারি হালনাগাদ থাকলে সাব-রেজিস্ট্রি অফিসে মূল দলিল দেখে ক্রয় প্রক্রিয়া এগিয়ে নিতে পারেন।',
+  summaryClosingWarning:
+    'উপরে উল্লেখিত সতর্কতাগুলো সমাধানের পূর্বে কোনো প্রকার বায়না বা আর্থিক লেনদেন করা থেকে বিরত থাকুন।',
+  summaryClosingCritical:
+    'এই জমি ক্রয়ে গুরুতর আইনি ঝুঁকি বিদ্যমান। দলিল রেজিস্ট্রি বা বায়না সম্পূর্ণ স্থগিত রাখুন।',
+
+  // Timeline & History
+  filterAll: 'সব',
+  filterRecord: 'রেকর্ড',
+  filterDeed: 'দলিল',
+  filterMutation: 'নামজারি',
+  filterInheritance: 'ওয়ারিশ',
+  filterCase: 'মামলা',
+  invalidEventBadge: 'অবৈধ বা বাতিল লেনদেন',
+  surveyCS: 'সিএস (১৯৩২)',
+  surveySA: 'এসএ (১৯৬২)',
+  surveyRS: 'আরএস (১৯৮৭)',
+  surveyBS: 'বিএস (২০১১)',
+  viewFamilyTree: 'ফারায়েজ বণ্টন চিত্র',
+  closeFamilyTree: 'বংশলতিকা বন্ধ করুন',
+  khatian: 'খতিয়ান',
+  khatianNo: 'খতিয়ান নং',
+  deedNo: 'দলিল নং',
+  caseNo: 'কেস নং',
+  sale: 'বিক্রয়',
+  gift: 'দান',
+  landTaxPayment: 'ভূমি উন্নয়ন কর পরিশোধ',
+  paidUpTo: 'সাল পর্যন্ত পরিশোধিত',
+  arrears: 'বকেয়া',
+  heirCount: '{n} জন ওয়ারিশ',
+  muslimLaw: 'মুসলিম আইন',
+  hinduLaw: 'হিন্দু আইন',
+  courtStatusPending: 'চলমান',
+  courtStatusDisposed: 'নিষ্পত্তি',
+  statusLabel: 'অবস্থা',
+  inheritanceDistribution: 'উত্তরাধিকার বণ্টন',
+
+  // Family Tree & Inheritance
+  deceased: 'মরহুম',
+  heir: 'ওয়ারিশ',
+  relation: 'সম্পর্ক',
+  faraizShare: 'ফারায়েজ অংশ',
+  entitledArea: 'প্রাপ্য জমি',
+  soldArea: 'বিক্রিকৃত জমি',
+  excessSold: 'অতিরিক্ত বিক্রয়',
+  faraizLegalReviewRequired: 'ওয়ারিশ বণ্টনে জটিলতা — আইনি পর্যালোচনা প্রয়োজন',
+  faraizDisclaimer: 'সাধারণ ক্ষেত্রের হিসাব — আইনি পরামর্শ নয়',
+  relation_wife: 'স্ত্রী',
+  relation_husband: 'স্বামী',
+  relation_father: 'পিতা',
+  relation_mother: 'মাতা',
+  relation_son: 'পুত্র',
+  relation_daughter: 'কন্যা',
+
+  // Skeletons / Upcoming tabs
+  priceComingSoon: 'বাজারমূল্য ও তুলনামূলক বিক্রির হিসাব',
+  priceComingSoonDesc:
+    'কাছাকাছি একই শ্রেণির জমির সাম্প্রতিক রেজিস্ট্রি দলিলের ভিত্তিতে আনুমানিক মূল্য ও তুলনামূলক বিশ্লেষণ পরবর্তী ধাপে আসছে।',
+  costComingSoon: 'রেজিস্ট্রেশন ফি ও মোট খরচের হিসাব',
+  costComingSoonDesc:
+    'স্ট্যাম্প শুল্ক, উৎসে কর, স্থানীয় কর ও নামজারি ফিসহ জমি কেনার সম্পূর্ণ ও নির্ভুল সরকারি খরচ ক্যালকুলেটর পরবর্তী ধাপে আসছে।',
 };
 
 export type TranslationKey = keyof typeof bn;
