@@ -1,0 +1,130 @@
+:root {
+  /* Paper & Ink core palette - Light mode default */
+  --paper: #f5efe3;
+  --paper-2: #ede4d3;
+  --paper-3: #e3d7c1;
+  --ink: #1e2229;
+  --ink-2: #575c66;
+  --ink-3: #8a8577;
+  --line: #d6cab4;
+  --sepia: #6b4e2e;
+  --accent: #25386b;
+  --accent-ink: #f5efe3;
+  --ok: #2f7a57;
+  --warn: #a86e12;
+  --bad: #a8382b;
+  --ok-wash: rgba(47, 122, 87, 0.1);
+  --warn-wash: rgba(168, 110, 18, 0.1);
+  --bad-wash: rgba(168, 56, 43, 0.1);
+
+  /* Radius */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+
+  /* Paper elevation shadow */
+  --shadow-paper: 0 1px 0 rgba(30, 34, 41, 0.06), 0 8px 24px rgba(30, 34, 41, 0.08);
+
+  /* Paper grain texture */
+  --paper-grain: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+/* Dark mode preferences */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --paper: #14161a;
+    --paper-2: #1b1e23;
+    --paper-3: #242830;
+    --ink: #ece6da;
+    --ink-2: #a9a397;
+    --ink-3: #7a766d;
+    --line: #2e323a;
+    --sepia: #c8a77d;
+    --accent: #8ea6e8;
+    --accent-ink: #14161a;
+    --ok: #6fcb9c;
+    --warn: #e6b45a;
+    --bad: #ee8577;
+    --ok-wash: rgba(111, 203, 156, 0.16);
+    --warn-wash: rgba(230, 180, 90, 0.16);
+    --bad-wash: rgba(238, 133, 119, 0.16);
+    --shadow-paper: none;
+    --paper-grain: none;
+  }
+}
+
+/* Explicit data-theme="dark" override */
+:root[data-theme='dark'] {
+  --paper: #14161a;
+  --paper-2: #1b1e23;
+  --paper-3: #242830;
+  --ink: #ece6da;
+  --ink-2: #a9a397;
+  --ink-3: #7a766d;
+  --line: #2e323a;
+  --sepia: #c8a77d;
+  --accent: #8ea6e8;
+  --accent-ink: #14161a;
+  --ok: #6fcb9c;
+  --warn: #e6b45a;
+  --bad: #ee8577;
+  --ok-wash: rgba(111, 203, 156, 0.16);
+  --warn-wash: rgba(230, 180, 90, 0.16);
+  --bad-wash: rgba(238, 133, 119, 0.16);
+  --shadow-paper: none;
+  --paper-grain: none;
+}
+
+/* Explicit data-theme="light" override */
+:root[data-theme='light'] {
+  --paper: #f5efe3;
+  --paper-2: #ede4d3;
+  --paper-3: #e3d7c1;
+  --ink: #1e2229;
+  --ink-2: #575c66;
+  --ink-3: #8a8577;
+  --line: #d6cab4;
+  --sepia: #6b4e2e;
+  --accent: #25386b;
+  --accent-ink: #f5efe3;
+  --ok: #2f7a57;
+  --warn: #a86e12;
+  --bad: #a8382b;
+  --ok-wash: rgba(47, 122, 87, 0.1);
+  --warn-wash: rgba(168, 110, 18, 0.1);
+  --bad-wash: rgba(168, 56, 43, 0.1);
+  --shadow-paper: 0 1px 0 rgba(30, 34, 41, 0.06), 0 8px 24px rgba(30, 34, 41, 0.08);
+  --paper-grain: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  :root {
+    --paper-grain: none;
+  }
+}
+
+/* Tailwind CSS v4 Theme Mapping */
+@theme {
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-paper-3: var(--paper-3);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-line: var(--line);
+  --color-sepia: var(--sepia);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-ok: var(--ok);
+  --color-warn: var(--warn);
+  --color-bad: var(--bad);
+  --color-ok-wash: var(--ok-wash);
+  --color-warn-wash: var(--warn-wash);
+  --color-bad-wash: var(--bad-wash);
+
+  --font-sans: 'Hind Siliguri', 'Inter', system-ui, sans-serif;
+  --font-serif: 'Noto Serif Bengali', 'Fraunces', serif;
+
+  --shadow-paper: var(--shadow-paper);
+}
