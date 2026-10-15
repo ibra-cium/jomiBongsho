@@ -123,7 +123,7 @@
   --color-warn-wash: var(--warn-wash);
   --color-bad-wash: var(--bad-wash);
 
-  --font-sans: 'Hind Siliguri', 'Inter', system-ui, sans-serif;
+  --font-sans: 'BengaliDigits', 'Hind Siliguri', 'Inter', system-ui, sans-serif;
   --font-serif: 'Noto Serif Bengali', 'Fraunces', serif;
 
   --shadow-paper: var(--shadow-paper);
