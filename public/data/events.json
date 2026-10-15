@@ -1,0 +1,5061 @@
+[
+  {
+    "id": "ev-101-1",
+    "dagId": "101",
+    "date": "1932-03-15",
+    "type": "record",
+    "survey": "CS",
+    "khatianNo": "CS-01",
+    "holdings": [
+      {
+        "personId": "p-101-cs",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-101-2",
+    "dagId": "101",
+    "date": "1962-05-20",
+    "type": "record",
+    "survey": "SA",
+    "khatianNo": "SA-01",
+    "holdings": [
+      {
+        "personId": "p-101-sa",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-101-3",
+    "dagId": "101",
+    "date": "1987-10-10",
+    "type": "record",
+    "survey": "RS",
+    "khatianNo": "RS-201",
+    "holdings": [
+      {
+        "personId": "p-karim",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-101-4",
+    "dagId": "101",
+    "date": "2011-04-12",
+    "type": "record",
+    "survey": "BS",
+    "khatianNo": "BS-101",
+    "holdings": [
+      {
+        "personId": "p-karim",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-101-5",
+    "dagId": "101",
+    "date": "2019-03-15",
+    "type": "deed",
+    "deedNo": "D-2019-101",
+    "kind": "sale",
+    "sellers": [
+      {
+        "personId": "p-karim",
+        "share": "1/1"
+      }
+    ],
+    "buyers": [
+      {
+        "personId": "p-rahim",
+        "share": "1/1"
+      }
+    ],
+    "declaredPriceBdt": 8655000,
+    "subRegistryBn": "মানিকগঞ্জ সদর"
+  },
+  {
+    "id": "ev-101-6",
+    "dagId": "101",
+    "date": "2019-04-20",
+    "type": "mutation",
+    "caseNo": "M-2019-101",
+    "refDeedNo": "D-2019-101",
+    "holdingsAfter": [
+      {
+        "personId": "p-rahim",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-101-7",
+    "dagId": "101",
+    "date": "2026-02-10",
+    "type": "landTax",
+    "paidUpToYear": 2026,
+    "arrearsBdt": 0
+  },
+  {
+    "id": "ev-102-1",
+    "dagId": "102",
+    "date": "1932-03-15",
+    "type": "record",
+    "survey": "CS",
+    "khatianNo": "CS-01",
+    "holdings": [
+      {
+        "personId": "p-101-cs",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-102-2",
+    "dagId": "102",
+    "date": "1962-05-20",
+    "type": "record",
+    "survey": "SA",
+    "khatianNo": "SA-01",
+    "holdings": [
+      {
+        "personId": "p-101-sa",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-102-3",
+    "dagId": "102",
+    "date": "1987-10-10",
+    "type": "record",
+    "survey": "RS",
+    "khatianNo": "RS-202",
+    "holdings": [
+      {
+        "personId": "p-jalal",
+        "share": "1/2"
+      },
+      {
+        "personId": "p-rokeya",
+        "share": "1/2"
+      }
+    ]
+  },
+  {
+    "id": "ev-102-4",
+    "dagId": "102",
+    "date": "2011-06-10",
+    "type": "record",
+    "survey": "BS",
+    "khatianNo": "BS-102",
+    "holdings": [
+      {
+        "personId": "p-jalal",
+        "share": "1/2"
+      },
+      {
+        "personId": "p-rokeya",
+        "share": "1/2"
+      }
+    ]
+  },
+  {
+    "id": "ev-102-5",
+    "dagId": "102",
+    "date": "2025-01-15",
+    "type": "deed",
+    "deedNo": "D-2025-102A",
+    "kind": "sale",
+    "sellers": [
+      {
+        "personId": "p-jalal",
+        "share": "1/2"
+      }
+    ],
+    "buyers": [
+      {
+        "personId": "p-buyer-a",
+        "share": "1/2"
+      }
+    ],
+    "declaredPriceBdt": 4578000,
+    "subRegistryBn": "মানিকগঞ্জ সদর"
+  },
+  {
+    "id": "ev-102-6",
+    "dagId": "102",
+    "date": "2025-02-20",
+    "type": "mutation",
+    "caseNo": "M-2025-102A",
+    "refDeedNo": "D-2025-102A",
+    "holdingsAfter": [
+      {
+        "personId": "p-buyer-a",
+        "share": "1/2"
+      },
+      {
+        "personId": "p-rokeya",
+        "share": "1/2"
+      }
+    ]
+  },
+  {
+    "id": "ev-102-8",
+    "dagId": "102",
+    "date": "2026-01-15",
+    "type": "landTax",
+    "paidUpToYear": 2026,
+    "arrearsBdt": 0
+  },
+  {
+    "id": "ev-102-7",
+    "dagId": "102",
+    "date": "2026-07-10",
+    "type": "deed",
+    "deedNo": "D-2026-102B",
+    "kind": "sale",
+    "sellers": [
+      {
+        "personId": "p-jalal",
+        "share": "1/2"
+      }
+    ],
+    "buyers": [
+      {
+        "personId": "p-buyer-b",
+        "share": "1/2"
+      }
+    ],
+    "declaredPriceBdt": 4945000,
+    "subRegistryBn": "মানিকগঞ্জ সদর"
+  },
+  {
+    "id": "ev-103-1",
+    "dagId": "103",
+    "date": "1932-03-15",
+    "type": "record",
+    "survey": "CS",
+    "khatianNo": "CS-02",
+    "holdings": [
+      {
+        "personId": "p-malek",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-103-2",
+    "dagId": "103",
+    "date": "1962-05-20",
+    "type": "record",
+    "survey": "SA",
+    "khatianNo": "SA-02",
+    "holdings": [
+      {
+        "personId": "p-malek",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-103-3",
+    "dagId": "103",
+    "date": "1987-10-10",
+    "type": "record",
+    "survey": "RS",
+    "khatianNo": "RS-203",
+    "holdings": [
+      {
+        "personId": "p-malek",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-103-4",
+    "dagId": "103",
+    "date": "2011-05-15",
+    "type": "record",
+    "survey": "BS",
+    "khatianNo": "BS-103",
+    "holdings": [
+      {
+        "personId": "p-malek",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-103-5",
+    "dagId": "103",
+    "date": "2021-05-10",
+    "type": "inheritance",
+    "deceasedId": "p-malek",
+    "law": "muslim",
+    "heirs": [
+      {
+        "personId": "p-rahima",
+        "relation": "wife"
+      },
+      {
+        "personId": "p-faruk",
+        "relation": "son"
+      },
+      {
+        "personId": "p-selim",
+        "relation": "son"
+      },
+      {
+        "personId": "p-nasima",
+        "relation": "daughter"
+      }
+    ]
+  },
+  {
+    "id": "ev-103-6",
+    "dagId": "103",
+    "date": "2021-09-18",
+    "type": "mutation",
+    "caseNo": "M-2021-103",
+    "refDeedNo": null,
+    "holdingsAfter": [
+      {
+        "personId": "p-rahima",
+        "share": "1/8"
+      },
+      {
+        "personId": "p-faruk",
+        "share": "7/20"
+      },
+      {
+        "personId": "p-selim",
+        "share": "7/20"
+      },
+      {
+        "personId": "p-nasima",
+        "share": "7/40"
+      }
+    ]
+  },
+  {
+    "id": "ev-103-8",
+    "dagId": "103",
+    "date": "2026-03-12",
+    "type": "landTax",
+    "paidUpToYear": 2026,
+    "arrearsBdt": 0
+  },
+  {
+    "id": "ev-103-7",
+    "dagId": "103",
+    "date": "2026-08-14",
+    "type": "deed",
+    "deedNo": "D-2026-103",
+    "kind": "sale",
+    "sellers": [
+      {
+        "personId": "p-faruk",
+        "share": "1/2"
+      }
+    ],
+    "buyers": [
+      {
+        "personId": "p-buyer-c",
+        "share": "1/2"
+      }
+    ],
+    "declaredPriceBdt": 3622500,
+    "subRegistryBn": "মানিকগঞ্জ সদর"
+  },
+  {
+    "id": "ev-104-1",
+    "dagId": "104",
+    "date": "1932-03-15",
+    "type": "record",
+    "survey": "CS",
+    "khatianNo": "CS-02",
+    "holdings": [
+      {
+        "personId": "p-104-seller",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-104-2",
+    "dagId": "104",
+    "date": "1962-05-20",
+    "type": "record",
+    "survey": "SA",
+    "khatianNo": "SA-02",
+    "holdings": [
+      {
+        "personId": "p-104-seller",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-104-3",
+    "dagId": "104",
+    "date": "1987-10-10",
+    "type": "record",
+    "survey": "RS",
+    "khatianNo": "RS-204",
+    "holdings": [
+      {
+        "personId": "p-104-seller",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-104-4",
+    "dagId": "104",
+    "date": "2011-04-10",
+    "type": "record",
+    "survey": "BS",
+    "khatianNo": "BS-104",
+    "holdings": [
+      {
+        "personId": "p-104-seller",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-104-5",
+    "dagId": "104",
+    "date": "2025-12-10",
+    "type": "deed",
+    "deedNo": "D-2025-104",
+    "kind": "sale",
+    "sellers": [
+      {
+        "personId": "p-104-seller",
+        "share": "1/1"
+      }
+    ],
+    "buyers": [
+      {
+        "personId": "p-104-buyer",
+        "share": "1/1"
+      }
+    ],
+    "declaredPriceBdt": 11446750,
+    "subRegistryBn": "মানিকগঞ্জ সদর"
+  },
+  {
+    "id": "ev-104-6",
+    "dagId": "104",
+    "date": "2026-02-15",
+    "type": "landTax",
+    "paidUpToYear": 2026,
+    "arrearsBdt": 0
+  },
+  {
+    "id": "ev-105-1",
+    "dagId": "105",
+    "date": "1932-03-15",
+    "type": "record",
+    "survey": "CS",
+    "khatianNo": "CS-03",
+    "holdings": [
+      {
+        "personId": "p-105-a",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-105-2",
+    "dagId": "105",
+    "date": "1962-05-20",
+    "type": "record",
+    "survey": "SA",
+    "khatianNo": "SA-03",
+    "holdings": [
+      {
+        "personId": "p-105-a",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-105-3",
+    "dagId": "105",
+    "date": "1987-10-10",
+    "type": "record",
+    "survey": "RS",
+    "khatianNo": "RS-205",
+    "holdings": [
+      {
+        "personId": "p-105-a",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-105-4",
+    "dagId": "105",
+    "date": "2011-04-10",
+    "type": "record",
+    "survey": "BS",
+    "khatianNo": "BS-105",
+    "holdings": [
+      {
+        "personId": "p-105-a",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-105-11",
+    "dagId": "105",
+    "date": "2026-02-01",
+    "type": "landTax",
+    "paidUpToYear": 2026,
+    "arrearsBdt": 0
+  },
+  {
+    "id": "ev-105-5",
+    "dagId": "105",
+    "date": "2026-02-10",
+    "type": "deed",
+    "deedNo": "D-2026-105A",
+    "kind": "sale",
+    "sellers": [
+      {
+        "personId": "p-105-a",
+        "share": "1/1"
+      }
+    ],
+    "buyers": [
+      {
+        "personId": "p-105-b",
+        "share": "1/1"
+      }
+    ],
+    "declaredPriceBdt": 10879000,
+    "subRegistryBn": "মানিকগঞ্জ সদর"
+  },
+  {
+    "id": "ev-105-6",
+    "dagId": "105",
+    "date": "2026-03-05",
+    "type": "mutation",
+    "caseNo": "M-2026-105A",
+    "refDeedNo": "D-2026-105A",
+    "holdingsAfter": [
+      {
+        "personId": "p-105-b",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-105-7",
+    "dagId": "105",
+    "date": "2026-04-15",
+    "type": "deed",
+    "deedNo": "D-2026-105B",
+    "kind": "sale",
+    "sellers": [
+      {
+        "personId": "p-105-b",
+        "share": "1/1"
+      }
+    ],
+    "buyers": [
+      {
+        "personId": "p-105-c",
+        "share": "1/1"
+      }
+    ],
+    "declaredPriceBdt": 11200000,
+    "subRegistryBn": "মানিকগঞ্জ সদর"
+  },
+  {
+    "id": "ev-105-8",
+    "dagId": "105",
+    "date": "2026-05-10",
+    "type": "mutation",
+    "caseNo": "M-2026-105B",
+    "refDeedNo": "D-2026-105B",
+    "holdingsAfter": [
+      {
+        "personId": "p-105-c",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-105-9",
+    "dagId": "105",
+    "date": "2026-06-20",
+    "type": "deed",
+    "deedNo": "D-2026-105C",
+    "kind": "sale",
+    "sellers": [
+      {
+        "personId": "p-105-c",
+        "share": "1/1"
+      }
+    ],
+    "buyers": [
+      {
+        "personId": "p-105-d",
+        "share": "1/1"
+      }
+    ],
+    "declaredPriceBdt": 11500000,
+    "subRegistryBn": "মানিকগঞ্জ সদর"
+  },
+  {
+    "id": "ev-105-10",
+    "dagId": "105",
+    "date": "2026-07-15",
+    "type": "mutation",
+    "caseNo": "M-2026-105C",
+    "refDeedNo": "D-2026-105C",
+    "holdingsAfter": [
+      {
+        "personId": "p-105-d",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-106-1",
+    "dagId": "106",
+    "date": "1932-03-15",
+    "type": "record",
+    "survey": "CS",
+    "khatianNo": "CS-03",
+    "holdings": [
+      {
+        "personId": "p-106-seller",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-106-2",
+    "dagId": "106",
+    "date": "1962-05-20",
+    "type": "record",
+    "survey": "SA",
+    "khatianNo": "SA-03",
+    "holdings": [
+      {
+        "personId": "p-106-seller",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-106-3",
+    "dagId": "106",
+    "date": "1987-10-10",
+    "type": "record",
+    "survey": "RS",
+    "khatianNo": "RS-206",
+    "holdings": [
+      {
+        "personId": "p-106-seller",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-106-4",
+    "dagId": "106",
+    "date": "2011-04-10",
+    "type": "record",
+    "survey": "BS",
+    "khatianNo": "BS-106",
+    "holdings": [
+      {
+        "personId": "p-106-seller",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-106-7",
+    "dagId": "106",
+    "date": "2026-01-20",
+    "type": "landTax",
+    "paidUpToYear": 2026,
+    "arrearsBdt": 0
+  },
+  {
+    "id": "ev-106-5",
+    "dagId": "106",
+    "date": "2026-05-18",
+    "type": "deed",
+    "deedNo": "D-2026-106",
+    "kind": "sale",
+    "sellers": [
+      {
+        "personId": "p-106-seller",
+        "share": "1/1"
+      }
+    ],
+    "buyers": [
+      {
+        "personId": "p-106-buyer",
+        "share": "1/1"
+      }
+    ],
+    "declaredPriceBdt": 3360000,
+    "subRegistryBn": "মানিকগঞ্জ সদর"
+  },
+  {
+    "id": "ev-106-6",
+    "dagId": "106",
+    "date": "2026-06-25",
+    "type": "mutation",
+    "caseNo": "M-2026-106",
+    "refDeedNo": "D-2026-106",
+    "holdingsAfter": [
+      {
+        "personId": "p-106-buyer",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-107-1",
+    "dagId": "107",
+    "date": "1932-03-15",
+    "type": "record",
+    "survey": "CS",
+    "khatianNo": "CS-04",
+    "holdings": [
+      {
+        "personId": "p-hasan",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-107-2",
+    "dagId": "107",
+    "date": "1962-05-20",
+    "type": "record",
+    "survey": "SA",
+    "khatianNo": "SA-04",
+    "holdings": [
+      {
+        "personId": "p-hasan",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-107-3",
+    "dagId": "107",
+    "date": "1987-10-10",
+    "type": "record",
+    "survey": "RS",
+    "khatianNo": "RS-207",
+    "holdings": [
+      {
+        "personId": "p-hasan",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-107-4",
+    "dagId": "107",
+    "date": "2011-04-10",
+    "type": "record",
+    "survey": "BS",
+    "khatianNo": "BS-107",
+    "holdings": [
+      {
+        "personId": "p-hasan",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-107-6",
+    "dagId": "107",
+    "date": "2026-02-18",
+    "type": "landTax",
+    "paidUpToYear": 2026,
+    "arrearsBdt": 0
+  },
+  {
+    "id": "ev-107-5",
+    "dagId": "107",
+    "date": "2026-04-10",
+    "type": "deed",
+    "deedNo": "D-2026-107",
+    "kind": "sale",
+    "sellers": [
+      {
+        "personId": "p-mizan",
+        "share": "1/1"
+      }
+    ],
+    "buyers": [
+      {
+        "personId": "p-buyer-e",
+        "share": "1/1"
+      }
+    ],
+    "declaredPriceBdt": 8452500,
+    "subRegistryBn": "মানিকগঞ্জ সদর"
+  },
+  {
+    "id": "ev-108-1",
+    "dagId": "108",
+    "date": "1932-03-15",
+    "type": "record",
+    "survey": "CS",
+    "khatianNo": "CS-04",
+    "holdings": [
+      {
+        "personId": "p-govt",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-108-2",
+    "dagId": "108",
+    "date": "1962-05-20",
+    "type": "record",
+    "survey": "SA",
+    "khatianNo": "SA-04",
+    "holdings": [
+      {
+        "personId": "p-govt",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-108-3",
+    "dagId": "108",
+    "date": "1987-10-10",
+    "type": "record",
+    "survey": "RS",
+    "khatianNo": "RS-208",
+    "holdings": [
+      {
+        "personId": "p-govt",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-108-4",
+    "dagId": "108",
+    "date": "2011-06-15",
+    "type": "record",
+    "survey": "BS",
+    "khatianNo": "BS-108",
+    "holdings": [
+      {
+        "personId": "p-govt",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-108-6",
+    "dagId": "108",
+    "date": "2026-01-10",
+    "type": "landTax",
+    "paidUpToYear": 2026,
+    "arrearsBdt": 0
+  },
+  {
+    "id": "ev-108-5",
+    "dagId": "108",
+    "date": "2026-02-22",
+    "type": "deed",
+    "deedNo": "D-2026-108",
+    "kind": "sale",
+    "sellers": [
+      {
+        "personId": "p-108-fake-seller",
+        "share": "1/1"
+      }
+    ],
+    "buyers": [
+      {
+        "personId": "p-108-victim",
+        "share": "1/1"
+      }
+    ],
+    "declaredPriceBdt": 9660000,
+    "subRegistryBn": "মানিকগঞ্জ সদর"
+  },
+  {
+    "id": "ev-109-1",
+    "dagId": "109",
+    "date": "1932-03-15",
+    "type": "record",
+    "survey": "CS",
+    "khatianNo": "CS-05",
+    "holdings": [
+      {
+        "personId": "p-109-owner",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-109-2",
+    "dagId": "109",
+    "date": "1962-05-20",
+    "type": "record",
+    "survey": "SA",
+    "khatianNo": "SA-05",
+    "holdings": [
+      {
+        "personId": "p-109-owner",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-109-3",
+    "dagId": "109",
+    "date": "1987-10-10",
+    "type": "record",
+    "survey": "RS",
+    "khatianNo": "RS-209",
+    "holdings": [
+      {
+        "personId": "p-109-owner",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-109-4",
+    "dagId": "109",
+    "date": "2011-04-10",
+    "type": "record",
+    "survey": "BS",
+    "khatianNo": "BS-109",
+    "holdings": [
+      {
+        "personId": "p-109-owner",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-109-5",
+    "dagId": "109",
+    "date": "2025-11-14",
+    "type": "case",
+    "caseNo": "CS-2025-42",
+    "courtBn": "যুগ্ম জেলা জজ ১ম আদালত, মানিকগঞ্জ",
+    "status": "pending"
+  },
+  {
+    "id": "ev-109-6",
+    "dagId": "109",
+    "date": "2026-01-15",
+    "type": "landTax",
+    "paidUpToYear": 2026,
+    "arrearsBdt": 0
+  },
+  {
+    "id": "ev-110-1",
+    "dagId": "110",
+    "date": "1932-03-15",
+    "type": "record",
+    "survey": "CS",
+    "khatianNo": "CS-05",
+    "holdings": [
+      {
+        "personId": "p-110-deceased",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-110-2",
+    "dagId": "110",
+    "date": "1962-05-20",
+    "type": "record",
+    "survey": "SA",
+    "khatianNo": "SA-05",
+    "holdings": [
+      {
+        "personId": "p-110-deceased",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-110-3",
+    "dagId": "110",
+    "date": "1987-10-10",
+    "type": "record",
+    "survey": "RS",
+    "khatianNo": "RS-210",
+    "holdings": [
+      {
+        "personId": "p-110-deceased",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-110-4",
+    "dagId": "110",
+    "date": "2011-04-10",
+    "type": "record",
+    "survey": "BS",
+    "khatianNo": "BS-110",
+    "holdings": [
+      {
+        "personId": "p-110-deceased",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-110-5",
+    "dagId": "110",
+    "date": "2023-03-12",
+    "type": "inheritance",
+    "deceasedId": "p-110-deceased",
+    "law": "muslim",
+    "heirs": [
+      {
+        "personId": "p-110-d1",
+        "relation": "daughter"
+      },
+      {
+        "personId": "p-110-d2",
+        "relation": "daughter"
+      },
+      {
+        "personId": "p-110-b1",
+        "relation": "brother"
+      }
+    ]
+  },
+  {
+    "id": "ev-110-6",
+    "dagId": "110",
+    "date": "2026-02-20",
+    "type": "landTax",
+    "paidUpToYear": 2026,
+    "arrearsBdt": 0
+  },
+  {
+    "id": "ev-111-1",
+    "dagId": "111",
+    "date": "1932-03-15",
+    "type": "record",
+    "survey": "CS",
+    "khatianNo": "CS-06",
+    "holdings": [
+      {
+        "personId": "p-111-original",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-111-2",
+    "dagId": "111",
+    "date": "1962-05-20",
+    "type": "record",
+    "survey": "SA",
+    "khatianNo": "SA-06",
+    "holdings": [
+      {
+        "personId": "p-111-original",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-111-3",
+    "dagId": "111",
+    "date": "1987-10-10",
+    "type": "record",
+    "survey": "RS",
+    "khatianNo": "RS-211",
+    "holdings": [
+      {
+        "personId": "p-111-original",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-111-4",
+    "dagId": "111",
+    "date": "2011-04-10",
+    "type": "record",
+    "survey": "BS",
+    "khatianNo": "BS-111",
+    "holdings": [
+      {
+        "personId": "p-111-original",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-111-5",
+    "dagId": "111",
+    "date": "2025-06-18",
+    "type": "mutation",
+    "caseNo": "M-2025-111",
+    "refDeedNo": "D-NONEXISTENT-9999",
+    "holdingsAfter": [
+      {
+        "personId": "p-kamal",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-111-6",
+    "dagId": "111",
+    "date": "2026-03-01",
+    "type": "landTax",
+    "paidUpToYear": 2026,
+    "arrearsBdt": 0
+  },
+  {
+    "id": "ev-112-1",
+    "dagId": "112",
+    "date": "1932-03-15",
+    "type": "record",
+    "survey": "CS",
+    "khatianNo": "CS-06",
+    "holdings": [
+      {
+        "personId": "p-112-owner",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-112-2",
+    "dagId": "112",
+    "date": "1962-05-20",
+    "type": "record",
+    "survey": "SA",
+    "khatianNo": "SA-06",
+    "holdings": [
+      {
+        "personId": "p-112-owner",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-112-3",
+    "dagId": "112",
+    "date": "1987-10-10",
+    "type": "record",
+    "survey": "RS",
+    "khatianNo": "RS-212",
+    "holdings": [
+      {
+        "personId": "p-112-owner",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-112-4",
+    "dagId": "112",
+    "date": "2011-04-10",
+    "type": "record",
+    "survey": "BS",
+    "khatianNo": "BS-112",
+    "holdings": [
+      {
+        "personId": "p-112-owner",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-112-5",
+    "dagId": "112",
+    "date": "2026-02-25",
+    "type": "landTax",
+    "paidUpToYear": 2022,
+    "arrearsBdt": 18500
+  },
+  {
+    "id": "ev-113-cs",
+    "dagId": "113",
+    "date": "1932-02-15",
+    "type": "record",
+    "survey": "CS",
+    "khatianNo": "CS-7",
+    "holdings": [
+      {
+        "personId": "p-gen-82",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-113-sa",
+    "dagId": "113",
+    "date": "1962-04-10",
+    "type": "record",
+    "survey": "SA",
+    "khatianNo": "SA-7",
+    "holdings": [
+      {
+        "personId": "p-gen-82",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-113-rs",
+    "dagId": "113",
+    "date": "1987-11-20",
+    "type": "record",
+    "survey": "RS",
+    "khatianNo": "RS-213",
+    "holdings": [
+      {
+        "personId": "p-gen-48",
+        "share": "1/2"
+      },
+      {
+        "personId": "p-gen-54",
+        "share": "1/2"
+      }
+    ]
+  },
+  {
+    "id": "ev-113-bs",
+    "dagId": "113",
+    "date": "2011-06-15",
+    "type": "record",
+    "survey": "BS",
+    "khatianNo": "BS-113",
+    "holdings": [
+      {
+        "personId": "p-gen-44",
+        "share": "1/2"
+      },
+      {
+        "personId": "p-gen-23",
+        "share": "1/2"
+      }
+    ]
+  },
+  {
+    "id": "ev-113-tax",
+    "dagId": "113",
+    "date": "2026-02-15",
+    "type": "landTax",
+    "paidUpToYear": 2026,
+    "arrearsBdt": 0
+  },
+  {
+    "id": "ev-113-d1",
+    "dagId": "113",
+    "date": "2026-05-16",
+    "type": "deed",
+    "deedNo": "D-2026-113-1",
+    "kind": "sale",
+    "sellers": [
+      {
+        "personId": "p-gen-44",
+        "share": "1/2"
+      }
+    ],
+    "buyers": [
+      {
+        "personId": "p-gen-13",
+        "share": "1/2"
+      }
+    ],
+    "declaredPriceBdt": 8898149,
+    "subRegistryBn": "মানিকগঞ্জ সদর"
+  },
+  {
+    "id": "ev-113-m1",
+    "dagId": "113",
+    "date": "2026-06-20",
+    "type": "mutation",
+    "caseNo": "M-2026-113-1",
+    "refDeedNo": "D-2026-113-1",
+    "holdingsAfter": [
+      {
+        "personId": "p-gen-23",
+        "share": "1/2"
+      },
+      {
+        "personId": "p-gen-13",
+        "share": "1/2"
+      }
+    ]
+  },
+  {
+    "id": "ev-114-cs",
+    "dagId": "114",
+    "date": "1932-02-15",
+    "type": "record",
+    "survey": "CS",
+    "khatianNo": "CS-7",
+    "holdings": [
+      {
+        "personId": "p-gen-21",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-114-sa",
+    "dagId": "114",
+    "date": "1962-04-10",
+    "type": "record",
+    "survey": "SA",
+    "khatianNo": "SA-7",
+    "holdings": [
+      {
+        "personId": "p-gen-109",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-114-rs",
+    "dagId": "114",
+    "date": "1987-11-20",
+    "type": "record",
+    "survey": "RS",
+    "khatianNo": "RS-214",
+    "holdings": [
+      {
+        "personId": "p-gen-23",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-114-bs",
+    "dagId": "114",
+    "date": "2011-06-15",
+    "type": "record",
+    "survey": "BS",
+    "khatianNo": "BS-114",
+    "holdings": [
+      {
+        "personId": "p-gen-108",
+        "share": "1/2"
+      },
+      {
+        "personId": "p-gen-52",
+        "share": "1/4"
+      },
+      {
+        "personId": "p-gen-4",
+        "share": "1/4"
+      }
+    ]
+  },
+  {
+    "id": "ev-114-d1",
+    "dagId": "114",
+    "date": "2015-01-04",
+    "type": "deed",
+    "deedNo": "D-2015-114-2",
+    "kind": "sale",
+    "sellers": [
+      {
+        "personId": "p-gen-108",
+        "share": "1/2"
+      }
+    ],
+    "buyers": [
+      {
+        "personId": "p-gen-80",
+        "share": "1/2"
+      }
+    ],
+    "declaredPriceBdt": 3290219,
+    "subRegistryBn": "মানিকগঞ্জ সদর"
+  },
+  {
+    "id": "ev-114-m1",
+    "dagId": "114",
+    "date": "2015-02-23",
+    "type": "mutation",
+    "caseNo": "M-2015-114-2",
+    "refDeedNo": "D-2015-114-2",
+    "holdingsAfter": [
+      {
+        "personId": "p-gen-52",
+        "share": "1/4"
+      },
+      {
+        "personId": "p-gen-4",
+        "share": "1/4"
+      },
+      {
+        "personId": "p-gen-80",
+        "share": "1/2"
+      }
+    ]
+  },
+  {
+    "id": "ev-114-d2",
+    "dagId": "114",
+    "date": "2025-11-13",
+    "type": "deed",
+    "deedNo": "D-2025-114-3",
+    "kind": "sale",
+    "sellers": [
+      {
+        "personId": "p-gen-52",
+        "share": "1/4"
+      }
+    ],
+    "buyers": [
+      {
+        "personId": "p-gen-26",
+        "share": "1/4"
+      }
+    ],
+    "declaredPriceBdt": 3759072,
+    "subRegistryBn": "মানিকগঞ্জ সদর"
+  },
+  {
+    "id": "ev-114-m2",
+    "dagId": "114",
+    "date": "2025-12-21",
+    "type": "mutation",
+    "caseNo": "M-2025-114-3",
+    "refDeedNo": "D-2025-114-3",
+    "holdingsAfter": [
+      {
+        "personId": "p-gen-4",
+        "share": "1/4"
+      },
+      {
+        "personId": "p-gen-80",
+        "share": "1/2"
+      },
+      {
+        "personId": "p-gen-26",
+        "share": "1/4"
+      }
+    ]
+  },
+  {
+    "id": "ev-114-tax",
+    "dagId": "114",
+    "date": "2026-02-15",
+    "type": "landTax",
+    "paidUpToYear": 2026,
+    "arrearsBdt": 0
+  },
+  {
+    "id": "ev-115-cs",
+    "dagId": "115",
+    "date": "1932-02-15",
+    "type": "record",
+    "survey": "CS",
+    "khatianNo": "CS-8",
+    "holdings": [
+      {
+        "personId": "p-gen-76",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-115-sa",
+    "dagId": "115",
+    "date": "1962-04-10",
+    "type": "record",
+    "survey": "SA",
+    "khatianNo": "SA-8",
+    "holdings": [
+      {
+        "personId": "p-gen-60",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-115-rs",
+    "dagId": "115",
+    "date": "1987-11-20",
+    "type": "record",
+    "survey": "RS",
+    "khatianNo": "RS-215",
+    "holdings": [
+      {
+        "personId": "p-gen-108",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-115-bs",
+    "dagId": "115",
+    "date": "2011-06-15",
+    "type": "record",
+    "survey": "BS",
+    "khatianNo": "BS-115",
+    "holdings": [
+      {
+        "personId": "p-gen-30",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-115-cov-deed",
+    "dagId": "115",
+    "date": "2025-06-15",
+    "type": "deed",
+    "deedNo": "D-2025-115-cov-36",
+    "kind": "sale",
+    "sellers": [
+      {
+        "personId": "p-gen-30",
+        "share": "1/1"
+      }
+    ],
+    "buyers": [
+      {
+        "personId": "p-gen-42",
+        "share": "1/1"
+      }
+    ],
+    "declaredPriceBdt": 19259240,
+    "subRegistryBn": "মানিকগঞ্জ সদর"
+  },
+  {
+    "id": "ev-115-cov-mut",
+    "dagId": "115",
+    "date": "2025-07-20",
+    "type": "mutation",
+    "caseNo": "M-2025-115-cov-36",
+    "refDeedNo": "D-2025-115-cov-36",
+    "holdingsAfter": [
+      {
+        "personId": "p-gen-42",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-115-tax",
+    "dagId": "115",
+    "date": "2026-02-15",
+    "type": "landTax",
+    "paidUpToYear": 2026,
+    "arrearsBdt": 0
+  },
+  {
+    "id": "ev-116-cs",
+    "dagId": "116",
+    "date": "1932-02-15",
+    "type": "record",
+    "survey": "CS",
+    "khatianNo": "CS-8",
+    "holdings": [
+      {
+        "personId": "p-gen-5",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-116-sa",
+    "dagId": "116",
+    "date": "1962-04-10",
+    "type": "record",
+    "survey": "SA",
+    "khatianNo": "SA-8",
+    "holdings": [
+      {
+        "personId": "p-gen-5",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-116-rs",
+    "dagId": "116",
+    "date": "1987-11-20",
+    "type": "record",
+    "survey": "RS",
+    "khatianNo": "RS-216",
+    "holdings": [
+      {
+        "personId": "p-gen-39",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-116-bs",
+    "dagId": "116",
+    "date": "2011-06-15",
+    "type": "record",
+    "survey": "BS",
+    "khatianNo": "BS-116",
+    "holdings": [
+      {
+        "personId": "p-gen-9",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-116-tax",
+    "dagId": "116",
+    "date": "2026-02-15",
+    "type": "landTax",
+    "paidUpToYear": 2026,
+    "arrearsBdt": 0
+  },
+  {
+    "id": "ev-117-cs",
+    "dagId": "117",
+    "date": "1932-02-15",
+    "type": "record",
+    "survey": "CS",
+    "khatianNo": "CS-9",
+    "holdings": [
+      {
+        "personId": "p-gen-90",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-117-sa",
+    "dagId": "117",
+    "date": "1962-04-10",
+    "type": "record",
+    "survey": "SA",
+    "khatianNo": "SA-9",
+    "holdings": [
+      {
+        "personId": "p-gen-1",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-117-rs",
+    "dagId": "117",
+    "date": "1987-11-20",
+    "type": "record",
+    "survey": "RS",
+    "khatianNo": "RS-217",
+    "holdings": [
+      {
+        "personId": "p-gen-69",
+        "share": "1/2"
+      },
+      {
+        "personId": "p-gen-79",
+        "share": "1/2"
+      }
+    ]
+  },
+  {
+    "id": "ev-117-bs",
+    "dagId": "117",
+    "date": "2011-06-15",
+    "type": "record",
+    "survey": "BS",
+    "khatianNo": "BS-117",
+    "holdings": [
+      {
+        "personId": "p-gen-6",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-117-d1",
+    "dagId": "117",
+    "date": "2020-02-11",
+    "type": "deed",
+    "deedNo": "D-2020-117-4",
+    "kind": "sale",
+    "sellers": [
+      {
+        "personId": "p-gen-6",
+        "share": "1/1"
+      }
+    ],
+    "buyers": [
+      {
+        "personId": "p-gen-38",
+        "share": "1/1"
+      }
+    ],
+    "declaredPriceBdt": 14389760,
+    "subRegistryBn": "মানিকগঞ্জ সদর"
+  },
+  {
+    "id": "ev-117-m1",
+    "dagId": "117",
+    "date": "2020-03-13",
+    "type": "mutation",
+    "caseNo": "M-2020-117-4",
+    "refDeedNo": "D-2020-117-4",
+    "holdingsAfter": [
+      {
+        "personId": "p-gen-38",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-117-tax",
+    "dagId": "117",
+    "date": "2026-02-15",
+    "type": "landTax",
+    "paidUpToYear": 2026,
+    "arrearsBdt": 0
+  },
+  {
+    "id": "ev-117-d2",
+    "dagId": "117",
+    "date": "2026-04-13",
+    "type": "deed",
+    "deedNo": "D-2026-117-5",
+    "kind": "sale",
+    "sellers": [
+      {
+        "personId": "p-gen-38",
+        "share": "1/1"
+      }
+    ],
+    "buyers": [
+      {
+        "personId": "p-gen-32",
+        "share": "1/1"
+      }
+    ],
+    "declaredPriceBdt": 22497090,
+    "subRegistryBn": "মানিকগঞ্জ সদর"
+  },
+  {
+    "id": "ev-117-m2",
+    "dagId": "117",
+    "date": "2026-05-09",
+    "type": "mutation",
+    "caseNo": "M-2026-117-5",
+    "refDeedNo": "D-2026-117-5",
+    "holdingsAfter": [
+      {
+        "personId": "p-gen-32",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-118-cs",
+    "dagId": "118",
+    "date": "1932-02-15",
+    "type": "record",
+    "survey": "CS",
+    "khatianNo": "CS-9",
+    "holdings": [
+      {
+        "personId": "p-gen-70",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-118-sa",
+    "dagId": "118",
+    "date": "1962-04-10",
+    "type": "record",
+    "survey": "SA",
+    "khatianNo": "SA-9",
+    "holdings": [
+      {
+        "personId": "p-gen-70",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-118-rs",
+    "dagId": "118",
+    "date": "1987-11-20",
+    "type": "record",
+    "survey": "RS",
+    "khatianNo": "RS-218",
+    "holdings": [
+      {
+        "personId": "p-gen-84",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-118-bs",
+    "dagId": "118",
+    "date": "2011-06-15",
+    "type": "record",
+    "survey": "BS",
+    "khatianNo": "BS-118",
+    "holdings": [
+      {
+        "personId": "p-gen-39",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-118-cov-deed",
+    "dagId": "118",
+    "date": "2025-06-15",
+    "type": "deed",
+    "deedNo": "D-2025-118-cov-37",
+    "kind": "sale",
+    "sellers": [
+      {
+        "personId": "p-gen-39",
+        "share": "1/1"
+      }
+    ],
+    "buyers": [
+      {
+        "personId": "p-gen-28",
+        "share": "1/1"
+      }
+    ],
+    "declaredPriceBdt": 16129614,
+    "subRegistryBn": "মানিকগঞ্জ সদর"
+  },
+  {
+    "id": "ev-118-cov-mut",
+    "dagId": "118",
+    "date": "2025-07-20",
+    "type": "mutation",
+    "caseNo": "M-2025-118-cov-37",
+    "refDeedNo": "D-2025-118-cov-37",
+    "holdingsAfter": [
+      {
+        "personId": "p-gen-28",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-118-tax",
+    "dagId": "118",
+    "date": "2026-02-15",
+    "type": "landTax",
+    "paidUpToYear": 2026,
+    "arrearsBdt": 0
+  },
+  {
+    "id": "ev-119-cs",
+    "dagId": "119",
+    "date": "1932-02-15",
+    "type": "record",
+    "survey": "CS",
+    "khatianNo": "CS-10",
+    "holdings": [
+      {
+        "personId": "p-gen-13",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-119-sa",
+    "dagId": "119",
+    "date": "1962-04-10",
+    "type": "record",
+    "survey": "SA",
+    "khatianNo": "SA-10",
+    "holdings": [
+      {
+        "personId": "p-gen-13",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-119-rs",
+    "dagId": "119",
+    "date": "1987-11-20",
+    "type": "record",
+    "survey": "RS",
+    "khatianNo": "RS-219",
+    "holdings": [
+      {
+        "personId": "p-gen-78",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-119-bs",
+    "dagId": "119",
+    "date": "2011-06-15",
+    "type": "record",
+    "survey": "BS",
+    "khatianNo": "BS-119",
+    "holdings": [
+      {
+        "personId": "p-gen-104",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-119-cov-deed",
+    "dagId": "119",
+    "date": "2025-06-15",
+    "type": "deed",
+    "deedNo": "D-2025-119-cov-38",
+    "kind": "sale",
+    "sellers": [
+      {
+        "personId": "p-gen-104",
+        "share": "1/1"
+      }
+    ],
+    "buyers": [
+      {
+        "personId": "p-gen-73",
+        "share": "1/1"
+      }
+    ],
+    "declaredPriceBdt": 14925911,
+    "subRegistryBn": "মানিকগঞ্জ সদর"
+  },
+  {
+    "id": "ev-119-cov-mut",
+    "dagId": "119",
+    "date": "2025-07-20",
+    "type": "mutation",
+    "caseNo": "M-2025-119-cov-38",
+    "refDeedNo": "D-2025-119-cov-38",
+    "holdingsAfter": [
+      {
+        "personId": "p-gen-73",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-119-tax",
+    "dagId": "119",
+    "date": "2026-02-15",
+    "type": "landTax",
+    "paidUpToYear": 2026,
+    "arrearsBdt": 0
+  },
+  {
+    "id": "ev-120-cs",
+    "dagId": "120",
+    "date": "1932-02-15",
+    "type": "record",
+    "survey": "CS",
+    "khatianNo": "CS-10",
+    "holdings": [
+      {
+        "personId": "p-gen-51",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-120-sa",
+    "dagId": "120",
+    "date": "1962-04-10",
+    "type": "record",
+    "survey": "SA",
+    "khatianNo": "SA-10",
+    "holdings": [
+      {
+        "personId": "p-gen-51",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-120-rs",
+    "dagId": "120",
+    "date": "1987-11-20",
+    "type": "record",
+    "survey": "RS",
+    "khatianNo": "RS-220",
+    "holdings": [
+      {
+        "personId": "p-gen-71",
+        "share": "1/2"
+      },
+      {
+        "personId": "p-gen-103",
+        "share": "1/2"
+      }
+    ]
+  },
+  {
+    "id": "ev-120-bs",
+    "dagId": "120",
+    "date": "2011-06-15",
+    "type": "record",
+    "survey": "BS",
+    "khatianNo": "BS-120",
+    "holdings": [
+      {
+        "personId": "p-gen-25",
+        "share": "1/2"
+      },
+      {
+        "personId": "p-gen-59",
+        "share": "1/2"
+      }
+    ]
+  },
+  {
+    "id": "ev-120-tax",
+    "dagId": "120",
+    "date": "2026-02-15",
+    "type": "landTax",
+    "paidUpToYear": 2026,
+    "arrearsBdt": 0
+  },
+  {
+    "id": "ev-121-cs",
+    "dagId": "121",
+    "date": "1932-02-15",
+    "type": "record",
+    "survey": "CS",
+    "khatianNo": "CS-11",
+    "holdings": [
+      {
+        "personId": "p-gen-1",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-121-sa",
+    "dagId": "121",
+    "date": "1962-04-10",
+    "type": "record",
+    "survey": "SA",
+    "khatianNo": "SA-11",
+    "holdings": [
+      {
+        "personId": "p-gen-106",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-121-rs",
+    "dagId": "121",
+    "date": "1987-11-20",
+    "type": "record",
+    "survey": "RS",
+    "khatianNo": "RS-221",
+    "holdings": [
+      {
+        "personId": "p-gen-71",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-121-bs",
+    "dagId": "121",
+    "date": "2011-06-15",
+    "type": "record",
+    "survey": "BS",
+    "khatianNo": "BS-121",
+    "holdings": [
+      {
+        "personId": "p-gen-24",
+        "share": "1/2"
+      },
+      {
+        "personId": "p-gen-26",
+        "share": "1/4"
+      },
+      {
+        "personId": "p-gen-90",
+        "share": "1/4"
+      }
+    ]
+  },
+  {
+    "id": "ev-121-tax",
+    "dagId": "121",
+    "date": "2026-02-15",
+    "type": "landTax",
+    "paidUpToYear": 2026,
+    "arrearsBdt": 0
+  },
+  {
+    "id": "ev-122-cs",
+    "dagId": "122",
+    "date": "1932-02-15",
+    "type": "record",
+    "survey": "CS",
+    "khatianNo": "CS-11",
+    "holdings": [
+      {
+        "personId": "p-gen-80",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-122-sa",
+    "dagId": "122",
+    "date": "1962-04-10",
+    "type": "record",
+    "survey": "SA",
+    "khatianNo": "SA-11",
+    "holdings": [
+      {
+        "personId": "p-gen-80",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-122-rs",
+    "dagId": "122",
+    "date": "1987-11-20",
+    "type": "record",
+    "survey": "RS",
+    "khatianNo": "RS-222",
+    "holdings": [
+      {
+        "personId": "p-gen-105",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-122-bs",
+    "dagId": "122",
+    "date": "2011-06-15",
+    "type": "record",
+    "survey": "BS",
+    "khatianNo": "BS-122",
+    "holdings": [
+      {
+        "personId": "p-gen-63",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-122-d1",
+    "dagId": "122",
+    "date": "2019-01-25",
+    "type": "deed",
+    "deedNo": "D-2019-122-6",
+    "kind": "sale",
+    "sellers": [
+      {
+        "personId": "p-gen-63",
+        "share": "1/1"
+      }
+    ],
+    "buyers": [
+      {
+        "personId": "p-gen-109",
+        "share": "1/1"
+      }
+    ],
+    "declaredPriceBdt": 8183735,
+    "subRegistryBn": "মানিকগঞ্জ সদর"
+  },
+  {
+    "id": "ev-122-m1",
+    "dagId": "122",
+    "date": "2019-03-06",
+    "type": "mutation",
+    "caseNo": "M-2019-122-6",
+    "refDeedNo": "D-2019-122-6",
+    "holdingsAfter": [
+      {
+        "personId": "p-gen-109",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-122-d2",
+    "dagId": "122",
+    "date": "2026-02-07",
+    "type": "deed",
+    "deedNo": "D-2026-122-7",
+    "kind": "sale",
+    "sellers": [
+      {
+        "personId": "p-gen-109",
+        "share": "1/1"
+      }
+    ],
+    "buyers": [
+      {
+        "personId": "p-gen-71",
+        "share": "1/1"
+      }
+    ],
+    "declaredPriceBdt": 13544125,
+    "subRegistryBn": "মানিকগঞ্জ সদর"
+  },
+  {
+    "id": "ev-122-tax",
+    "dagId": "122",
+    "date": "2026-02-15",
+    "type": "landTax",
+    "paidUpToYear": 2026,
+    "arrearsBdt": 0
+  },
+  {
+    "id": "ev-122-m2",
+    "dagId": "122",
+    "date": "2026-03-07",
+    "type": "mutation",
+    "caseNo": "M-2026-122-7",
+    "refDeedNo": "D-2026-122-7",
+    "holdingsAfter": [
+      {
+        "personId": "p-gen-71",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-123-cs",
+    "dagId": "123",
+    "date": "1932-02-15",
+    "type": "record",
+    "survey": "CS",
+    "khatianNo": "CS-12",
+    "holdings": [
+      {
+        "personId": "p-gen-45",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-123-sa",
+    "dagId": "123",
+    "date": "1962-04-10",
+    "type": "record",
+    "survey": "SA",
+    "khatianNo": "SA-12",
+    "holdings": [
+      {
+        "personId": "p-gen-87",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-123-rs",
+    "dagId": "123",
+    "date": "1987-11-20",
+    "type": "record",
+    "survey": "RS",
+    "khatianNo": "RS-223",
+    "holdings": [
+      {
+        "personId": "p-gen-8",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-123-bs",
+    "dagId": "123",
+    "date": "2011-06-15",
+    "type": "record",
+    "survey": "BS",
+    "khatianNo": "BS-123",
+    "holdings": [
+      {
+        "personId": "p-gen-102",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-123-tax",
+    "dagId": "123",
+    "date": "2026-02-15",
+    "type": "landTax",
+    "paidUpToYear": 2026,
+    "arrearsBdt": 0
+  },
+  {
+    "id": "ev-124-cs",
+    "dagId": "124",
+    "date": "1932-02-15",
+    "type": "record",
+    "survey": "CS",
+    "khatianNo": "CS-12",
+    "holdings": [
+      {
+        "personId": "p-gen-103",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-124-sa",
+    "dagId": "124",
+    "date": "1962-04-10",
+    "type": "record",
+    "survey": "SA",
+    "khatianNo": "SA-12",
+    "holdings": [
+      {
+        "personId": "p-gen-103",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-124-rs",
+    "dagId": "124",
+    "date": "1987-11-20",
+    "type": "record",
+    "survey": "RS",
+    "khatianNo": "RS-224",
+    "holdings": [
+      {
+        "personId": "p-gen-8",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-124-bs",
+    "dagId": "124",
+    "date": "2011-06-15",
+    "type": "record",
+    "survey": "BS",
+    "khatianNo": "BS-124",
+    "holdings": [
+      {
+        "personId": "p-gen-20",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-124-d1",
+    "dagId": "124",
+    "date": "2018-02-05",
+    "type": "deed",
+    "deedNo": "D-2018-124-8",
+    "kind": "sale",
+    "sellers": [
+      {
+        "personId": "p-gen-20",
+        "share": "1/1"
+      }
+    ],
+    "buyers": [
+      {
+        "personId": "p-gen-80",
+        "share": "1/1"
+      }
+    ],
+    "declaredPriceBdt": 1287535,
+    "subRegistryBn": "মানিকগঞ্জ সদর"
+  },
+  {
+    "id": "ev-124-m1",
+    "dagId": "124",
+    "date": "2018-04-05",
+    "type": "mutation",
+    "caseNo": "M-2018-124-8",
+    "refDeedNo": "D-2018-124-8",
+    "holdingsAfter": [
+      {
+        "personId": "p-gen-80",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-124-d2",
+    "dagId": "124",
+    "date": "2025-09-05",
+    "type": "deed",
+    "deedNo": "D-2025-124-9",
+    "kind": "sale",
+    "sellers": [
+      {
+        "personId": "p-gen-80",
+        "share": "1/1"
+      }
+    ],
+    "buyers": [
+      {
+        "personId": "p-gen-30",
+        "share": "1/1"
+      }
+    ],
+    "declaredPriceBdt": 7607573,
+    "subRegistryBn": "মানিকগঞ্জ সদর"
+  },
+  {
+    "id": "ev-124-m2",
+    "dagId": "124",
+    "date": "2025-09-29",
+    "type": "mutation",
+    "caseNo": "M-2025-124-9",
+    "refDeedNo": "D-2025-124-9",
+    "holdingsAfter": [
+      {
+        "personId": "p-gen-30",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-124-tax",
+    "dagId": "124",
+    "date": "2026-02-15",
+    "type": "landTax",
+    "paidUpToYear": 2026,
+    "arrearsBdt": 0
+  },
+  {
+    "id": "ev-125-cs",
+    "dagId": "125",
+    "date": "1932-02-15",
+    "type": "record",
+    "survey": "CS",
+    "khatianNo": "CS-13",
+    "holdings": [
+      {
+        "personId": "p-gen-45",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-125-sa",
+    "dagId": "125",
+    "date": "1962-04-10",
+    "type": "record",
+    "survey": "SA",
+    "khatianNo": "SA-13",
+    "holdings": [
+      {
+        "personId": "p-gen-3",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-125-rs",
+    "dagId": "125",
+    "date": "1987-11-20",
+    "type": "record",
+    "survey": "RS",
+    "khatianNo": "RS-225",
+    "holdings": [
+      {
+        "personId": "p-gen-112",
+        "share": "1/2"
+      },
+      {
+        "personId": "p-gen-45",
+        "share": "1/2"
+      }
+    ]
+  },
+  {
+    "id": "ev-125-bs",
+    "dagId": "125",
+    "date": "2011-06-15",
+    "type": "record",
+    "survey": "BS",
+    "khatianNo": "BS-125",
+    "holdings": [
+      {
+        "personId": "p-gen-7",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-125-d1",
+    "dagId": "125",
+    "date": "2015-03-27",
+    "type": "deed",
+    "deedNo": "D-2015-125-10",
+    "kind": "sale",
+    "sellers": [
+      {
+        "personId": "p-gen-7",
+        "share": "1/1"
+      }
+    ],
+    "buyers": [
+      {
+        "personId": "p-gen-59",
+        "share": "1/1"
+      }
+    ],
+    "declaredPriceBdt": 8445728,
+    "subRegistryBn": "মানিকগঞ্জ সদর"
+  },
+  {
+    "id": "ev-125-m1",
+    "dagId": "125",
+    "date": "2015-04-28",
+    "type": "mutation",
+    "caseNo": "M-2015-125-10",
+    "refDeedNo": "D-2015-125-10",
+    "holdingsAfter": [
+      {
+        "personId": "p-gen-59",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-125-tax",
+    "dagId": "125",
+    "date": "2026-02-15",
+    "type": "landTax",
+    "paidUpToYear": 2026,
+    "arrearsBdt": 0
+  },
+  {
+    "id": "ev-125-d2",
+    "dagId": "125",
+    "date": "2026-05-24",
+    "type": "deed",
+    "deedNo": "D-2026-125-11",
+    "kind": "sale",
+    "sellers": [
+      {
+        "personId": "p-gen-59",
+        "share": "1/1"
+      }
+    ],
+    "buyers": [
+      {
+        "personId": "p-gen-10",
+        "share": "1/1"
+      }
+    ],
+    "declaredPriceBdt": 17200260,
+    "subRegistryBn": "মানিকগঞ্জ সদর"
+  },
+  {
+    "id": "ev-125-m2",
+    "dagId": "125",
+    "date": "2026-07-10",
+    "type": "mutation",
+    "caseNo": "M-2026-125-11",
+    "refDeedNo": "D-2026-125-11",
+    "holdingsAfter": [
+      {
+        "personId": "p-gen-10",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-126-cs",
+    "dagId": "126",
+    "date": "1932-02-15",
+    "type": "record",
+    "survey": "CS",
+    "khatianNo": "CS-13",
+    "holdings": [
+      {
+        "personId": "p-gen-77",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-126-sa",
+    "dagId": "126",
+    "date": "1962-04-10",
+    "type": "record",
+    "survey": "SA",
+    "khatianNo": "SA-13",
+    "holdings": [
+      {
+        "personId": "p-gen-80",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-126-rs",
+    "dagId": "126",
+    "date": "1987-11-20",
+    "type": "record",
+    "survey": "RS",
+    "khatianNo": "RS-226",
+    "holdings": [
+      {
+        "personId": "p-gen-15",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-126-bs",
+    "dagId": "126",
+    "date": "2011-06-15",
+    "type": "record",
+    "survey": "BS",
+    "khatianNo": "BS-126",
+    "holdings": [
+      {
+        "personId": "p-gen-4",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-126-d1",
+    "dagId": "126",
+    "date": "2017-02-12",
+    "type": "deed",
+    "deedNo": "D-2017-126-12",
+    "kind": "sale",
+    "sellers": [
+      {
+        "personId": "p-gen-4",
+        "share": "1/1"
+      }
+    ],
+    "buyers": [
+      {
+        "personId": "p-gen-68",
+        "share": "1/1"
+      }
+    ],
+    "declaredPriceBdt": 7359855,
+    "subRegistryBn": "মানিকগঞ্জ সদর"
+  },
+  {
+    "id": "ev-126-m1",
+    "dagId": "126",
+    "date": "2017-03-26",
+    "type": "mutation",
+    "caseNo": "M-2017-126-12",
+    "refDeedNo": "D-2017-126-12",
+    "holdingsAfter": [
+      {
+        "personId": "p-gen-68",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-126-tax",
+    "dagId": "126",
+    "date": "2026-02-15",
+    "type": "landTax",
+    "paidUpToYear": 2026,
+    "arrearsBdt": 0
+  },
+  {
+    "id": "ev-126-d2",
+    "dagId": "126",
+    "date": "2026-05-01",
+    "type": "deed",
+    "deedNo": "D-2026-126-13",
+    "kind": "sale",
+    "sellers": [
+      {
+        "personId": "p-gen-68",
+        "share": "1/1"
+      }
+    ],
+    "buyers": [
+      {
+        "personId": "p-gen-97",
+        "share": "1/1"
+      }
+    ],
+    "declaredPriceBdt": 14458897,
+    "subRegistryBn": "মানিকগঞ্জ সদর"
+  },
+  {
+    "id": "ev-126-m2",
+    "dagId": "126",
+    "date": "2026-06-15",
+    "type": "mutation",
+    "caseNo": "M-2026-126-13",
+    "refDeedNo": "D-2026-126-13",
+    "holdingsAfter": [
+      {
+        "personId": "p-gen-97",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-127-cs",
+    "dagId": "127",
+    "date": "1932-02-15",
+    "type": "record",
+    "survey": "CS",
+    "khatianNo": "CS-14",
+    "holdings": [
+      {
+        "personId": "p-gen-63",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-127-sa",
+    "dagId": "127",
+    "date": "1962-04-10",
+    "type": "record",
+    "survey": "SA",
+    "khatianNo": "SA-14",
+    "holdings": [
+      {
+        "personId": "p-gen-63",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-127-rs",
+    "dagId": "127",
+    "date": "1987-11-20",
+    "type": "record",
+    "survey": "RS",
+    "khatianNo": "RS-227",
+    "holdings": [
+      {
+        "personId": "p-gen-74",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-127-bs",
+    "dagId": "127",
+    "date": "2011-06-15",
+    "type": "record",
+    "survey": "BS",
+    "khatianNo": "BS-127",
+    "holdings": [
+      {
+        "personId": "p-gen-46",
+        "share": "1/2"
+      },
+      {
+        "personId": "p-gen-112",
+        "share": "1/4"
+      },
+      {
+        "personId": "p-gen-103",
+        "share": "1/4"
+      }
+    ]
+  },
+  {
+    "id": "ev-127-d1",
+    "dagId": "127",
+    "date": "2025-09-15",
+    "type": "deed",
+    "deedNo": "D-2025-127-14",
+    "kind": "sale",
+    "sellers": [
+      {
+        "personId": "p-gen-46",
+        "share": "1/2"
+      }
+    ],
+    "buyers": [
+      {
+        "personId": "p-gen-81",
+        "share": "1/2"
+      }
+    ],
+    "declaredPriceBdt": 8836190,
+    "subRegistryBn": "মানিকগঞ্জ সদর"
+  },
+  {
+    "id": "ev-127-m1",
+    "dagId": "127",
+    "date": "2025-10-14",
+    "type": "mutation",
+    "caseNo": "M-2025-127-14",
+    "refDeedNo": "D-2025-127-14",
+    "holdingsAfter": [
+      {
+        "personId": "p-gen-112",
+        "share": "1/4"
+      },
+      {
+        "personId": "p-gen-103",
+        "share": "1/4"
+      },
+      {
+        "personId": "p-gen-81",
+        "share": "1/2"
+      }
+    ]
+  },
+  {
+    "id": "ev-127-tax",
+    "dagId": "127",
+    "date": "2026-02-15",
+    "type": "landTax",
+    "paidUpToYear": 2026,
+    "arrearsBdt": 0
+  },
+  {
+    "id": "ev-128-cs",
+    "dagId": "128",
+    "date": "1932-02-15",
+    "type": "record",
+    "survey": "CS",
+    "khatianNo": "CS-14",
+    "holdings": [
+      {
+        "personId": "p-gen-13",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-128-sa",
+    "dagId": "128",
+    "date": "1962-04-10",
+    "type": "record",
+    "survey": "SA",
+    "khatianNo": "SA-14",
+    "holdings": [
+      {
+        "personId": "p-gen-13",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-128-rs",
+    "dagId": "128",
+    "date": "1987-11-20",
+    "type": "record",
+    "survey": "RS",
+    "khatianNo": "RS-228",
+    "holdings": [
+      {
+        "personId": "p-gen-6",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-128-bs",
+    "dagId": "128",
+    "date": "2011-06-15",
+    "type": "record",
+    "survey": "BS",
+    "khatianNo": "BS-128",
+    "holdings": [
+      {
+        "personId": "p-gen-71",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-128-d1",
+    "dagId": "128",
+    "date": "2025-06-15",
+    "type": "deed",
+    "deedNo": "D-2025-128-15",
+    "kind": "sale",
+    "sellers": [
+      {
+        "personId": "p-gen-71",
+        "share": "1/1"
+      }
+    ],
+    "buyers": [
+      {
+        "personId": "p-gen-63",
+        "share": "1/1"
+      }
+    ],
+    "declaredPriceBdt": 16588682,
+    "subRegistryBn": "মানিকগঞ্জ সদর"
+  },
+  {
+    "id": "ev-128-m1",
+    "dagId": "128",
+    "date": "2025-08-13",
+    "type": "mutation",
+    "caseNo": "M-2025-128-15",
+    "refDeedNo": "D-2025-128-15",
+    "holdingsAfter": [
+      {
+        "personId": "p-gen-63",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-128-tax",
+    "dagId": "128",
+    "date": "2026-02-15",
+    "type": "landTax",
+    "paidUpToYear": 2026,
+    "arrearsBdt": 0
+  },
+  {
+    "id": "ev-129-cs",
+    "dagId": "129",
+    "date": "1932-02-15",
+    "type": "record",
+    "survey": "CS",
+    "khatianNo": "CS-15",
+    "holdings": [
+      {
+        "personId": "p-gen-68",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-129-sa",
+    "dagId": "129",
+    "date": "1962-04-10",
+    "type": "record",
+    "survey": "SA",
+    "khatianNo": "SA-15",
+    "holdings": [
+      {
+        "personId": "p-gen-68",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-129-rs",
+    "dagId": "129",
+    "date": "1987-11-20",
+    "type": "record",
+    "survey": "RS",
+    "khatianNo": "RS-229",
+    "holdings": [
+      {
+        "personId": "p-gen-36",
+        "share": "1/2"
+      },
+      {
+        "personId": "p-gen-2",
+        "share": "1/2"
+      }
+    ]
+  },
+  {
+    "id": "ev-129-bs",
+    "dagId": "129",
+    "date": "2011-06-15",
+    "type": "record",
+    "survey": "BS",
+    "khatianNo": "BS-129",
+    "holdings": [
+      {
+        "personId": "p-gen-52",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-129-d1",
+    "dagId": "129",
+    "date": "2025-10-10",
+    "type": "deed",
+    "deedNo": "D-2025-129-16",
+    "kind": "sale",
+    "sellers": [
+      {
+        "personId": "p-gen-52",
+        "share": "1/1"
+      }
+    ],
+    "buyers": [
+      {
+        "personId": "p-gen-80",
+        "share": "1/1"
+      }
+    ],
+    "declaredPriceBdt": 9568360,
+    "subRegistryBn": "মানিকগঞ্জ সদর"
+  },
+  {
+    "id": "ev-129-m1",
+    "dagId": "129",
+    "date": "2025-10-28",
+    "type": "mutation",
+    "caseNo": "M-2025-129-16",
+    "refDeedNo": "D-2025-129-16",
+    "holdingsAfter": [
+      {
+        "personId": "p-gen-80",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-129-tax",
+    "dagId": "129",
+    "date": "2026-02-15",
+    "type": "landTax",
+    "paidUpToYear": 2026,
+    "arrearsBdt": 0
+  },
+  {
+    "id": "ev-130-cs",
+    "dagId": "130",
+    "date": "1932-02-15",
+    "type": "record",
+    "survey": "CS",
+    "khatianNo": "CS-15",
+    "holdings": [
+      {
+        "personId": "p-gen-51",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-130-sa",
+    "dagId": "130",
+    "date": "1962-04-10",
+    "type": "record",
+    "survey": "SA",
+    "khatianNo": "SA-15",
+    "holdings": [
+      {
+        "personId": "p-gen-78",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-130-rs",
+    "dagId": "130",
+    "date": "1987-11-20",
+    "type": "record",
+    "survey": "RS",
+    "khatianNo": "RS-230",
+    "holdings": [
+      {
+        "personId": "p-gen-70",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-130-bs",
+    "dagId": "130",
+    "date": "2011-06-15",
+    "type": "record",
+    "survey": "BS",
+    "khatianNo": "BS-130",
+    "holdings": [
+      {
+        "personId": "p-gen-25",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-130-d1",
+    "dagId": "130",
+    "date": "2020-12-06",
+    "type": "deed",
+    "deedNo": "D-2020-130-17",
+    "kind": "sale",
+    "sellers": [
+      {
+        "personId": "p-gen-25",
+        "share": "1/1"
+      }
+    ],
+    "buyers": [
+      {
+        "personId": "p-gen-97",
+        "share": "1/1"
+      }
+    ],
+    "declaredPriceBdt": 4467124,
+    "subRegistryBn": "মানিকগঞ্জ সদর"
+  },
+  {
+    "id": "ev-130-m1",
+    "dagId": "130",
+    "date": "2021-01-28",
+    "type": "mutation",
+    "caseNo": "M-2020-130-17",
+    "refDeedNo": "D-2020-130-17",
+    "holdingsAfter": [
+      {
+        "personId": "p-gen-97",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-130-d2",
+    "dagId": "130",
+    "date": "2026-02-03",
+    "type": "deed",
+    "deedNo": "D-2026-130-18",
+    "kind": "sale",
+    "sellers": [
+      {
+        "personId": "p-gen-97",
+        "share": "1/1"
+      }
+    ],
+    "buyers": [
+      {
+        "personId": "p-gen-45",
+        "share": "1/1"
+      }
+    ],
+    "declaredPriceBdt": 6105720,
+    "subRegistryBn": "মানিকগঞ্জ সদর"
+  },
+  {
+    "id": "ev-130-tax",
+    "dagId": "130",
+    "date": "2026-02-15",
+    "type": "landTax",
+    "paidUpToYear": 2026,
+    "arrearsBdt": 0
+  },
+  {
+    "id": "ev-130-m2",
+    "dagId": "130",
+    "date": "2026-02-25",
+    "type": "mutation",
+    "caseNo": "M-2026-130-18",
+    "refDeedNo": "D-2026-130-18",
+    "holdingsAfter": [
+      {
+        "personId": "p-gen-45",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-131-cs",
+    "dagId": "131",
+    "date": "1932-02-15",
+    "type": "record",
+    "survey": "CS",
+    "khatianNo": "CS-16",
+    "holdings": [
+      {
+        "personId": "p-gen-92",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-131-sa",
+    "dagId": "131",
+    "date": "1962-04-10",
+    "type": "record",
+    "survey": "SA",
+    "khatianNo": "SA-16",
+    "holdings": [
+      {
+        "personId": "p-gen-75",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-131-rs",
+    "dagId": "131",
+    "date": "1987-11-20",
+    "type": "record",
+    "survey": "RS",
+    "khatianNo": "RS-231",
+    "holdings": [
+      {
+        "personId": "p-gen-29",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-131-bs",
+    "dagId": "131",
+    "date": "2011-06-15",
+    "type": "record",
+    "survey": "BS",
+    "khatianNo": "BS-131",
+    "holdings": [
+      {
+        "personId": "p-gen-65",
+        "share": "1/2"
+      },
+      {
+        "personId": "p-gen-71",
+        "share": "1/2"
+      }
+    ]
+  },
+  {
+    "id": "ev-131-tax",
+    "dagId": "131",
+    "date": "2026-02-15",
+    "type": "landTax",
+    "paidUpToYear": 2026,
+    "arrearsBdt": 0
+  },
+  {
+    "id": "ev-131-d1",
+    "dagId": "131",
+    "date": "2026-07-20",
+    "type": "deed",
+    "deedNo": "D-2026-131-19",
+    "kind": "sale",
+    "sellers": [
+      {
+        "personId": "p-gen-65",
+        "share": "1/2"
+      }
+    ],
+    "buyers": [
+      {
+        "personId": "p-gen-73",
+        "share": "1/2"
+      }
+    ],
+    "declaredPriceBdt": 3871846,
+    "subRegistryBn": "মানিকগঞ্জ সদর"
+  },
+  {
+    "id": "ev-131-m1",
+    "dagId": "131",
+    "date": "2026-08-09",
+    "type": "mutation",
+    "caseNo": "M-2026-131-19",
+    "refDeedNo": "D-2026-131-19",
+    "holdingsAfter": [
+      {
+        "personId": "p-gen-71",
+        "share": "1/2"
+      },
+      {
+        "personId": "p-gen-73",
+        "share": "1/2"
+      }
+    ]
+  },
+  {
+    "id": "ev-132-cs",
+    "dagId": "132",
+    "date": "1932-02-15",
+    "type": "record",
+    "survey": "CS",
+    "khatianNo": "CS-16",
+    "holdings": [
+      {
+        "personId": "p-gen-96",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-132-sa",
+    "dagId": "132",
+    "date": "1962-04-10",
+    "type": "record",
+    "survey": "SA",
+    "khatianNo": "SA-16",
+    "holdings": [
+      {
+        "personId": "p-gen-96",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-132-rs",
+    "dagId": "132",
+    "date": "1987-11-20",
+    "type": "record",
+    "survey": "RS",
+    "khatianNo": "RS-232",
+    "holdings": [
+      {
+        "personId": "p-gen-100",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-132-bs",
+    "dagId": "132",
+    "date": "2011-06-15",
+    "type": "record",
+    "survey": "BS",
+    "khatianNo": "BS-132",
+    "holdings": [
+      {
+        "personId": "p-gen-38",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-132-d1",
+    "dagId": "132",
+    "date": "2017-09-02",
+    "type": "deed",
+    "deedNo": "D-2017-132-20",
+    "kind": "sale",
+    "sellers": [
+      {
+        "personId": "p-gen-38",
+        "share": "1/1"
+      }
+    ],
+    "buyers": [
+      {
+        "personId": "p-gen-33",
+        "share": "1/1"
+      }
+    ],
+    "declaredPriceBdt": 4361858,
+    "subRegistryBn": "মানিকগঞ্জ সদর"
+  },
+  {
+    "id": "ev-132-m1",
+    "dagId": "132",
+    "date": "2017-10-26",
+    "type": "mutation",
+    "caseNo": "M-2017-132-20",
+    "refDeedNo": "D-2017-132-20",
+    "holdingsAfter": [
+      {
+        "personId": "p-gen-33",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-132-tax",
+    "dagId": "132",
+    "date": "2026-02-15",
+    "type": "landTax",
+    "paidUpToYear": 2026,
+    "arrearsBdt": 0
+  },
+  {
+    "id": "ev-132-d2",
+    "dagId": "132",
+    "date": "2026-04-11",
+    "type": "deed",
+    "deedNo": "D-2026-132-21",
+    "kind": "sale",
+    "sellers": [
+      {
+        "personId": "p-gen-33",
+        "share": "1/1"
+      }
+    ],
+    "buyers": [
+      {
+        "personId": "p-gen-88",
+        "share": "1/1"
+      }
+    ],
+    "declaredPriceBdt": 7569144,
+    "subRegistryBn": "মানিকগঞ্জ সদর"
+  },
+  {
+    "id": "ev-132-m2",
+    "dagId": "132",
+    "date": "2026-05-11",
+    "type": "mutation",
+    "caseNo": "M-2026-132-21",
+    "refDeedNo": "D-2026-132-21",
+    "holdingsAfter": [
+      {
+        "personId": "p-gen-88",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-133-cs",
+    "dagId": "133",
+    "date": "1932-02-15",
+    "type": "record",
+    "survey": "CS",
+    "khatianNo": "CS-17",
+    "holdings": [
+      {
+        "personId": "p-gen-101",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-133-sa",
+    "dagId": "133",
+    "date": "1962-04-10",
+    "type": "record",
+    "survey": "SA",
+    "khatianNo": "SA-17",
+    "holdings": [
+      {
+        "personId": "p-gen-67",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-133-rs",
+    "dagId": "133",
+    "date": "1987-11-20",
+    "type": "record",
+    "survey": "RS",
+    "khatianNo": "RS-233",
+    "holdings": [
+      {
+        "personId": "p-gen-71",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-133-bs",
+    "dagId": "133",
+    "date": "2011-06-15",
+    "type": "record",
+    "survey": "BS",
+    "khatianNo": "BS-133",
+    "holdings": [
+      {
+        "personId": "p-gen-18",
+        "share": "1/2"
+      },
+      {
+        "personId": "p-gen-106",
+        "share": "1/2"
+      }
+    ]
+  },
+  {
+    "id": "ev-133-tax",
+    "dagId": "133",
+    "date": "2026-02-15",
+    "type": "landTax",
+    "paidUpToYear": 2026,
+    "arrearsBdt": 0
+  },
+  {
+    "id": "ev-133-d1",
+    "dagId": "133",
+    "date": "2026-06-02",
+    "type": "deed",
+    "deedNo": "D-2026-133-22",
+    "kind": "sale",
+    "sellers": [
+      {
+        "personId": "p-gen-18",
+        "share": "1/2"
+      }
+    ],
+    "buyers": [
+      {
+        "personId": "p-gen-57",
+        "share": "1/2"
+      }
+    ],
+    "declaredPriceBdt": 3863944,
+    "subRegistryBn": "মানিকগঞ্জ সদর"
+  },
+  {
+    "id": "ev-133-m1",
+    "dagId": "133",
+    "date": "2026-06-20",
+    "type": "mutation",
+    "caseNo": "M-2026-133-22",
+    "refDeedNo": "D-2026-133-22",
+    "holdingsAfter": [
+      {
+        "personId": "p-gen-106",
+        "share": "1/2"
+      },
+      {
+        "personId": "p-gen-57",
+        "share": "1/2"
+      }
+    ]
+  },
+  {
+    "id": "ev-134-cs",
+    "dagId": "134",
+    "date": "1932-02-15",
+    "type": "record",
+    "survey": "CS",
+    "khatianNo": "CS-17",
+    "holdings": [
+      {
+        "personId": "p-gen-9",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-134-sa",
+    "dagId": "134",
+    "date": "1962-04-10",
+    "type": "record",
+    "survey": "SA",
+    "khatianNo": "SA-17",
+    "holdings": [
+      {
+        "personId": "p-gen-72",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-134-rs",
+    "dagId": "134",
+    "date": "1987-11-20",
+    "type": "record",
+    "survey": "RS",
+    "khatianNo": "RS-234",
+    "holdings": [
+      {
+        "personId": "p-gen-49",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-134-bs",
+    "dagId": "134",
+    "date": "2011-06-15",
+    "type": "record",
+    "survey": "BS",
+    "khatianNo": "BS-134",
+    "holdings": [
+      {
+        "personId": "p-gen-73",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-134-tax",
+    "dagId": "134",
+    "date": "2026-02-15",
+    "type": "landTax",
+    "paidUpToYear": 2026,
+    "arrearsBdt": 0
+  },
+  {
+    "id": "ev-134-d1",
+    "dagId": "134",
+    "date": "2026-03-03",
+    "type": "deed",
+    "deedNo": "D-2026-134-23",
+    "kind": "sale",
+    "sellers": [
+      {
+        "personId": "p-gen-73",
+        "share": "1/1"
+      }
+    ],
+    "buyers": [
+      {
+        "personId": "p-gen-106",
+        "share": "1/1"
+      }
+    ],
+    "declaredPriceBdt": 8459817,
+    "subRegistryBn": "মানিকগঞ্জ সদর"
+  },
+  {
+    "id": "ev-134-m1",
+    "dagId": "134",
+    "date": "2026-04-07",
+    "type": "mutation",
+    "caseNo": "M-2026-134-23",
+    "refDeedNo": "D-2026-134-23",
+    "holdingsAfter": [
+      {
+        "personId": "p-gen-106",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-135-cs",
+    "dagId": "135",
+    "date": "1932-02-15",
+    "type": "record",
+    "survey": "CS",
+    "khatianNo": "CS-18",
+    "holdings": [
+      {
+        "personId": "p-gen-114",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-135-sa",
+    "dagId": "135",
+    "date": "1962-04-10",
+    "type": "record",
+    "survey": "SA",
+    "khatianNo": "SA-18",
+    "holdings": [
+      {
+        "personId": "p-gen-25",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-135-rs",
+    "dagId": "135",
+    "date": "1987-11-20",
+    "type": "record",
+    "survey": "RS",
+    "khatianNo": "RS-235",
+    "holdings": [
+      {
+        "personId": "p-gen-95",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-135-bs",
+    "dagId": "135",
+    "date": "2011-06-15",
+    "type": "record",
+    "survey": "BS",
+    "khatianNo": "BS-135",
+    "holdings": [
+      {
+        "personId": "p-gen-66",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-135-d1",
+    "dagId": "135",
+    "date": "2018-11-04",
+    "type": "deed",
+    "deedNo": "D-2018-135-24",
+    "kind": "sale",
+    "sellers": [
+      {
+        "personId": "p-gen-66",
+        "share": "1/1"
+      }
+    ],
+    "buyers": [
+      {
+        "personId": "p-gen-67",
+        "share": "1/1"
+      }
+    ],
+    "declaredPriceBdt": 5238045,
+    "subRegistryBn": "মানিকগঞ্জ সদর"
+  },
+  {
+    "id": "ev-135-m1",
+    "dagId": "135",
+    "date": "2018-12-03",
+    "type": "mutation",
+    "caseNo": "M-2018-135-24",
+    "refDeedNo": "D-2018-135-24",
+    "holdingsAfter": [
+      {
+        "personId": "p-gen-67",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-135-tax",
+    "dagId": "135",
+    "date": "2026-02-15",
+    "type": "landTax",
+    "paidUpToYear": 2026,
+    "arrearsBdt": 0
+  },
+  {
+    "id": "ev-135-d2",
+    "dagId": "135",
+    "date": "2026-04-25",
+    "type": "deed",
+    "deedNo": "D-2026-135-25",
+    "kind": "sale",
+    "sellers": [
+      {
+        "personId": "p-gen-67",
+        "share": "1/1"
+      }
+    ],
+    "buyers": [
+      {
+        "personId": "p-gen-11",
+        "share": "1/1"
+      }
+    ],
+    "declaredPriceBdt": 9428567,
+    "subRegistryBn": "মানিকগঞ্জ সদর"
+  },
+  {
+    "id": "ev-135-m2",
+    "dagId": "135",
+    "date": "2026-06-21",
+    "type": "mutation",
+    "caseNo": "M-2026-135-25",
+    "refDeedNo": "D-2026-135-25",
+    "holdingsAfter": [
+      {
+        "personId": "p-gen-11",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-136-cs",
+    "dagId": "136",
+    "date": "1932-02-15",
+    "type": "record",
+    "survey": "CS",
+    "khatianNo": "CS-18",
+    "holdings": [
+      {
+        "personId": "p-gen-52",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-136-sa",
+    "dagId": "136",
+    "date": "1962-04-10",
+    "type": "record",
+    "survey": "SA",
+    "khatianNo": "SA-18",
+    "holdings": [
+      {
+        "personId": "p-gen-8",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-136-rs",
+    "dagId": "136",
+    "date": "1987-11-20",
+    "type": "record",
+    "survey": "RS",
+    "khatianNo": "RS-236",
+    "holdings": [
+      {
+        "personId": "p-gen-107",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-136-bs",
+    "dagId": "136",
+    "date": "2011-06-15",
+    "type": "record",
+    "survey": "BS",
+    "khatianNo": "BS-136",
+    "holdings": [
+      {
+        "personId": "p-gen-12",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-136-d1",
+    "dagId": "136",
+    "date": "2020-05-27",
+    "type": "deed",
+    "deedNo": "D-2020-136-26",
+    "kind": "sale",
+    "sellers": [
+      {
+        "personId": "p-gen-12",
+        "share": "1/1"
+      }
+    ],
+    "buyers": [
+      {
+        "personId": "p-gen-41",
+        "share": "1/1"
+      }
+    ],
+    "declaredPriceBdt": 6334846,
+    "subRegistryBn": "মানিকগঞ্জ সদর"
+  },
+  {
+    "id": "ev-136-m1",
+    "dagId": "136",
+    "date": "2020-07-04",
+    "type": "mutation",
+    "caseNo": "M-2020-136-26",
+    "refDeedNo": "D-2020-136-26",
+    "holdingsAfter": [
+      {
+        "personId": "p-gen-41",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-136-tax",
+    "dagId": "136",
+    "date": "2026-02-15",
+    "type": "landTax",
+    "paidUpToYear": 2026,
+    "arrearsBdt": 0
+  },
+  {
+    "id": "ev-136-d2",
+    "dagId": "136",
+    "date": "2026-02-19",
+    "type": "deed",
+    "deedNo": "D-2026-136-27",
+    "kind": "sale",
+    "sellers": [
+      {
+        "personId": "p-gen-41",
+        "share": "1/1"
+      }
+    ],
+    "buyers": [
+      {
+        "personId": "p-gen-33",
+        "share": "1/1"
+      }
+    ],
+    "declaredPriceBdt": 7800759,
+    "subRegistryBn": "মানিকগঞ্জ সদর"
+  },
+  {
+    "id": "ev-136-m2",
+    "dagId": "136",
+    "date": "2026-03-22",
+    "type": "mutation",
+    "caseNo": "M-2026-136-27",
+    "refDeedNo": "D-2026-136-27",
+    "holdingsAfter": [
+      {
+        "personId": "p-gen-33",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-137-cs",
+    "dagId": "137",
+    "date": "1932-02-15",
+    "type": "record",
+    "survey": "CS",
+    "khatianNo": "CS-19",
+    "holdings": [
+      {
+        "personId": "p-gen-85",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-137-sa",
+    "dagId": "137",
+    "date": "1962-04-10",
+    "type": "record",
+    "survey": "SA",
+    "khatianNo": "SA-19",
+    "holdings": [
+      {
+        "personId": "p-gen-85",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-137-rs",
+    "dagId": "137",
+    "date": "1987-11-20",
+    "type": "record",
+    "survey": "RS",
+    "khatianNo": "RS-237",
+    "holdings": [
+      {
+        "personId": "p-gen-7",
+        "share": "1/2"
+      },
+      {
+        "personId": "p-gen-54",
+        "share": "1/2"
+      }
+    ]
+  },
+  {
+    "id": "ev-137-bs",
+    "dagId": "137",
+    "date": "2011-06-15",
+    "type": "record",
+    "survey": "BS",
+    "khatianNo": "BS-137",
+    "holdings": [
+      {
+        "personId": "p-gen-53",
+        "share": "1/2"
+      },
+      {
+        "personId": "p-gen-63",
+        "share": "1/2"
+      }
+    ]
+  },
+  {
+    "id": "ev-137-tax",
+    "dagId": "137",
+    "date": "2026-02-15",
+    "type": "landTax",
+    "paidUpToYear": 2026,
+    "arrearsBdt": 0
+  },
+  {
+    "id": "ev-137-d1",
+    "dagId": "137",
+    "date": "2026-05-27",
+    "type": "deed",
+    "deedNo": "D-2026-137-28",
+    "kind": "sale",
+    "sellers": [
+      {
+        "personId": "p-gen-53",
+        "share": "1/2"
+      }
+    ],
+    "buyers": [
+      {
+        "personId": "p-gen-19",
+        "share": "1/2"
+      }
+    ],
+    "declaredPriceBdt": 4046290,
+    "subRegistryBn": "মানিকগঞ্জ সদর"
+  },
+  {
+    "id": "ev-137-m1",
+    "dagId": "137",
+    "date": "2026-07-04",
+    "type": "mutation",
+    "caseNo": "M-2026-137-28",
+    "refDeedNo": "D-2026-137-28",
+    "holdingsAfter": [
+      {
+        "personId": "p-gen-63",
+        "share": "1/2"
+      },
+      {
+        "personId": "p-gen-19",
+        "share": "1/2"
+      }
+    ]
+  },
+  {
+    "id": "ev-138-cs",
+    "dagId": "138",
+    "date": "1932-02-15",
+    "type": "record",
+    "survey": "CS",
+    "khatianNo": "CS-19",
+    "holdings": [
+      {
+        "personId": "p-gen-5",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-138-sa",
+    "dagId": "138",
+    "date": "1962-04-10",
+    "type": "record",
+    "survey": "SA",
+    "khatianNo": "SA-19",
+    "holdings": [
+      {
+        "personId": "p-gen-57",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-138-rs",
+    "dagId": "138",
+    "date": "1987-11-20",
+    "type": "record",
+    "survey": "RS",
+    "khatianNo": "RS-238",
+    "holdings": [
+      {
+        "personId": "p-gen-113",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-138-bs",
+    "dagId": "138",
+    "date": "2011-06-15",
+    "type": "record",
+    "survey": "BS",
+    "khatianNo": "BS-138",
+    "holdings": [
+      {
+        "personId": "p-gen-12",
+        "share": "1/2"
+      },
+      {
+        "personId": "p-gen-98",
+        "share": "1/4"
+      },
+      {
+        "personId": "p-gen-101",
+        "share": "1/4"
+      }
+    ]
+  },
+  {
+    "id": "ev-138-d1",
+    "dagId": "138",
+    "date": "2025-01-21",
+    "type": "deed",
+    "deedNo": "D-2025-138-29",
+    "kind": "sale",
+    "sellers": [
+      {
+        "personId": "p-gen-12",
+        "share": "1/2"
+      }
+    ],
+    "buyers": [
+      {
+        "personId": "p-gen-37",
+        "share": "1/2"
+      }
+    ],
+    "declaredPriceBdt": 4009727,
+    "subRegistryBn": "মানিকগঞ্জ সদর"
+  },
+  {
+    "id": "ev-138-m1",
+    "dagId": "138",
+    "date": "2025-03-17",
+    "type": "mutation",
+    "caseNo": "M-2025-138-29",
+    "refDeedNo": "D-2025-138-29",
+    "holdingsAfter": [
+      {
+        "personId": "p-gen-98",
+        "share": "1/4"
+      },
+      {
+        "personId": "p-gen-101",
+        "share": "1/4"
+      },
+      {
+        "personId": "p-gen-37",
+        "share": "1/2"
+      }
+    ]
+  },
+  {
+    "id": "ev-138-tax",
+    "dagId": "138",
+    "date": "2026-02-15",
+    "type": "landTax",
+    "paidUpToYear": 2026,
+    "arrearsBdt": 0
+  },
+  {
+    "id": "ev-139-cs",
+    "dagId": "139",
+    "date": "1932-02-15",
+    "type": "record",
+    "survey": "CS",
+    "khatianNo": "CS-20",
+    "holdings": [
+      {
+        "personId": "p-gen-7",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-139-sa",
+    "dagId": "139",
+    "date": "1962-04-10",
+    "type": "record",
+    "survey": "SA",
+    "khatianNo": "SA-20",
+    "holdings": [
+      {
+        "personId": "p-gen-26",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-139-rs",
+    "dagId": "139",
+    "date": "1987-11-20",
+    "type": "record",
+    "survey": "RS",
+    "khatianNo": "RS-239",
+    "holdings": [
+      {
+        "personId": "p-gen-68",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-139-bs",
+    "dagId": "139",
+    "date": "2011-06-15",
+    "type": "record",
+    "survey": "BS",
+    "khatianNo": "BS-139",
+    "holdings": [
+      {
+        "personId": "p-gen-9",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-139-tax",
+    "dagId": "139",
+    "date": "2026-02-15",
+    "type": "landTax",
+    "paidUpToYear": 2026,
+    "arrearsBdt": 0
+  },
+  {
+    "id": "ev-139-d1",
+    "dagId": "139",
+    "date": "2026-05-18",
+    "type": "deed",
+    "deedNo": "D-2026-139-30",
+    "kind": "sale",
+    "sellers": [
+      {
+        "personId": "p-gen-9",
+        "share": "1/1"
+      }
+    ],
+    "buyers": [
+      {
+        "personId": "p-gen-10",
+        "share": "1/1"
+      }
+    ],
+    "declaredPriceBdt": 6819712,
+    "subRegistryBn": "মানিকগঞ্জ সদর"
+  },
+  {
+    "id": "ev-139-m1",
+    "dagId": "139",
+    "date": "2026-06-30",
+    "type": "mutation",
+    "caseNo": "M-2026-139-30",
+    "refDeedNo": "D-2026-139-30",
+    "holdingsAfter": [
+      {
+        "personId": "p-gen-10",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-140-cs",
+    "dagId": "140",
+    "date": "1932-02-15",
+    "type": "record",
+    "survey": "CS",
+    "khatianNo": "CS-20",
+    "holdings": [
+      {
+        "personId": "p-gen-112",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-140-sa",
+    "dagId": "140",
+    "date": "1962-04-10",
+    "type": "record",
+    "survey": "SA",
+    "khatianNo": "SA-20",
+    "holdings": [
+      {
+        "personId": "p-gen-65",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-140-rs",
+    "dagId": "140",
+    "date": "1987-11-20",
+    "type": "record",
+    "survey": "RS",
+    "khatianNo": "RS-240",
+    "holdings": [
+      {
+        "personId": "p-gen-20",
+        "share": "1/2"
+      },
+      {
+        "personId": "p-gen-86",
+        "share": "1/2"
+      }
+    ]
+  },
+  {
+    "id": "ev-140-bs",
+    "dagId": "140",
+    "date": "2011-06-15",
+    "type": "record",
+    "survey": "BS",
+    "khatianNo": "BS-140",
+    "holdings": [
+      {
+        "personId": "p-gen-79",
+        "share": "1/2"
+      },
+      {
+        "personId": "p-gen-42",
+        "share": "1/2"
+      }
+    ]
+  },
+  {
+    "id": "ev-140-d1",
+    "dagId": "140",
+    "date": "2020-10-09",
+    "type": "deed",
+    "deedNo": "D-2020-140-31",
+    "kind": "sale",
+    "sellers": [
+      {
+        "personId": "p-gen-79",
+        "share": "1/2"
+      }
+    ],
+    "buyers": [
+      {
+        "personId": "p-gen-104",
+        "share": "1/2"
+      }
+    ],
+    "declaredPriceBdt": 1067703,
+    "subRegistryBn": "মানিকগঞ্জ সদর"
+  },
+  {
+    "id": "ev-140-m1",
+    "dagId": "140",
+    "date": "2020-10-26",
+    "type": "mutation",
+    "caseNo": "M-2020-140-31",
+    "refDeedNo": "D-2020-140-31",
+    "holdingsAfter": [
+      {
+        "personId": "p-gen-42",
+        "share": "1/2"
+      },
+      {
+        "personId": "p-gen-104",
+        "share": "1/2"
+      }
+    ]
+  },
+  {
+    "id": "ev-140-tax",
+    "dagId": "140",
+    "date": "2026-02-15",
+    "type": "landTax",
+    "paidUpToYear": 2026,
+    "arrearsBdt": 0
+  },
+  {
+    "id": "ev-140-d2",
+    "dagId": "140",
+    "date": "2026-06-21",
+    "type": "deed",
+    "deedNo": "D-2026-140-32",
+    "kind": "sale",
+    "sellers": [
+      {
+        "personId": "p-gen-42",
+        "share": "1/2"
+      }
+    ],
+    "buyers": [
+      {
+        "personId": "p-gen-59",
+        "share": "1/2"
+      }
+    ],
+    "declaredPriceBdt": 4561268,
+    "subRegistryBn": "মানিকগঞ্জ সদর"
+  },
+  {
+    "id": "ev-140-m2",
+    "dagId": "140",
+    "date": "2026-08-11",
+    "type": "mutation",
+    "caseNo": "M-2026-140-32",
+    "refDeedNo": "D-2026-140-32",
+    "holdingsAfter": [
+      {
+        "personId": "p-gen-104",
+        "share": "1/2"
+      },
+      {
+        "personId": "p-gen-59",
+        "share": "1/2"
+      }
+    ]
+  },
+  {
+    "id": "ev-141-cs",
+    "dagId": "141",
+    "date": "1932-02-15",
+    "type": "record",
+    "survey": "CS",
+    "khatianNo": "CS-21",
+    "holdings": [
+      {
+        "personId": "p-gen-54",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-141-sa",
+    "dagId": "141",
+    "date": "1962-04-10",
+    "type": "record",
+    "survey": "SA",
+    "khatianNo": "SA-21",
+    "holdings": [
+      {
+        "personId": "p-gen-40",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-141-rs",
+    "dagId": "141",
+    "date": "1987-11-20",
+    "type": "record",
+    "survey": "RS",
+    "khatianNo": "RS-241",
+    "holdings": [
+      {
+        "personId": "p-gen-24",
+        "share": "1/2"
+      },
+      {
+        "personId": "p-gen-101",
+        "share": "1/2"
+      }
+    ]
+  },
+  {
+    "id": "ev-141-bs",
+    "dagId": "141",
+    "date": "2011-06-15",
+    "type": "record",
+    "survey": "BS",
+    "khatianNo": "BS-141",
+    "holdings": [
+      {
+        "personId": "p-gen-12",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-141-tax",
+    "dagId": "141",
+    "date": "2026-02-15",
+    "type": "landTax",
+    "paidUpToYear": 2026,
+    "arrearsBdt": 0
+  },
+  {
+    "id": "ev-142-cs",
+    "dagId": "142",
+    "date": "1932-02-15",
+    "type": "record",
+    "survey": "CS",
+    "khatianNo": "CS-21",
+    "holdings": [
+      {
+        "personId": "p-gen-38",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-142-sa",
+    "dagId": "142",
+    "date": "1962-04-10",
+    "type": "record",
+    "survey": "SA",
+    "khatianNo": "SA-21",
+    "holdings": [
+      {
+        "personId": "p-gen-38",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-142-rs",
+    "dagId": "142",
+    "date": "1987-11-20",
+    "type": "record",
+    "survey": "RS",
+    "khatianNo": "RS-242",
+    "holdings": [
+      {
+        "personId": "p-gen-112",
+        "share": "1/2"
+      },
+      {
+        "personId": "p-gen-2",
+        "share": "1/2"
+      }
+    ]
+  },
+  {
+    "id": "ev-142-bs",
+    "dagId": "142",
+    "date": "2011-06-15",
+    "type": "record",
+    "survey": "BS",
+    "khatianNo": "BS-142",
+    "holdings": [
+      {
+        "personId": "p-gen-59",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-142-d1",
+    "dagId": "142",
+    "date": "2025-09-05",
+    "type": "deed",
+    "deedNo": "D-2025-142-33",
+    "kind": "sale",
+    "sellers": [
+      {
+        "personId": "p-gen-59",
+        "share": "1/1"
+      }
+    ],
+    "buyers": [
+      {
+        "personId": "p-gen-70",
+        "share": "1/1"
+      }
+    ],
+    "declaredPriceBdt": 6392550,
+    "subRegistryBn": "মানিকগঞ্জ সদর"
+  },
+  {
+    "id": "ev-142-m1",
+    "dagId": "142",
+    "date": "2025-10-04",
+    "type": "mutation",
+    "caseNo": "M-2025-142-33",
+    "refDeedNo": "D-2025-142-33",
+    "holdingsAfter": [
+      {
+        "personId": "p-gen-70",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-142-tax",
+    "dagId": "142",
+    "date": "2026-02-15",
+    "type": "landTax",
+    "paidUpToYear": 2026,
+    "arrearsBdt": 0
+  },
+  {
+    "id": "ev-143-cs",
+    "dagId": "143",
+    "date": "1932-02-15",
+    "type": "record",
+    "survey": "CS",
+    "khatianNo": "CS-22",
+    "holdings": [
+      {
+        "personId": "p-gen-23",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-143-sa",
+    "dagId": "143",
+    "date": "1962-04-10",
+    "type": "record",
+    "survey": "SA",
+    "khatianNo": "SA-22",
+    "holdings": [
+      {
+        "personId": "p-gen-79",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-143-rs",
+    "dagId": "143",
+    "date": "1987-11-20",
+    "type": "record",
+    "survey": "RS",
+    "khatianNo": "RS-243",
+    "holdings": [
+      {
+        "personId": "p-gen-4",
+        "share": "1/2"
+      },
+      {
+        "personId": "p-gen-28",
+        "share": "1/2"
+      }
+    ]
+  },
+  {
+    "id": "ev-143-bs",
+    "dagId": "143",
+    "date": "2011-06-15",
+    "type": "record",
+    "survey": "BS",
+    "khatianNo": "BS-143",
+    "holdings": [
+      {
+        "personId": "p-gen-40",
+        "share": "1/2"
+      },
+      {
+        "personId": "p-gen-39",
+        "share": "1/4"
+      },
+      {
+        "personId": "p-gen-11",
+        "share": "1/4"
+      }
+    ]
+  },
+  {
+    "id": "ev-143-tax",
+    "dagId": "143",
+    "date": "2026-02-15",
+    "type": "landTax",
+    "paidUpToYear": 2026,
+    "arrearsBdt": 0
+  },
+  {
+    "id": "ev-143-d1",
+    "dagId": "143",
+    "date": "2026-06-19",
+    "type": "deed",
+    "deedNo": "D-2026-143-34",
+    "kind": "sale",
+    "sellers": [
+      {
+        "personId": "p-gen-40",
+        "share": "1/2"
+      }
+    ],
+    "buyers": [
+      {
+        "personId": "p-gen-101",
+        "share": "1/2"
+      }
+    ],
+    "declaredPriceBdt": 3835628,
+    "subRegistryBn": "মানিকগঞ্জ সদর"
+  },
+  {
+    "id": "ev-143-m1",
+    "dagId": "143",
+    "date": "2026-07-23",
+    "type": "mutation",
+    "caseNo": "M-2026-143-34",
+    "refDeedNo": "D-2026-143-34",
+    "holdingsAfter": [
+      {
+        "personId": "p-gen-39",
+        "share": "1/4"
+      },
+      {
+        "personId": "p-gen-11",
+        "share": "1/4"
+      },
+      {
+        "personId": "p-gen-101",
+        "share": "1/2"
+      }
+    ]
+  },
+  {
+    "id": "ev-144-cs",
+    "dagId": "144",
+    "date": "1932-02-15",
+    "type": "record",
+    "survey": "CS",
+    "khatianNo": "CS-22",
+    "holdings": [
+      {
+        "personId": "p-gen-75",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-144-sa",
+    "dagId": "144",
+    "date": "1962-04-10",
+    "type": "record",
+    "survey": "SA",
+    "khatianNo": "SA-22",
+    "holdings": [
+      {
+        "personId": "p-gen-75",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-144-rs",
+    "dagId": "144",
+    "date": "1987-11-20",
+    "type": "record",
+    "survey": "RS",
+    "khatianNo": "RS-244",
+    "holdings": [
+      {
+        "personId": "p-gen-96",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-144-bs",
+    "dagId": "144",
+    "date": "2011-06-15",
+    "type": "record",
+    "survey": "BS",
+    "khatianNo": "BS-144",
+    "holdings": [
+      {
+        "personId": "p-gen-11",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-144-tax",
+    "dagId": "144",
+    "date": "2026-02-15",
+    "type": "landTax",
+    "paidUpToYear": 2026,
+    "arrearsBdt": 0
+  },
+  {
+    "id": "ev-144-d1",
+    "dagId": "144",
+    "date": "2026-05-26",
+    "type": "deed",
+    "deedNo": "D-2026-144-35",
+    "kind": "sale",
+    "sellers": [
+      {
+        "personId": "p-gen-11",
+        "share": "1/1"
+      }
+    ],
+    "buyers": [
+      {
+        "personId": "p-gen-41",
+        "share": "1/1"
+      }
+    ],
+    "declaredPriceBdt": 7648749,
+    "subRegistryBn": "মানিকগঞ্জ সদর"
+  },
+  {
+    "id": "ev-144-m1",
+    "dagId": "144",
+    "date": "2026-07-06",
+    "type": "mutation",
+    "caseNo": "M-2026-144-35",
+    "refDeedNo": "D-2026-144-35",
+    "holdingsAfter": [
+      {
+        "personId": "p-gen-41",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-145-cs",
+    "dagId": "145",
+    "date": "1932-02-15",
+    "type": "record",
+    "survey": "CS",
+    "khatianNo": "CS-23",
+    "holdings": [
+      {
+        "personId": "p-gen-32",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-145-sa",
+    "dagId": "145",
+    "date": "1962-04-10",
+    "type": "record",
+    "survey": "SA",
+    "khatianNo": "SA-23",
+    "holdings": [
+      {
+        "personId": "p-gen-18",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-145-rs",
+    "dagId": "145",
+    "date": "1987-11-20",
+    "type": "record",
+    "survey": "RS",
+    "khatianNo": "RS-245",
+    "holdings": [
+      {
+        "personId": "p-gen-20",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-145-bs",
+    "dagId": "145",
+    "date": "2011-06-15",
+    "type": "record",
+    "survey": "BS",
+    "khatianNo": "BS-145",
+    "holdings": [
+      {
+        "personId": "p-gen-63",
+        "share": "1/2"
+      },
+      {
+        "personId": "p-gen-94",
+        "share": "1/4"
+      },
+      {
+        "personId": "p-gen-69",
+        "share": "1/4"
+      }
+    ]
+  },
+  {
+    "id": "ev-145-tax",
+    "dagId": "145",
+    "date": "2026-02-15",
+    "type": "landTax",
+    "paidUpToYear": 2026,
+    "arrearsBdt": 0
+  },
+  {
+    "id": "ev-146-cs",
+    "dagId": "146",
+    "date": "1932-02-15",
+    "type": "record",
+    "survey": "CS",
+    "khatianNo": "CS-23",
+    "holdings": [
+      {
+        "personId": "p-gen-35",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-146-sa",
+    "dagId": "146",
+    "date": "1962-04-10",
+    "type": "record",
+    "survey": "SA",
+    "khatianNo": "SA-23",
+    "holdings": [
+      {
+        "personId": "p-gen-35",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-146-rs",
+    "dagId": "146",
+    "date": "1987-11-20",
+    "type": "record",
+    "survey": "RS",
+    "khatianNo": "RS-246",
+    "holdings": [
+      {
+        "personId": "p-gen-95",
+        "share": "1/2"
+      },
+      {
+        "personId": "p-gen-83",
+        "share": "1/2"
+      }
+    ]
+  },
+  {
+    "id": "ev-146-bs",
+    "dagId": "146",
+    "date": "2011-06-15",
+    "type": "record",
+    "survey": "BS",
+    "khatianNo": "BS-146",
+    "holdings": [
+      {
+        "personId": "p-gen-46",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-146-tax",
+    "dagId": "146",
+    "date": "2026-02-15",
+    "type": "landTax",
+    "paidUpToYear": 2026,
+    "arrearsBdt": 0
+  },
+  {
+    "id": "ev-147-cs",
+    "dagId": "147",
+    "date": "1932-02-15",
+    "type": "record",
+    "survey": "CS",
+    "khatianNo": "CS-24",
+    "holdings": [
+      {
+        "personId": "p-gen-2",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-147-sa",
+    "dagId": "147",
+    "date": "1962-04-10",
+    "type": "record",
+    "survey": "SA",
+    "khatianNo": "SA-24",
+    "holdings": [
+      {
+        "personId": "p-gen-2",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-147-rs",
+    "dagId": "147",
+    "date": "1987-11-20",
+    "type": "record",
+    "survey": "RS",
+    "khatianNo": "RS-247",
+    "holdings": [
+      {
+        "personId": "p-gen-31",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-147-bs",
+    "dagId": "147",
+    "date": "2011-06-15",
+    "type": "record",
+    "survey": "BS",
+    "khatianNo": "BS-147",
+    "holdings": [
+      {
+        "personId": "p-gen-90",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-147-tax",
+    "dagId": "147",
+    "date": "2026-02-15",
+    "type": "landTax",
+    "paidUpToYear": 2026,
+    "arrearsBdt": 0
+  },
+  {
+    "id": "ev-148-cs",
+    "dagId": "148",
+    "date": "1932-02-15",
+    "type": "record",
+    "survey": "CS",
+    "khatianNo": "CS-24",
+    "holdings": [
+      {
+        "personId": "p-gen-15",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-148-sa",
+    "dagId": "148",
+    "date": "1962-04-10",
+    "type": "record",
+    "survey": "SA",
+    "khatianNo": "SA-24",
+    "holdings": [
+      {
+        "personId": "p-gen-15",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-148-rs",
+    "dagId": "148",
+    "date": "1987-11-20",
+    "type": "record",
+    "survey": "RS",
+    "khatianNo": "RS-248",
+    "holdings": [
+      {
+        "personId": "p-gen-100",
+        "share": "1/1"
+      }
+    ]
+  },
+  {
+    "id": "ev-148-bs",
+    "dagId": "148",
+    "date": "2011-06-15",
+    "type": "record",
+    "survey": "BS",
+    "khatianNo": "BS-148",
+    "holdings": [
+      {
+        "personId": "p-gen-40",
+        "share": "1/2"
+      },
+      {
+        "personId": "p-gen-101",
+        "share": "1/2"
+      }
+    ]
+  },
+  {
+    "id": "ev-148-tax",
+    "dagId": "148",
+    "date": "2026-02-15",
+    "type": "landTax",
+    "paidUpToYear": 2026,
+    "arrearsBdt": 0
+  }
+]

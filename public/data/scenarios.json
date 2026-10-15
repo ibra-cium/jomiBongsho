@@ -1,0 +1,110 @@
+[
+  {
+    "dagId": "101",
+    "key": "CLEAN_HISTORY",
+    "expected": "green",
+    "titleBn": "সম্পূর্ণ নির্ভুল ও পরিষ্কার মালিকানা",
+    "titleEn": "Clean & Verified Ownership",
+    "storyBn": "সিএস থেকে বিএস পর্যন্ত ধারাবাহিক রেকর্ড, ক্রয়সূত্রে নামজারি এবং হালনাগাদ খাজনা পরিশোধিত।",
+    "storyEn": "Continuous records from CS to BS, mutated purchase deed, and up-to-date land development tax."
+  },
+  {
+    "dagId": "102",
+    "key": "DOUBLE_SALE",
+    "expected": "red",
+    "titleBn": "একই জমি দুইবার বিক্রি",
+    "titleEn": "Same Land Sold Twice",
+    "storyBn": "জালাল তার সম্পূর্ণ ১০ শতাংশ জমি প্রথম ক্রেতার কাছে বিক্রির পর পুনরায় দ্বিতীয় ক্রেতার কাছে বিক্রি করেছেন।",
+    "storyEn": "Jalal sold his entire 10 decimal share to Buyer A, then sold the same land again to Buyer B."
+  },
+  {
+    "dagId": "103",
+    "key": "HEIR_OVER_SALE",
+    "expected": "red",
+    "titleBn": "ওয়ারিশ তার অংশের বেশি বিক্রি করছেন",
+    "titleEn": "Heir Selling More Than Their Share",
+    "storyBn": "আব্দুল মালেকের মৃত্যুর পর ফারুকের ফারায়েজ অংশ ১০.৫ শতাংশ, কিন্তু তিনি ১৫ শতাংশ বিক্রি করছেন।",
+    "storyEn": "After Abdul Malek's death, Faruk's faraiz share is 10.5 decimal, but he is selling 15 decimal."
+  },
+  {
+    "dagId": "104",
+    "key": "REG_WITHOUT_MUTATION",
+    "expected": "yellow",
+    "titleBn": "দলিল হয়েছে কিন্তু নামজারি হয়নি",
+    "titleEn": "Registered Deed Without Mutation",
+    "storyBn": "২০২৫ সালের ডিসেম্বরে জমি বিক্রি হলেও ৯ মাসের বেশি সময় ধরে কোনো নামজারি সম্পন্ন করা হয়নি।",
+    "storyEn": "Land was sold in December 2025, but no mutation was completed after more than 9 months."
+  },
+  {
+    "dagId": "105",
+    "key": "RAPID_RESALE",
+    "expected": "yellow",
+    "titleBn": "অল্প সময়ে বারবার হাতবদল",
+    "titleEn": "Rapid Successive Reselling",
+    "storyBn": "২০২৬ সালের ৫ মাসের মধ্যে জমিটি ৩ বার হাতবদল হয়েছে, যা কৃত্রিম মূল্যবৃদ্ধির সন্দেহ তৈরি করে।",
+    "storyEn": "The plot changed hands 3 times within 5 months in 2026, raising speculation concerns."
+  },
+  {
+    "dagId": "106",
+    "key": "UNDER_DECLARED",
+    "expected": "yellow",
+    "titleBn": "দলিলে বাজারমূল্যের চেয়ে অনেক কম দাম",
+    "titleEn": "Under-Declared Deed Price",
+    "storyBn": "এলাকার গড় বাজারমূল্য ৪,৩০,০০০ টাকা হলেও দলিলে মাত্র ১,২০,০০০ টাকা উল্লেখ করা হয়েছে।",
+    "storyEn": "Market value is ~Tk 430,000/dec, but the deed declared only Tk 120,000/dec to evade taxes."
+  },
+  {
+    "dagId": "107",
+    "key": "CHAIN_BREAK",
+    "expected": "red",
+    "titleBn": "বিক্রেতা কখনো মালিক ছিলেন না",
+    "titleEn": "Chain of Title Broken",
+    "storyBn": "খতিয়ান অনুযায়ী জমির মালিক হাসান, কিন্তু মিজান নিজেকে মালিক দাবি করে জমি বিক্রি করেছেন।",
+    "storyEn": "Khatian owner is Hasan, but Mizan, who has no title history, sold the land."
+  },
+  {
+    "dagId": "108",
+    "key": "KHAS_LAND",
+    "expected": "red",
+    "titleBn": "সরকারি খাস জমি ব্যক্তিগত বিক্রি",
+    "titleEn": "Government Khas Land",
+    "storyBn": "এটি বাংলাদেশ সরকারের মালিকানাধীন ১ নং খাস খতিয়ানের জমি, যা অবৈধভাবে বিক্রির চেষ্টা করা হয়েছে।",
+    "storyEn": "This plot belongs to Government Khas Khatian No. 1 and cannot be privately sold."
+  },
+  {
+    "dagId": "109",
+    "key": "PENDING_CASE",
+    "expected": "red",
+    "titleBn": "আদালতে দেওয়ানি মামলা চলমান",
+    "titleEn": "Pending Court Dispute",
+    "storyBn": "জমিটির স্বত্ব নিয়ে সহকারী জজ আদালতে দেওয়ানি মামলা চলমান রয়েছে।",
+    "storyEn": "A title declaration suit regarding this land is pending in the Assistant Judge Court."
+  },
+  {
+    "dagId": "110",
+    "key": "ESTATE_LEGAL_REVIEW",
+    "expected": "yellow",
+    "titleBn": "ওয়ারিশ বণ্টন আইনি পর্যালোচনা প্রয়োজন",
+    "titleEn": "Inheritance Requires Legal Review",
+    "storyBn": "মৃত ব্যক্তির ওয়ারিশ হিসেবে ২ কন্যা ও ১ ভাই রয়েছেন, যা বিশেষ ফারায়েজ নিয়মের আওতাভুক্ত।",
+    "storyEn": "Deceased left 2 daughters and a brother, requiring legal review under complex faraiz rules."
+  },
+  {
+    "dagId": "111",
+    "key": "MUTATION_WITHOUT_DEED",
+    "expected": "red",
+    "titleBn": "ভুয়া দলিল নম্বর দিয়ে নামজারি",
+    "titleEn": "Mutation Without Valid Deed",
+    "storyBn": "নামজারি খতিয়ানে যে দলিল নম্বর দেখানো হয়েছে, সাব-রেজিস্ট্রি অফিসে তার কোনো অস্তিত্ব নেই।",
+    "storyEn": "The deed referenced in the mutation record does not exist in the sub-registry office."
+  },
+  {
+    "dagId": "112",
+    "key": "TAX_ARREARS",
+    "expected": "green",
+    "titleBn": "মালিকানা সঠিক কিন্তু ভূমি উন্নয়ন কর বকেয়া",
+    "titleEn": "Valid Title With Tax Arrears",
+    "storyBn": "মালিকানার ধারাবাহিকতা সঠিক হলেও ২০২২ সালের পর থেকে ১৮,৫০০ টাকা ভূমি কর বকেয়া রয়েছে।",
+    "storyEn": "Ownership chain is clean, but Tk 18,500 in land development tax has been overdue since 2022."
+  }
+]

@@ -1,0 +1,40 @@
+{
+  "fiscalYear": "2025-26",
+  "status": "DEMO — verify every rate with the official registration cost calculator before real use",
+  "sources": [
+    {
+      "label": "Dhaka Tribune, 2 Jun 2025 — Land registration cost reduced (source tax 6/4/3% by area)",
+      "url": "https://www.dhakatribune.com/bangladesh/382928/land-registration-cost-reduced"
+    },
+    {
+      "label": "The Financial Express, 2022 — e-mutation fee breakdown (Tk 1,170)",
+      "url": "https://thefinancialexpress.com.bd/national/bangladesh-mandates-online-payment-of-land-mutation-fees-1664697255"
+    }
+  ],
+  "bp": {
+    "stampDuty": 150,
+    "registrationFee": 100,
+    "localGovtTax": {
+      "union": 200,
+      "pourashava": 300,
+      "city": 300
+    },
+    "sourceTax": {
+      "A": 600,
+      "B": 400,
+      "C": 300
+    }
+  },
+  "fixedFeesBdt": {
+    "eFee": 100,
+    "nFee": 100,
+    "courtFee": 20,
+    "affidavitStamp": 200
+  },
+  "mutationFeesBdt": {
+    "courtFee": 20,
+    "noticeFee": 50,
+    "recordCorrection": 1000,
+    "ledgerCopy": 100
+  }
+}
