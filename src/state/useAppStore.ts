@@ -31,12 +31,14 @@ const STORAGE_KEY_LANG = 'jb_lang';
 const STORAGE_KEY_THEME = 'jb_theme';
 
 const initialLang: SupportedLang = storage.get<SupportedLang>(STORAGE_KEY_LANG, 'bn');
-const initialTheme: AppTheme = storage.get<AppTheme>(STORAGE_KEY_THEME, 'system');
+const initialTheme: AppTheme = storage.get<AppTheme>(STORAGE_KEY_THEME, 'light');
 
-// Synchronize document language immediately
+// Synchronize document language and theme immediately
 if (typeof document !== 'undefined') {
   document.documentElement.lang = initialLang;
-  if (initialTheme !== 'system') {
+  if (initialTheme === 'system') {
+    document.documentElement.removeAttribute('data-theme');
+  } else {
     document.documentElement.setAttribute('data-theme', initialTheme);
   }
 }
