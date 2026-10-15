@@ -10,3 +10,4 @@ export * from './Toast';
 export * from './Watermark';
 export * from './VerdictStamp';
 export * from './Sheet';
+export * from './UpdateToast';

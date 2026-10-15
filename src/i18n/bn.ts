@@ -14,6 +14,11 @@ export const bn = {
   devUi: 'ইউআই প্রিভিউ',
   demo: 'ডেমো',
   install: 'ইনস্টল করুন',
+  iosInstallHint:
+    'অ্যাপটি ইনস্টল করতে Safari-র নিচে শেয়ার বোতাম চেপে "হোম স্ক্রিনে যোগ করুন" চাপুন।',
+  updateReady: 'নতুন সংস্করণ প্রস্তুত আছে',
+  updateAction: 'রিফ্রেশ',
+  offlineReady: 'অ্যাপটি অফলাইনে ব্যবহারের জন্য প্রস্তুত',
   language: 'ভাষা',
   theme: 'থিম',
   themeLight: 'লাইট',
