@@ -23,6 +23,34 @@ import {
 } from './layers';
 import { getMouzaSheetDataUrl } from './mouzaSheet';
 import { DagLabels } from './DagLabels';
+import { useAppStore } from '@/state/useAppStore';
+
+function createCirclePolygon(
+  center: [number, number],
+  radiusMeters: number,
+): GeoJSON.Feature<GeoJSON.Polygon> {
+  const [lng, lat] = center;
+  const points = 32;
+  const coords: [number, number][] = [];
+  const distanceX = radiusMeters / (111320 * Math.cos((lat * Math.PI) / 180));
+  const distanceY = radiusMeters / 110540;
+
+  for (let i = 0; i <= points; i++) {
+    const theta = (i / points) * (2 * Math.PI);
+    const x = distanceX * Math.cos(theta);
+    const y = distanceY * Math.sin(theta);
+    coords.push([lng + x, lat + y]);
+  }
+
+  return {
+    type: 'Feature',
+    geometry: {
+      type: 'Polygon',
+      coordinates: [coords],
+    },
+    properties: {},
+  };
+}
 
 interface MapViewProps {
   data: DemoData;
@@ -45,10 +73,13 @@ export const MapView: React.FC<MapViewProps> = ({
 }) => {
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<maplibregl.Map | null>(null);
+  const gpsMarkerRef = useRef<maplibregl.Marker | null>(null);
   const [mapLoaded, setMapLoaded] = useState(false);
   const prevSelectedRef = useRef<string | null>(null);
   const onSelectDagRef = useRef(onSelectDag);
   const sheetOpacityRef = useRef(sheetOpacity);
+
+  const gpsLocation = useAppStore((state) => state.gpsLocation);
 
   useEffect(() => {
     sheetOpacityRef.current = sheetOpacity;
@@ -157,6 +188,33 @@ export const MapView: React.FC<MapViewProps> = ({
         }
       }
 
+      // 3. Add GPS Accuracy Source & Layers
+      if (!map.getSource('gps-accuracy')) {
+        map.addSource('gps-accuracy', {
+          type: 'geojson',
+          data: { type: 'FeatureCollection', features: [] },
+        });
+        map.addLayer({
+          id: 'gps-accuracy-fill',
+          type: 'fill',
+          source: 'gps-accuracy',
+          paint: {
+            'fill-color': '#2563EB',
+            'fill-opacity': 0.12,
+          },
+        });
+        map.addLayer({
+          id: 'gps-accuracy-line',
+          type: 'line',
+          source: 'gps-accuracy',
+          paint: {
+            'line-color': '#2563EB',
+            'line-width': 1.5,
+            'line-opacity': 0.4,
+          },
+        });
+      }
+
       // Fit map to mouza bounds
       map.fitBounds(
         [
@@ -222,6 +280,8 @@ export const MapView: React.FC<MapViewProps> = ({
 
     return () => {
       setMapLoaded(false);
+      gpsMarkerRef.current?.remove();
+      gpsMarkerRef.current = null;
       map.remove();
       mapRef.current = null;
     };
@@ -286,6 +346,46 @@ export const MapView: React.FC<MapViewProps> = ({
     if (!map || !mapLoaded || !map.getLayer(MOUZA_SHEET_LAYER_ID)) return;
     map.setPaintProperty(MOUZA_SHEET_LAYER_ID, 'raster-opacity', sheetOpacity);
   }, [sheetOpacity, mapLoaded]);
+
+  // Synchronize GPS marker and accuracy circle
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !mapLoaded) return;
+
+    const { state, coords, accuracy } = gpsLocation;
+
+    if (coords && (state === 'found' || state === 'outside')) {
+      // 1. Update or create GPS DOM marker
+      if (!gpsMarkerRef.current) {
+        const el = document.createElement('div');
+        el.className = 'pointer-events-none relative flex items-center justify-center w-7 h-7';
+        el.innerHTML = `
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-60"></span>
+          <span class="relative inline-flex rounded-full h-4 w-4 bg-blue-600 border-2 border-white shadow-md"></span>
+        `;
+        gpsMarkerRef.current = new maplibregl.Marker({ element: el }).setLngLat(coords).addTo(map);
+      } else {
+        gpsMarkerRef.current.setLngLat(coords).addTo(map);
+      }
+
+      // 2. Update accuracy circle
+      const accuracySource = map.getSource('gps-accuracy') as maplibregl.GeoJSONSource | undefined;
+      if (accuracySource) {
+        const radius = accuracy ?? 10;
+        accuracySource.setData(createCirclePolygon(coords, radius));
+      }
+    } else {
+      // Remove marker & clear accuracy circle
+      if (gpsMarkerRef.current) {
+        gpsMarkerRef.current.remove();
+        gpsMarkerRef.current = null;
+      }
+      const accuracySource = map.getSource('gps-accuracy') as maplibregl.GeoJSONSource | undefined;
+      if (accuracySource) {
+        accuracySource.setData({ type: 'FeatureCollection', features: [] });
+      }
+    }
+  }, [gpsLocation, mapLoaded]);
 
   return (
     <div className={`relative w-full h-full ${className}`}>

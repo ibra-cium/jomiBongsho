@@ -21,6 +21,7 @@
     "@fontsource/noto-serif-bengali": "^5.3.0",
     "@turf/area": "^7.4.0",
     "@turf/bbox": "^7.4.0",
+    "@turf/boolean-point-in-polygon": "^7.4.0",
     "@turf/centroid": "^7.4.0",
     "@turf/distance": "^7.4.0",
     "fraction.js": "^5.3.4",

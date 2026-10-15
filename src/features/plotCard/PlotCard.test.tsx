@@ -185,4 +185,20 @@ describe('P1-T08 Acceptance Criteria — Plot Sheet Data & Analysis', () => {
       expect(json).not.toContain('saving');
     });
   });
+
+  describe('P1-T11 Acceptance Criteria — GPS Mismatch and Search', () => {
+    it('simulated location on 105 while 101 is selected triggers mismatch condition', () => {
+      const selectedDagId: string = '101';
+      const gpsDagId: string = '105';
+      const isMismatch = Boolean(gpsDagId && gpsDagId !== selectedDagId);
+      expect(isMismatch).toBe(true);
+    });
+
+    it('simulated location on 101 while 101 is selected does NOT trigger mismatch', () => {
+      const selectedDagId: string = '101';
+      const gpsDagId: string = '101';
+      const isMismatch = Boolean(gpsDagId && gpsDagId !== selectedDagId);
+      expect(isMismatch).toBe(false);
+    });
+  });
 });

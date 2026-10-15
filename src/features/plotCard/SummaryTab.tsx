@@ -1,7 +1,8 @@
 import React, { useMemo } from 'react';
-import { CheckCircle2, ShieldAlert, Calculator } from 'lucide-react';
+import { CheckCircle2, ShieldAlert, Calculator, MapPin } from 'lucide-react';
 import { useT } from '@/i18n/useT';
-import { formatTaka } from '@/lib/format';
+import { useAppStore } from '@/state/useAppStore';
+import { formatTaka, toBanglaDigits } from '@/lib/format';
 import { Stamp, VerdictType } from '@/ui/Stamp';
 import { calculateCost } from '@/engine';
 import { IssueRow } from './IssueRow';
@@ -31,6 +32,7 @@ export const SummaryTab: React.FC<SummaryTabProps> = ({
   className = '',
 }) => {
   const { t, lang } = useT();
+  const gpsDagId = useAppStore((state) => state.gpsLocation.dagId);
 
   const { verdict, issues, owners, dag, priceEstimate } = analysis;
 
@@ -84,6 +86,25 @@ export const SummaryTab: React.FC<SummaryTabProps> = ({
 
   return (
     <div className={`space-y-6 ${className}`}>
+      {/* 0. GPS Plot Mismatch Warning (Seller Plot Fraud Check) */}
+      {gpsDagId && gpsDagId !== dag.id && (
+        <div className="p-3.5 bg-warn-wash/80 border-2 border-warn rounded-2xl flex items-start gap-3 shadow-xs">
+          <MapPin className="w-5 h-5 text-warn shrink-0 mt-0.5" />
+          <div className="space-y-1">
+            <div className="font-serif font-bold text-xs sm:text-sm text-warn">
+              {t('plotMismatchWarning')}
+            </div>
+            <p className="text-xs font-semibold text-ink leading-relaxed">
+              {t('plotMismatchBody', {
+                gps: lang === 'bn' ? toBanglaDigits(gpsDagId) : gpsDagId,
+                selected: lang === 'bn' ? toBanglaDigits(dag.id) : dag.id,
+              })}
+            </p>
+            <p className="text-[11px] text-ink-2 leading-relaxed">{t('plotMismatchAdvice')}</p>
+          </div>
+        </div>
+      )}
+
       {/* 1. Hero Element: VerdictStamp (Von Restorff effect) */}
       <div className="flex flex-col items-center justify-center pt-2 pb-1 text-center space-y-2">
         <Stamp

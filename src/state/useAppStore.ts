@@ -5,9 +5,20 @@ export type SupportedLang = 'bn' | 'en';
 export type AppTheme = 'system' | 'light' | 'dark';
 export type SheetSnap = 'peek' | 'half' | 'full';
 
-interface DemoFlags {
+export interface DemoFlags {
   simulatedLocation: boolean;
+  simulatedDagId?: string | null;
+  simulatedCoords?: [number, number] | null;
   tamperMode: boolean;
+}
+
+export type GpsState = 'idle' | 'locating' | 'found' | 'outside' | 'denied' | 'unsupported';
+
+export interface GpsLocation {
+  state: GpsState;
+  coords: [number, number] | null;
+  accuracy: number | null;
+  dagId: string | null;
 }
 
 interface AppState {
@@ -18,6 +29,7 @@ interface AppState {
   sheetOpacity: number;
   demo: DemoFlags;
   showRiskColors: boolean;
+  gpsLocation: GpsLocation;
 
   // Actions
   setLang: (lang: SupportedLang) => void;
@@ -27,6 +39,7 @@ interface AppState {
   setSheetOpacity: (opacity: number) => void;
   setShowRiskColors: (show: boolean) => void;
   setDemoFlags: (flags: Partial<DemoFlags>) => void;
+  setGpsLocation: (loc: Partial<GpsLocation>) => void;
 }
 
 const STORAGE_KEY_LANG = 'jb_lang';
@@ -56,6 +69,12 @@ export const useAppStore = create<AppState>((set) => ({
     tamperMode: false,
   },
   showRiskColors: false,
+  gpsLocation: {
+    state: 'idle',
+    coords: null,
+    accuracy: null,
+    dagId: null,
+  },
 
   setLang: (lang) => {
     storage.set(STORAGE_KEY_LANG, lang);
@@ -84,5 +103,9 @@ export const useAppStore = create<AppState>((set) => ({
   setDemoFlags: (flags) =>
     set((state) => ({
       demo: { ...state.demo, ...flags },
+    })),
+  setGpsLocation: (loc) =>
+    set((state) => ({
+      gpsLocation: { ...state.gpsLocation, ...loc },
     })),
 }));

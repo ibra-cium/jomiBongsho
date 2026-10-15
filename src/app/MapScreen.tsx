@@ -17,12 +17,16 @@ import {
 import { useT } from '@/i18n/useT';
 import { useAppStore } from '@/state/useAppStore';
 import { useDataStore } from '@/data/useDataStore';
-import { Watermark, Sheet, Badge, Button, Skeleton } from '@/ui';
+import { Watermark, Sheet, Badge, Button, Skeleton, useToast } from '@/ui';
 import { toBanglaDigits } from '@/lib/format';
 import { useInstallPrompt } from '@/lib/pwa';
 import { MapView } from '@/map/MapView';
+import { useGeolocation } from '@/map/useGeolocation';
+import { GPSFab } from '@/map/GPSFab';
 import { SheetOpacitySlider } from '@/features/map/SheetOpacitySlider';
 import { PlotCard, PlotCardPeek } from '@/features/plotCard';
+import { SearchModal } from '@/features/search';
+import { DemoPanel, PermissionHelpModal } from '@/features/demo';
 import { analyseDag } from '@/engine';
 
 export const MapScreen: React.FC = () => {
@@ -46,6 +50,12 @@ export const MapScreen: React.FC = () => {
 
   const [activeTab, setActiveTab] = React.useState('summary');
   const [menuOpen, setMenuOpen] = React.useState(false);
+  const [searchOpen, setSearchOpen] = React.useState(false);
+  const [demoOpen, setDemoOpen] = React.useState(false);
+  const [permissionHelpOpen, setPermissionHelpOpen] = React.useState(false);
+
+  const { addToast } = useToast();
+  const { state: gpsState, dagId: gpsDagId, startLocating } = useGeolocation();
 
   // Load data on initial mount
   useEffect(() => {
@@ -75,6 +85,25 @@ export const MapScreen: React.FC = () => {
 
   const toggleLanguage = () => {
     setLang(lang === 'bn' ? 'en' : 'bn');
+  };
+
+  const handleGpsPress = () => {
+    if (gpsState === 'idle') {
+      startLocating();
+    } else if (gpsState === 'found' && gpsDagId) {
+      handleSelectDag(gpsDagId);
+      addToast(
+        t('gpsCurrentLocation', {
+          n: lang === 'bn' ? toBanglaDigits(gpsDagId) : gpsDagId,
+        }),
+      );
+    } else if (gpsState === 'outside') {
+      addToast(t('locationOutside'));
+    } else if (gpsState === 'denied' || gpsState === 'unsupported') {
+      setPermissionHelpOpen(true);
+    } else {
+      startLocating();
+    }
   };
 
   // Selected dag metadata and analysis
@@ -199,6 +228,23 @@ export const MapScreen: React.FC = () => {
                 <span>{t('present')}</span>
               </Link>
 
+              <button
+                type="button"
+                onClick={() => {
+                  setMenuOpen(false);
+                  setDemoOpen(true);
+                }}
+                className="w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-medium text-ink hover:bg-paper-2 transition-colors cursor-pointer text-left"
+              >
+                <div className="flex items-center gap-3">
+                  <Sparkles className="w-4 h-4 text-accent" />
+                  <span>{t('demo')}</span>
+                </div>
+                <span className="px-2 py-0.5 text-[10px] font-bold rounded-full bg-warn-wash text-warn border border-warn/30">
+                  {t('demoNotice')}
+                </span>
+              </button>
+
               <Link
                 to="/dev/ui"
                 onClick={() => setMenuOpen(false)}
@@ -231,10 +277,15 @@ export const MapScreen: React.FC = () => {
             </button>
 
             {/* Search pill */}
-            <div className="flex items-center gap-2 px-3 py-2 bg-paper-2 border border-line rounded-full shadow-paper text-ink-2 hover:border-ink/20 cursor-pointer text-sm">
+            <button
+              type="button"
+              onClick={() => setSearchOpen(true)}
+              className="flex items-center gap-2 px-3 py-2 bg-paper-2 border border-line rounded-full shadow-paper text-ink-2 hover:border-ink/20 cursor-pointer text-sm"
+              aria-label={t('search')}
+            >
               <Search className="w-4 h-4 text-ink-3" />
               <span className="font-sans text-xs sm:text-sm">{t('searchPlaceholder')}</span>
-            </div>
+            </button>
           </div>
 
           <div className="flex items-center gap-2 pointer-events-auto">
@@ -320,6 +371,11 @@ export const MapScreen: React.FC = () => {
           />
         )}
 
+        {/* GPS FAB */}
+        <div className="absolute right-4 bottom-44 sm:bottom-48 z-20 pointer-events-auto">
+          <GPSFab state={gpsState} dagId={gpsDagId} onPress={handleGpsPress} />
+        </div>
+
         {/* Floating Sheet Opacity Slider */}
         <div className="absolute bottom-32 sm:bottom-36 left-1/2 -translate-x-1/2 z-20 pointer-events-auto">
           <SheetOpacitySlider />
@@ -368,6 +424,31 @@ export const MapScreen: React.FC = () => {
           />
         )}
       </Sheet>
+
+      {/* Search Modal */}
+      {data && (
+        <SearchModal
+          isOpen={searchOpen}
+          onClose={() => setSearchOpen(false)}
+          features={data.dags.features}
+          onSelectDag={handleSelectDag}
+        />
+      )}
+
+      {/* Demo Panel */}
+      <DemoPanel
+        isOpen={demoOpen}
+        onClose={() => setDemoOpen(false)}
+        onSelectDag={handleSelectDag}
+      />
+
+      {/* Permission Help Modal */}
+      <PermissionHelpModal
+        isOpen={permissionHelpOpen}
+        onClose={() => setPermissionHelpOpen(false)}
+        onOpenDemo={() => setDemoOpen(true)}
+      />
+
       <Outlet />
     </div>
   );

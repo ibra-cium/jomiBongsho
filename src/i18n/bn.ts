@@ -348,6 +348,37 @@ export const bn = {
   costLine_fixedFees: 'নির্দিষ্ট সরকারি ফি (ই-ফি, এন-ফি, কোর্ট ফি, স্ট্যাম্প)',
   costLine_mutationFee: 'ই-নামজারি ফি',
   costLine_landTaxArrears: 'বকেয়া ভূমি উন্নয়ন কর',
+
+  // Search, GPS & Demo Panel (P1-T11)
+  plotMismatchWarning: 'জমির দাগ অমিল সতর্কবার্তা',
+  plotMismatchBody: 'আপনি দাগ {gps}-এ দাঁড়িয়ে আছেন, কিন্তু দেখছেন দাগ {selected}।',
+  plotMismatchAdvice:
+    'বিক্রেতা আপনাকে অন্য বা ভুল দাগ দেখাচ্ছেন কি না সাব-রেজিস্ট্রি দলিলের চৌহদ্দি দেখে নিশ্চিত হোন।',
+  gpsCurrentLocation: 'আপনি দাগ {n}-এ আছেন',
+  gpsFindLocation: 'আমার অবস্থান খুঁজুন',
+  gpsLocating: 'অবস্থান খোঁজা হচ্ছে...',
+  gpsLocationFound: 'অবস্থান পাওয়া গেছে',
+  gpsPermissionHelp: 'অবস্থান অনুমতি সহায়তা',
+  gpsPermissionTitle: 'অবস্থান (GPS) অনুমতি দিন',
+  gpsPermissionDesc: 'জমির দাগ শনাক্ত করার জন্য জিপিএস প্রয়োজন',
+  demoPanelTitle: 'ডেমো কন্ট্রোল প্যানেল',
+  demoPanelSubtitle: 'হ্যাকাথন উপস্থাপনা ও বিশেষ কেস সরাসরি পরীক্ষা করার টুল',
+  simulateLocationTitle: 'অবস্থান (GPS) অনুকরণ',
+  simulateLocationDesc:
+    'ল্যাপটপে বা প্রদর্শনীতে নির্দিষ্ট কোনো দাগে উপস্থিত থাকার অনুভূতি তৈরির জন্য অবস্থান অনুকরণ করুন।',
+  simulateLocationSelectDag: 'দাগ নির্বাচন:',
+  simulateLocationBtn: 'অবস্থান অনুকরণ করুন',
+  simulateLocationStop: 'অনুকরণ বন্ধ করুন',
+  simulateLocationActive: 'অনুকরণ সক্রিয়',
+  simulateLocationActiveMsg: 'আপনি বর্তমানে দাগ {n}-এ আছেন হিসেবে অনুকরণ করা হচ্ছে',
+  demoScenariosTitle: '১২টি বিশেষ জমি সিনারিও',
+  demoScenariosSubtitle: 'সরাসরি দাগে যেতে ট্যাপ করুন',
+  resetDemoBtn: 'ডেমো রিসেট',
+  resetDemoSuccess: 'ডেমো রিসেট করা হয়েছে',
+  viewDeedRecords: 'রেকর্ড ও খতিয়ান দেখুন',
+  matchedSurvey: '{survey} {n} মিলেছে',
+  searchHint: 'বর্তমান বা পুরনো খতিয়ানের দাগ নম্বর দিয়ে খুঁজুন',
+  searchExamples: 'উদা: ১০১, 103, CS 1, SA 12, RS 201',
 };
 
 export type TranslationKey = keyof typeof bn;
