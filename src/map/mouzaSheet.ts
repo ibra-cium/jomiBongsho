@@ -238,14 +238,14 @@ export async function getMouzaSheetDataUrl(
   // 2. Faint diagonal demo watermark (never obscures, maintains compliance with AGENTS.md rule 2)
   ctx.save();
   ctx.rotate((-26 * Math.PI) / 180);
-  ctx.font = '500 24px "Hind Siliguri", sans-serif';
-  ctx.fillStyle = 'rgba(95, 68, 40, 0.075)';
+  ctx.font = '600 52px "Hind Siliguri", sans-serif';
+  ctx.fillStyle = 'rgba(95, 68, 40, 0.055)';
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
   const wmText = 'ডেমো ডেটা – বাস্তব রেকর্ড নয়';
 
-  for (let wy = -height * 1.5; wy < height * 2; wy += 150) {
-    for (let wx = -width * 1.5; wx < width * 2; wx += 380) {
+  for (let wy = -height * 1.2; wy < height * 1.8; wy += 520) {
+    for (let wx = -width * 1.2; wx < width * 1.8; wx += 720) {
       ctx.fillText(wmText, wx, wy);
     }
   }
@@ -464,24 +464,24 @@ export async function getMouzaSheetDataUrl(
 
         // Station circle with center dot (⊙)
         ctx.beginPath();
-        ctx.arc(px, py, 4.5, 0, Math.PI * 2);
+        ctx.arc(px, py, 6.5, 0, Math.PI * 2);
         ctx.stroke();
         ctx.beginPath();
-        ctx.arc(px, py, 1.5, 0, Math.PI * 2);
+        ctx.arc(px, py, 2.0, 0, Math.PI * 2);
         ctx.fill();
 
-        // Tiny Bengali station number
-        ctx.font = '600 12px "Noto Serif Bengali", serif';
-        ctx.fillText(toBanglaDigits(stationNo++), px + 7, py - 4);
+        // Clear Bengali station number
+        ctx.font = '700 16px "Noto Serif Bengali", serif';
+        ctx.fillText(toBanglaDigits(stationNo++), px + 9, py - 4);
         ctx.restore();
       }
     }
   }
 
-  // 8. Dag Numbers in Bangla digits (Neat penmanship, exactly like reference)
+  // 8. Dag Numbers in Bangla digits (Neat penmanship, bold and clearly legible)
   ctx.save();
-  ctx.font = '600 24px "Noto Serif Bengali", serif';
-  ctx.fillStyle = '#261E17'; // Carbon dip-pen ink
+  ctx.font = '700 34px "Noto Serif Bengali", serif';
+  ctx.fillStyle = '#1D1610'; // Deep carbon dip-pen ink
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
 
@@ -711,8 +711,8 @@ export async function getMouzaSheetDataUrl(
 
   // 12. Cadastral Schedule Table ("দাগ ও খতিয়ান সূচি", matching bottom-left of reference)
   ctx.save();
-  const tblW = 320;
-  const tblH = 135;
+  const tblW = 340;
+  const tblH = 155;
   const tblX = 55;
   const tblY = height - tblH - 45;
 
@@ -723,14 +723,14 @@ export async function getMouzaSheetDataUrl(
   ctx.lineWidth = 1.4;
   ctx.strokeRect(tblX, tblY, tblW, tblH);
 
-  ctx.font = 'bold 12.5px "Noto Serif Bengali", serif';
+  ctx.font = '700 15px "Noto Serif Bengali", serif';
   ctx.fillStyle = '#261E17';
   ctx.textAlign = 'center';
-  ctx.fillText('দাগ ও খতিয়ান তফসিল (নমুনা)', tblX + tblW / 2, tblY + 18);
+  ctx.fillText('দাগ ও খতিয়ান তফসিল (নমুনা)', tblX + tblW / 2, tblY + 20);
 
   // Table grid
-  const colX = [tblX, tblX + 65, tblX + 145, tblX + 225, tblX + tblW];
-  const rowY = [tblY + 28, tblY + 48, tblY + 68, tblY + 88, tblY + 108, tblY + tblH];
+  const colX = [tblX, tblX + 70, tblX + 155, tblX + 240, tblX + tblW];
+  const rowY = [tblY + 30, tblY + 54, tblY + 78, tblY + 102, tblY + 126, tblY + tblH];
 
   ctx.lineWidth = 0.8;
   for (const y of rowY) {
@@ -741,17 +741,17 @@ export async function getMouzaSheetDataUrl(
   }
   for (const x of colX) {
     ctx.beginPath();
-    ctx.moveTo(x, tblY + 28);
+    ctx.moveTo(x, tblY + 30);
     ctx.lineTo(x, tblY + tblH);
     ctx.stroke();
   }
 
   // Table Headers
-  ctx.font = '600 11px "Noto Serif Bengali", serif';
-  ctx.fillText('দাগ নং', (colX[0]! + colX[1]!) / 2, tblY + 42);
-  ctx.fillText('খতিয়ান', (colX[1]! + colX[2]!) / 2, tblY + 42);
-  ctx.fillText('শ্রেণি', (colX[2]! + colX[3]!) / 2, tblY + 42);
-  ctx.fillText('পরিমাণ', (colX[3]! + colX[4]!) / 2, tblY + 42);
+  ctx.font = '700 13px "Noto Serif Bengali", serif';
+  ctx.fillText('দাগ নং', (colX[0]! + colX[1]!) / 2, tblY + 46);
+  ctx.fillText('খতিয়ান', (colX[1]! + colX[2]!) / 2, tblY + 46);
+  ctx.fillText('শ্রেণি', (colX[2]! + colX[3]!) / 2, tblY + 46);
+  ctx.fillText('পরিমাণ', (colX[3]! + colX[4]!) / 2, tblY + 46);
 
   // Table Rows (Sample entries matching scenarios)
   const sampleRows = [
@@ -761,9 +761,9 @@ export async function getMouzaSheetDataUrl(
     { dag: '১০৪', khatian: '০৪', cls: 'ভিটা', area: '০.২৮' },
   ];
 
-  ctx.font = '500 11px "Noto Serif Bengali", serif';
+  ctx.font = '600 13px "Noto Serif Bengali", serif';
   sampleRows.forEach((r, idx) => {
-    const yCenter = rowY[idx + 1]! + 14;
+    const yCenter = rowY[idx + 1]! + 16;
     ctx.fillText(r.dag, (colX[0]! + colX[1]!) / 2, yCenter);
     ctx.fillText(r.khatian, (colX[1]! + colX[2]!) / 2, yCenter);
     ctx.fillText(r.cls, (colX[2]! + colX[3]!) / 2, yCenter);

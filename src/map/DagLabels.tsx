@@ -36,16 +36,16 @@ export const DagLabels: React.FC<DagLabelsProps> = ({ map, dags, lang, sheetOpac
         el.className =
           'dag-marker-label pointer-events-none select-none transition-opacity duration-200';
         el.textContent = text;
-        el.style.fontSize = '11px';
+        el.style.fontSize = '12px';
         el.style.fontWeight = '700';
         el.style.lineHeight = '1.1';
         el.style.fontFamily = lang === 'bn' ? '"Noto Serif Bengali", serif' : 'Inter, sans-serif';
         el.style.color = '#3D3730';
-        el.style.backgroundColor = 'rgba(247, 243, 235, 0.90)';
-        el.style.border = '1px solid rgba(92, 85, 73, 0.35)';
-        el.style.padding = '2px 4px';
-        el.style.borderRadius = '3px';
-        el.style.boxShadow = '0 1px 2px rgba(0, 0, 0, 0.08)';
+        el.style.backgroundColor = 'rgba(247, 243, 235, 0.92)';
+        el.style.border = '1px solid rgba(92, 85, 73, 0.40)';
+        el.style.padding = '2px 5px';
+        el.style.borderRadius = '4px';
+        el.style.boxShadow = '0 1px 2px rgba(0, 0, 0, 0.10)';
 
         const marker = new maplibregl.Marker({
           element: el,

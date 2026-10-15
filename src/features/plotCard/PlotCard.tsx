@@ -63,7 +63,7 @@ export const PlotCard: React.FC<PlotCardProps> = ({
   return (
     <div className={`space-y-4 ${className}`}>
       {/* Sticky Segmented Tab Controls */}
-      <div className="sticky top-0 z-10 bg-paper/95 backdrop-blur-xs py-1">
+      <div className="sticky top-0 z-10 bg-paper-2/95 backdrop-blur-xs py-1">
         <Segmented options={tabs} value={currentTab} onChange={setTab} className="w-full" />
       </div>
 

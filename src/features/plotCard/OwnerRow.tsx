@@ -14,7 +14,14 @@ export const OwnerRow: React.FC<{ owner: OwnerRowType }> = ({ owner }) => {
   const { t, lang } = useT();
 
   const displayName = lang === 'bn' ? owner.nameBn : owner.nameEn;
-  const displayShare = lang === 'bn' ? toBanglaDigits(owner.share) : owner.share;
+  const isWhole = owner.share === '1' || owner.share === '1/1';
+  const displayShare = isWhole
+    ? lang === 'bn'
+      ? '১/১ (সম্পূর্ণ)'
+      : '1/1 (Full)'
+    : lang === 'bn'
+      ? toBanglaDigits(owner.share)
+      : owner.share;
   const displayAreaDecimal = formatDecimal(owner.areaDecimal, lang);
   const displayKatha = formatDecimal(decimalToKatha(owner.areaDecimal), lang);
 
@@ -73,8 +80,10 @@ export const OwnersList: React.FC<OwnerSectionProps> = ({ owners, className = ''
             <User className="w-3.5 h-3.5 text-ok" />
             <span>{t('currentOwners')}</span>
           </div>
-          <span className="text-[11px] font-medium text-ink-3">
-            ({lang === 'bn' ? toBanglaDigits(validOwners.length) : validOwners.length} জন)
+          <span className="text-xs font-semibold text-ink-2 px-2 py-0.5 rounded-full bg-paper-3/70 border border-line">
+            {lang === 'bn'
+              ? `${toBanglaDigits(validOwners.length)} জন`
+              : `${validOwners.length} ${validOwners.length === 1 ? 'owner' : 'owners'}`}
           </span>
         </div>
 
@@ -100,7 +109,14 @@ export const OwnersList: React.FC<OwnerSectionProps> = ({ owners, className = ''
           <div className="space-y-2 pt-1">
             {disputedClaims.map((claim, idx) => {
               const name = lang === 'bn' ? claim.nameBn : claim.nameEn;
-              const shareStr = lang === 'bn' ? toBanglaDigits(claim.share) : claim.share;
+              const isWholeClaim = claim.share === '1' || claim.share === '1/1';
+              const shareStr = isWholeClaim
+                ? lang === 'bn'
+                  ? '১/১ (সম্পূর্ণ)'
+                  : '1/1 (Full)'
+                : lang === 'bn'
+                  ? toBanglaDigits(claim.share)
+                  : claim.share;
               const area = formatDecimal(claim.areaDecimal, lang);
 
               return (
