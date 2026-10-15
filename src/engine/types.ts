@@ -137,6 +137,27 @@ export interface FaraizRow {
   ruleKey: string;
 }
 
+export type FaraizUnsupportedReason =
+  'NO_SON' | 'UNSUPPORTED_RELATION' | 'HINDU_LAW' | 'NO_HEIRS' | 'INVALID_SPOUSE';
+
+export interface FaraizSupportedResult {
+  supported: true;
+  shares: FaraizRow[];
+}
+
+export interface FaraizUnsupportedResult {
+  supported: false;
+  reason: FaraizUnsupportedReason;
+}
+
+export type FaraizResult = FaraizSupportedResult | FaraizUnsupportedResult;
+
+export interface FaraizInput {
+  deceasedSex: 'M' | 'F';
+  law?: 'muslim' | 'hindu' | string;
+  heirs: { personId: string; relation: Relation | string }[];
+}
+
 export interface Issue {
   code: IssueCode;
   severity: 'critical' | 'warning' | 'info';
