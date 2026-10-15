@@ -111,68 +111,6 @@ export const MapScreen: React.FC = () => {
 
   return (
     <div className="relative w-screen h-screen overflow-hidden bg-paper flex flex-col lg:flex-row">
-      {/* Top bar overlaid on map */}
-      <header className="absolute top-3 left-3 right-3 z-20 flex items-center justify-between gap-2 pointer-events-none">
-        <div className="flex items-center gap-2 pointer-events-auto">
-          <button
-            type="button"
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="p-2.5 bg-paper-2 border border-line rounded-xl text-ink shadow-paper flex items-center justify-center hover:bg-paper-3 transition-colors cursor-pointer"
-            aria-label={t('menu')}
-          >
-            {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </button>
-
-          {/* Search pill */}
-          <div className="flex items-center gap-2 px-3 py-2 bg-paper-2 border border-line rounded-full shadow-paper text-ink-2 hover:border-ink/20 cursor-pointer text-sm">
-            <Search className="w-4 h-4 text-ink-3" />
-            <span className="font-sans text-xs sm:text-sm">{t('searchPlaceholder')}</span>
-          </div>
-        </div>
-
-        <div className="flex items-center gap-2 pointer-events-auto">
-          {/* Risk colors toggle */}
-          <button
-            type="button"
-            onClick={() => setShowRiskColors(!showRiskColors)}
-            className={`px-3 py-2 border rounded-full shadow-paper flex items-center gap-1.5 text-xs font-semibold transition-colors cursor-pointer ${
-              showRiskColors
-                ? 'bg-accent text-white border-accent'
-                : 'bg-paper-2 text-ink border-line hover:bg-paper-3'
-            }`}
-            aria-label={t('riskColors')}
-            title={t('riskColors')}
-          >
-            <ShieldAlert className="w-3.5 h-3.5" />
-            <span className="hidden sm:inline">{t('riskColors')}</span>
-          </button>
-
-          {/* Quick install button if available */}
-          {canInstall && (
-            <button
-              type="button"
-              onClick={promptInstall}
-              className="px-3 py-2 bg-paper-2 border border-line rounded-full shadow-paper text-accent flex items-center gap-1.5 text-xs font-semibold hover:bg-paper-3 transition-colors cursor-pointer"
-              aria-label={t('install')}
-            >
-              <Download className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">{t('install')}</span>
-            </button>
-          )}
-
-          {/* Language toggle */}
-          <button
-            type="button"
-            onClick={toggleLanguage}
-            className="px-3 py-2 bg-paper-2 border border-line rounded-full shadow-paper text-ink flex items-center gap-1.5 text-xs font-semibold hover:bg-paper-3 transition-colors cursor-pointer"
-            aria-label={t('language')}
-          >
-            <Globe className="w-3.5 h-3.5 text-ink-3" />
-            <span>{lang === 'bn' ? 'English' : 'বাংলা'}</span>
-          </button>
-        </div>
-      </header>
-
       {/* Slide-out / Popover Menu Drawer */}
       {menuOpen && (
         <div className="fixed inset-0 z-40 flex">
@@ -289,6 +227,68 @@ export const MapScreen: React.FC = () => {
 
       {/* Main Map Area */}
       <main className="relative flex-1 w-full h-full flex items-center justify-center bg-paper-3/40">
+        {/* Top bar overlaid on map (positions within map area on mobile & desktop) */}
+        <header className="absolute top-3 left-3 right-3 z-20 flex items-center justify-between gap-2 pointer-events-none">
+          <div className="flex items-center gap-2 pointer-events-auto">
+            <button
+              type="button"
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="p-2.5 bg-paper-2 border border-line rounded-xl text-ink shadow-paper flex items-center justify-center hover:bg-paper-3 transition-colors cursor-pointer"
+              aria-label={t('menu')}
+            >
+              {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
+
+            {/* Search pill */}
+            <div className="flex items-center gap-2 px-3 py-2 bg-paper-2 border border-line rounded-full shadow-paper text-ink-2 hover:border-ink/20 cursor-pointer text-sm">
+              <Search className="w-4 h-4 text-ink-3" />
+              <span className="font-sans text-xs sm:text-sm">{t('searchPlaceholder')}</span>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2 pointer-events-auto">
+            {/* Protection mode / Risk colors toggle */}
+            <button
+              type="button"
+              onClick={() => setShowRiskColors(!showRiskColors)}
+              className={`px-3 py-2 border rounded-full shadow-paper flex items-center gap-1.5 text-xs font-semibold transition-colors cursor-pointer ${
+                showRiskColors
+                  ? 'bg-accent text-white border-accent'
+                  : 'bg-paper-2 text-ink border-line hover:bg-paper-3'
+              }`}
+              aria-label={t('riskColors')}
+              title={t('riskColors')}
+            >
+              <ShieldAlert className="w-3.5 h-3.5" />
+              <span className="inline">{t('riskColors')}</span>
+            </button>
+
+            {/* Quick install button if available */}
+            {canInstall && (
+              <button
+                type="button"
+                onClick={promptInstall}
+                className="px-3 py-2 bg-paper-2 border border-line rounded-full shadow-paper text-accent flex items-center gap-1.5 text-xs font-semibold hover:bg-paper-3 transition-colors cursor-pointer"
+                aria-label={t('install')}
+              >
+                <Download className="w-3.5 h-3.5" />
+                <span className="hidden sm:inline">{t('install')}</span>
+              </button>
+            )}
+
+            {/* Language toggle */}
+            <button
+              type="button"
+              onClick={toggleLanguage}
+              className="px-3 py-2 bg-paper-2 border border-line rounded-full shadow-paper text-ink flex items-center gap-1.5 text-xs font-semibold hover:bg-paper-3 transition-colors cursor-pointer"
+              aria-label={t('language')}
+            >
+              <Globe className="w-3.5 h-3.5 text-ink-3" />
+              <span>{lang === 'bn' ? 'English' : 'বাংলা'}</span>
+            </button>
+          </div>
+        </header>
+
         {/* Persistent Demo Watermark */}
         <div className="absolute top-16 left-3 z-20 pointer-events-none">
           <Watermark />
