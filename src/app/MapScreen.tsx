@@ -10,7 +10,6 @@ import {
   Info,
   CheckCircle,
   Sparkles,
-  Sliders,
   ShieldAlert,
   RotateCw,
   MousePointerClick,
@@ -247,40 +246,6 @@ export const MapScreen: React.FC = () => {
                 </Badge>
               </button>
             </nav>
-
-            {/* Secondary Navigation & Developer tools */}
-            <div className="pt-2 border-t border-line space-y-1">
-              <div className="text-[10px] font-semibold text-ink-3 uppercase px-3 pb-1 tracking-wider">
-                অতিরিক্ত টুলস
-              </div>
-
-              <Link
-                to="/verify"
-                onClick={() => setMenuOpen(false)}
-                className="flex items-center gap-3 px-3 py-2 rounded-xl text-xs font-medium text-ink-2 hover:text-ink hover:bg-paper-2 transition-colors"
-              >
-                <CheckCircle className="w-3.5 h-3.5" />
-                <span>{t('verify')}</span>
-              </Link>
-
-              <Link
-                to="/present"
-                onClick={() => setMenuOpen(false)}
-                className="flex items-center gap-3 px-3 py-2 rounded-xl text-xs font-medium text-ink-2 hover:text-ink hover:bg-paper-2 transition-colors"
-              >
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>{t('present')}</span>
-              </Link>
-
-              <Link
-                to="/dev/ui"
-                onClick={() => setMenuOpen(false)}
-                className="flex items-center gap-3 px-3 py-2 rounded-xl text-xs font-medium text-ink-2 hover:text-ink hover:bg-paper-2 transition-colors"
-              >
-                <Sliders className="w-3.5 h-3.5" />
-                <span>{t('devUi')}</span>
-              </Link>
-            </div>
 
             <div className="pt-3 border-t border-line text-center mt-auto">
               <Watermark />
