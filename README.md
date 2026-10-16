@@ -123,8 +123,9 @@ We are grateful to the authors and maintainers of the following open-source libr
 ## Team
 
 - **Student Lead / Developer:** Siyam Ibrahim (Daffodil International University)
-- **Co-developer / Teammate:** _(DIU Student Teammate)_
-- **Faculty Mentor:** _(DIU Faculty Advisor)_
+- **Co-developer / Teammate:** Sunbeam Sikdar (Daffodil International University)
+- **Faculty Mentor :** Mahimul Islam Nadim (Daffodil International University)
+- **Industry Support Mentor:** Hanjala Habib Sadik
 
 ---
 
