@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback } from 'react';
+import React, { useEffect, useCallback, useState } from 'react';
 import { useParams, useNavigate, Link, Outlet } from 'react-router-dom';
 import {
   Search,
@@ -13,12 +13,15 @@ import {
   Sliders,
   ShieldAlert,
   RotateCw,
+  MousePointerClick,
+  MapPinOff,
 } from 'lucide-react';
 import { useT } from '@/i18n/useT';
 import { useAppStore } from '@/state/useAppStore';
 import { useDataStore } from '@/data/useDataStore';
 import { Watermark, Sheet, Badge, Button, Skeleton, useToast } from '@/ui';
 import { toBanglaDigits } from '@/lib/format';
+import { storage } from '@/lib/storage';
 import { useInstallPrompt } from '@/lib/pwa';
 import { MapView } from '@/map/MapView';
 import { useGeolocation } from '@/map/useGeolocation';
@@ -48,11 +51,16 @@ export const MapScreen: React.FC = () => {
   const { data, isLoading, error, loadData } = useDataStore();
   const { canInstall, isInstalled, isIOS, promptInstall } = useInstallPrompt();
 
-  const [activeTab, setActiveTab] = React.useState('summary');
-  const [menuOpen, setMenuOpen] = React.useState(false);
-  const [searchOpen, setSearchOpen] = React.useState(false);
-  const [demoOpen, setDemoOpen] = React.useState(false);
-  const [permissionHelpOpen, setPermissionHelpOpen] = React.useState(false);
+  const [activeTab, setActiveTab] = useState('summary');
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [demoOpen, setDemoOpen] = useState(false);
+  const [permissionHelpOpen, setPermissionHelpOpen] = useState(false);
+
+  // First-open coach chip state (persists until first plot selection)
+  const [hasSeenHint, setHasSeenHint] = useState<boolean>(() => {
+    return storage.get<boolean>('jb.hint.firstTapDone', false);
+  });
 
   const { addToast } = useToast();
   const { state: gpsState, dagId: gpsDagId, startLocating } = useGeolocation();
@@ -74,6 +82,8 @@ export const MapScreen: React.FC = () => {
     (id: string | null) => {
       setSelectedDagId(id);
       if (id) {
+        setHasSeenHint(true);
+        storage.set('jb.hint.firstTapDone', true);
         setSheetSnap('half');
         navigate(`/dag/${id}`, { replace: true });
       } else {
@@ -82,6 +92,11 @@ export const MapScreen: React.FC = () => {
     },
     [setSelectedDagId, setSheetSnap, navigate],
   );
+
+  const handleDismissHint = () => {
+    setHasSeenHint(true);
+    storage.set('jb.hint.firstTapDone', true);
+  };
 
   const toggleLanguage = () => {
     setLang(lang === 'bn' ? 'en' : 'bn');
@@ -106,21 +121,14 @@ export const MapScreen: React.FC = () => {
     }
   };
 
-  // Selected dag metadata and analysis
+  // Selected dag metadata and analysis (safe lookups prevent throwing on invalid IDs)
   const activeDagId = selectedDagId ?? (data?.dags.features[0]?.properties.id || '101');
   const activeFeature = data?.dags.features.find(
     (f) => String(f.properties.id || f.id) === activeDagId,
   );
-  const activeAnalysis = data ? analyseDag(activeDagId, data) : null;
+  const activeAnalysis = data && activeFeature ? analyseDag(activeDagId, data) : null;
 
   const displayDagNo = lang === 'bn' ? toBanglaDigits(activeDagId) : activeDagId;
-
-  const verdictVariant =
-    activeAnalysis?.verdict === 'red'
-      ? 'bad'
-      : activeAnalysis?.verdict === 'yellow'
-        ? 'warn'
-        : 'ok';
 
   const verdictLabel =
     activeAnalysis?.verdict === 'red'
@@ -139,7 +147,8 @@ export const MapScreen: React.FC = () => {
             onClick={() => setMenuOpen(false)}
           />
 
-          <div className="relative z-50 w-80 max-w-[85vw] h-full bg-paper border-r border-line shadow-2xl flex flex-col p-6 space-y-6 overflow-y-auto">
+          <div className="relative z-50 w-80 max-w-[85vw] h-full bg-paper border-r border-line shadow-2xl flex flex-col p-6 space-y-5 overflow-y-auto">
+            {/* Header */}
             <div className="flex items-center justify-between pb-4 border-b border-line">
               <div className="flex items-center gap-3">
                 <img
@@ -155,13 +164,14 @@ export const MapScreen: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setMenuOpen(false)}
-                className="p-1.5 text-ink-3 hover:text-ink rounded-lg"
+                className="p-1.5 text-ink-3 hover:text-ink rounded-lg cursor-pointer"
                 aria-label={t('close')}
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
 
+            {/* Install PWA Section (when available / iOS hint / installed badge) */}
             {canInstall && (
               <div className="p-3 bg-paper-2 border border-line rounded-xl space-y-2">
                 <div className="text-xs font-semibold text-ink">
@@ -187,47 +197,13 @@ export const MapScreen: React.FC = () => {
             {isInstalled && (
               <div className="flex items-center gap-2 px-3 py-2 bg-paper-2 border border-line rounded-xl text-xs text-ink-2">
                 <CheckCircle className="w-4 h-4 text-ok" />
-                <span>অ্যাপটি ইনস্টল করা হয়েছে</span>
+                <span>{t('installedApp')}</span>
               </div>
             )}
 
-            <nav className="flex-1 space-y-1">
-              <Link
-                to="/"
-                onClick={() => setMenuOpen(false)}
-                className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-ink hover:bg-paper-2 transition-colors"
-              >
-                <Globe className="w-4 h-4 text-ink-2" />
-                <span>{t('home')}</span>
-              </Link>
-
-              <Link
-                to="/about"
-                onClick={() => setMenuOpen(false)}
-                className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-ink hover:bg-paper-2 transition-colors"
-              >
-                <Info className="w-4 h-4 text-ink-2" />
-                <span>{t('about')}</span>
-              </Link>
-
-              <Link
-                to="/verify"
-                onClick={() => setMenuOpen(false)}
-                className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-ink hover:bg-paper-2 transition-colors"
-              >
-                <CheckCircle className="w-4 h-4 text-ink-2" />
-                <span>{t('verify')}</span>
-              </Link>
-
-              <Link
-                to="/present"
-                onClick={() => setMenuOpen(false)}
-                className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-ink hover:bg-paper-2 transition-colors"
-              >
-                <Sparkles className="w-4 h-4 text-ink-2" />
-                <span>{t('present')}</span>
-              </Link>
-
+            {/* Primary Menu Actions: ডেমো, সম্পর্কে, ভাষা */}
+            <nav className="space-y-1">
+              {/* 1. ডেমো */}
               <button
                 type="button"
                 onClick={() => {
@@ -245,17 +221,68 @@ export const MapScreen: React.FC = () => {
                 </span>
               </button>
 
+              {/* 2. সম্পর্কে */}
               <Link
-                to="/dev/ui"
+                to="/about"
                 onClick={() => setMenuOpen(false)}
                 className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-ink hover:bg-paper-2 transition-colors"
               >
-                <Sliders className="w-4 h-4 text-ink-2" />
-                <span>{t('devUi')}</span>
+                <Info className="w-4 h-4 text-ink-2" />
+                <span>{t('about')}</span>
               </Link>
+
+              {/* 3. ভাষা */}
+              <button
+                type="button"
+                onClick={toggleLanguage}
+                className="w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-medium text-ink hover:bg-paper-2 transition-colors cursor-pointer text-left"
+                aria-label={t('language')}
+              >
+                <div className="flex items-center gap-3">
+                  <Globe className="w-4 h-4 text-ink-2" />
+                  <span>{t('language')}</span>
+                </div>
+                <Badge variant="neutral" size="sm">
+                  {lang === 'bn' ? 'বাংলা (BN)' : 'English (EN)'}
+                </Badge>
+              </button>
             </nav>
 
-            <div className="pt-4 border-t border-line text-center">
+            {/* Secondary Navigation & Developer tools */}
+            <div className="pt-2 border-t border-line space-y-1">
+              <div className="text-[10px] font-semibold text-ink-3 uppercase px-3 pb-1 tracking-wider">
+                অতিরিক্ত টুলস
+              </div>
+
+              <Link
+                to="/verify"
+                onClick={() => setMenuOpen(false)}
+                className="flex items-center gap-3 px-3 py-2 rounded-xl text-xs font-medium text-ink-2 hover:text-ink hover:bg-paper-2 transition-colors"
+              >
+                <CheckCircle className="w-3.5 h-3.5" />
+                <span>{t('verify')}</span>
+              </Link>
+
+              <Link
+                to="/present"
+                onClick={() => setMenuOpen(false)}
+                className="flex items-center gap-3 px-3 py-2 rounded-xl text-xs font-medium text-ink-2 hover:text-ink hover:bg-paper-2 transition-colors"
+              >
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>{t('present')}</span>
+              </Link>
+
+              <Link
+                to="/dev/ui"
+                onClick={() => setMenuOpen(false)}
+                className="flex items-center gap-3 px-3 py-2 rounded-xl text-xs font-medium text-ink-2 hover:text-ink hover:bg-paper-2 transition-colors"
+              >
+                <Sliders className="w-3.5 h-3.5" />
+                <span>{t('devUi')}</span>
+              </Link>
+            </div>
+
+            <div className="pt-3 border-t border-line text-center mt-auto">
               <Watermark />
             </div>
           </div>
@@ -264,7 +291,7 @@ export const MapScreen: React.FC = () => {
 
       {/* Main Map Area */}
       <main className="relative flex-1 w-full h-full flex items-center justify-center bg-paper-3/40">
-        {/* Top bar overlaid on map (positions within map area on mobile & desktop) */}
+        {/* Top bar overlaid on map */}
         <header className="absolute top-3 left-3 right-3 z-20 flex items-center justify-between gap-2 pointer-events-none">
           <div className="flex items-center gap-2 pointer-events-auto">
             <button
@@ -371,6 +398,21 @@ export const MapScreen: React.FC = () => {
           />
         )}
 
+        {/* First-Open Hint Chip (Disappears permanently upon first plot selection) */}
+        {!hasSeenHint && !selectedDagId && data && (
+          <div className="absolute bottom-48 sm:bottom-52 left-1/2 -translate-x-1/2 z-20 pointer-events-auto">
+            <button
+              type="button"
+              onClick={handleDismissHint}
+              className="px-4 py-2 bg-paper-2 border border-accent/40 rounded-full shadow-paper text-ink flex items-center gap-2 text-xs sm:text-sm font-semibold hover:bg-paper-3 transition-colors cursor-pointer animate-bounce"
+              aria-label={t('firstOpenHint')}
+            >
+              <MousePointerClick className="w-4 h-4 text-accent" />
+              <span>{t('firstOpenHint')}</span>
+            </button>
+          </div>
+        )}
+
         {/* GPS FAB */}
         <div className="absolute right-4 bottom-44 sm:bottom-48 z-20 pointer-events-auto">
           <GPSFab state={gpsState} dagId={gpsDagId} onPress={handleGpsPress} />
@@ -405,14 +447,14 @@ export const MapScreen: React.FC = () => {
               <span className="font-serif text-lg font-bold text-ink">
                 {t('dag')} {displayDagNo}
               </span>
-              <Badge variant={verdictVariant} size="sm">
-                {verdictLabel}
+              <Badge variant="warn" size="sm">
+                {t('plotNotFound', { n: displayDagNo })}
               </Badge>
             </div>
           )
         }
       >
-        {activeAnalysis && data && (
+        {activeAnalysis && activeFeature && data ? (
           <PlotCard
             analysis={activeAnalysis}
             events={data.events.filter((e) => e.dagId === activeDagId)}
@@ -422,6 +464,23 @@ export const MapScreen: React.FC = () => {
             activeTab={activeTab}
             onTabChange={setActiveTab}
           />
+        ) : (
+          <div className="p-6 text-center space-y-4">
+            <div className="w-12 h-12 rounded-full bg-warn-wash border border-warn/30 text-warn mx-auto flex items-center justify-center">
+              <MapPinOff className="w-6 h-6" />
+            </div>
+            <div className="space-y-1">
+              <h2 className="font-serif text-lg font-bold text-ink">
+                {t('plotNotFound', { n: displayDagNo })}
+              </h2>
+              <p className="text-xs text-ink-2">{t('plotNotFoundDesc')}</p>
+            </div>
+            <div className="pt-2">
+              <Button size="sm" variant="primary" onClick={() => handleSelectDag('101')}>
+                {t('goToFirstDag')}
+              </Button>
+            </div>
+          </div>
         )}
       </Sheet>
 

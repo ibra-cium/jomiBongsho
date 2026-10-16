@@ -12,3 +12,4 @@ export * from './VerdictStamp';
 export * from './Stamp';
 export * from './Sheet';
 export * from './UpdateToast';
+export * from './ErrorBoundary';

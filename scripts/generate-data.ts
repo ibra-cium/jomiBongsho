@@ -70,7 +70,7 @@ function addDays(isoDate: string, days: number): string {
   return formatIsoDate(d);
 }
 
-export function generateData() {
+export function generateData(targetDir: string = OUTPUT_DIR) {
   const rng = createRng(SEED);
 
   // 1. Generate People pool (140+ people)
@@ -682,28 +682,28 @@ export function generateData() {
     feeRules: FEE_RULES,
   });
 
-  // 10. Write output files to public/data/
-  if (!fs.existsSync(OUTPUT_DIR)) {
-    fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+  // 10. Write output files to target directory
+  if (!fs.existsSync(targetDir)) {
+    fs.mkdirSync(targetDir, { recursive: true });
   }
 
-  fs.writeFileSync(path.join(OUTPUT_DIR, 'mouza.json'), JSON.stringify(mouza, null, 2) + '\n');
+  fs.writeFileSync(path.join(targetDir, 'mouza.json'), JSON.stringify(mouza, null, 2) + '\n');
   fs.writeFileSync(
-    path.join(OUTPUT_DIR, 'dags.geojson'),
+    path.join(targetDir, 'dags.geojson'),
     JSON.stringify(dagsGeojson, null, 2) + '\n',
   );
-  fs.writeFileSync(path.join(OUTPUT_DIR, 'people.json'), JSON.stringify(people, null, 2) + '\n');
-  fs.writeFileSync(path.join(OUTPUT_DIR, 'events.json'), JSON.stringify(allEvents, null, 2) + '\n');
+  fs.writeFileSync(path.join(targetDir, 'people.json'), JSON.stringify(people, null, 2) + '\n');
+  fs.writeFileSync(path.join(targetDir, 'events.json'), JSON.stringify(allEvents, null, 2) + '\n');
   fs.writeFileSync(
-    path.join(OUTPUT_DIR, 'scenarios.json'),
+    path.join(targetDir, 'scenarios.json'),
     JSON.stringify(SCENARIOS, null, 2) + '\n',
   );
   fs.writeFileSync(
-    path.join(OUTPUT_DIR, 'feeRules.json'),
+    path.join(targetDir, 'feeRules.json'),
     JSON.stringify(FEE_RULES, null, 2) + '\n',
   );
 
-  console.log(`Successfully generated demo mouza data in ${OUTPUT_DIR}:`);
+  console.log(`Successfully generated demo mouza data in ${targetDir}:`);
   console.log(`  - 48 Dags (101-148)`);
   console.log(`  - ${people.length} People`);
   console.log(`  - ${allEvents.length} Land Events`);

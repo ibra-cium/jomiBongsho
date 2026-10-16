@@ -379,6 +379,39 @@ export const bn = {
   matchedSurvey: '{survey} {n} মিলেছে',
   searchHint: 'বর্তমান বা পুরনো খতিয়ানের দাগ নম্বর দিয়ে খুঁজুন',
   searchExamples: 'উদা: ১০১, 103, CS 1, SA 12, RS 201',
+
+  // Polish & Demo Pass (P1-T12)
+  firstOpenHint: 'যেকোনো দাগে চাপ দিন',
+  somethingWentWrong: 'কিছু ভুল হয়েছে',
+  somethingWentWrongDesc:
+    'অ্যাপটিতে একটি সাময়িক সমস্যা দেখা দিয়েছে। অনুগ্রহ করে নিচের বোতাম চেপে পুনরায় চেষ্টা করুন।',
+  tryAgain: 'আবার চেষ্টা করুন',
+  pageNotFound: 'পৃষ্ঠাটি পাওয়া যায়নি (৪০৪)',
+  pageNotFoundDesc: 'আপনি যে পৃষ্ঠাটি খুঁজছেন তা বিদ্যমান নেই বা সরানো হয়েছে।',
+  backToMap: 'মানচিত্রে ফিরে যান',
+  plotNotFound: 'দাগ #{n} পাওয়া যায়নি',
+  plotNotFoundDesc: 'এই মৌজায় ১০১ থেকে ১৪৮ নম্বর দাগ রয়েছে।',
+  goToFirstDag: 'প্রথম দাগে যান (১০১)',
+  aboutSubtitle: 'জমির বংশ জানুন, নিরাপদে কিনুন',
+  aboutWhatIsTitle: 'এটি কী এবং কেন?',
+  aboutWhatIsDesc:
+    'জমি বংশ একটি মানচিত্র-কেন্দ্রিক ওয়েব অ্যাপ (PWA), যা জমি কেনার আগে যেকোনো দাগে (প্লটে) ট্যাপ করে মালিকানা যাচাই, ফারায়েজ অনুযায়ী অংশের বৈধতা, বাজারের প্রকৃত মূল্য ও দলিলের পূর্ণ সরকারি রেজিস্ট্রেশন খরচ এক নজরে জানতে সাহায্য করে। ল্যান্ডটেক ২০২৬ (DIU) হ্যাকাথনের জন্য তৈরি।',
+  aboutDisclaimerTitle: 'ডেমো ডেটা ঘোষণা (বাস্তব রেকর্ড নয়)',
+  aboutDisclaimerDesc:
+    'এই অ্যাপের প্রতিটি নাম, দাগ নম্বর, খতিয়ান ও দলিল সম্পূর্ণভাবে কাল্পনিক ও কৃত্রিম (সিন্থেটিক)। এটি কোনো সরকারি পোর্টাল (land.gov.bd বা eporcha) থেকে নেওয়া নয় বা স্ক্র্যাপ করা হয়নি। এটি কেবল ক্রয়পূর্ব সিদ্ধান্ত সহায়ক প্রোটোটাইপ, মালিকানার আইনি সনদ নয়।',
+  aboutSourcesTitle: 'উপাত্ত ও তথ্যের উৎস',
+  aboutSourcesMouza: 'সিন্থেটিক ডেমো মৌজা: "নতুন চর", মানিকগঞ্জ সদর (বীজ: jomi-bongsho-2026)',
+  aboutSourcesMap: 'বেসম্যাপ: OpenFreeMap © OpenMapTiles, তথ্যসূত্র © OpenStreetMap অবদানকারীগণ',
+  aboutSourcesFees:
+    'সরকারি ফি হার: অর্থ মন্ত্রণালয় ও সাব-রেজিস্ট্রি গেজেট রিপোর্ট (২০২৫-২৬ বাজেট)',
+  aboutAiTitle: 'এআই ও প্রযুক্তি ব্যবহারের ঘোষণা',
+  aboutAiDesc:
+    'গুগল অ্যান্টিগ্র্যাভিটি (Antigravity IDE) এবং জেমিনাই (Gemini) মডেলের সহায়তায় কোড তৈরি ও রিফ্যাক্টর করা হয়েছে। ক্লড (Claude) ব্যবহৃত হয়েছে পরিকল্পনা ও স্পেসিফিকেশন তৈরিতে। তবে সকল জমির আইনগত নিয়ম (শেয়ার লেজার, ফারায়েজ ও ফ্রড চেক) টিমের নিজস্ব বিশ্লেষণে তৈরি এবং ১০০% স্বয়ংক্রিয় টেস্ট দ্বারা পরীক্ষিত।',
+  aboutCreditsTitle: 'ওপেন সোর্স ও লাইব্রেরি কৃতজ্ঞতা',
+  aboutCreditsDesc:
+    'MapLibre GL JS, Turf.js, fraction.js, Zustand, React Router, Tailwind CSS, Motion, Lucide Icons, Vite, Vitest এবং @fontsource ফন্ট পরিবার।',
+  aboutVersion: 'সংস্করণ: ০.১.০ (রাউন্ড ১ প্রোটোটাইপ)',
+  installedApp: 'অ্যাপটি ইনস্টল করা আছে',
 };
 
 export type TranslationKey = keyof typeof bn;

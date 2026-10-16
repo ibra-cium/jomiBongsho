@@ -13,6 +13,8 @@ import { DEMO_TODAY } from './config';
 import { generateData } from './generate-data';
 import { SCENARIOS } from './scenarios';
 
+import os from 'node:os';
+
 const DATA_DIR = path.resolve(process.cwd(), 'public/data');
 
 function computeFileHash(filePath: string): string {
@@ -22,23 +24,31 @@ function computeFileHash(filePath: string): string {
 
 describe('Synthetic Data Generator (P1-T02)', () => {
   it('produces byte-identical files when run twice (determinism)', () => {
-    // First run
-    generateData();
-    const files = [
-      'mouza.json',
-      'dags.geojson',
-      'people.json',
-      'events.json',
-      'scenarios.json',
-      'feeRules.json',
-    ];
-    const firstHashes = files.map((file) => computeFileHash(path.join(DATA_DIR, file)));
+    const temp1 = path.join(os.tmpdir(), `jb-data-test1-${Date.now()}`);
+    const temp2 = path.join(os.tmpdir(), `jb-data-test2-${Date.now()}`);
 
-    // Second run
-    generateData();
-    const secondHashes = files.map((file) => computeFileHash(path.join(DATA_DIR, file)));
+    try {
+      // First run
+      generateData(temp1);
+      const files = [
+        'mouza.json',
+        'dags.geojson',
+        'people.json',
+        'events.json',
+        'scenarios.json',
+        'feeRules.json',
+      ];
+      const firstHashes = files.map((file) => computeFileHash(path.join(temp1, file)));
 
-    expect(firstHashes).toEqual(secondHashes);
+      // Second run
+      generateData(temp2);
+      const secondHashes = files.map((file) => computeFileHash(path.join(temp2, file)));
+
+      expect(firstHashes).toEqual(secondHashes);
+    } finally {
+      if (fs.existsSync(temp1)) fs.rmSync(temp1, { recursive: true, force: true });
+      if (fs.existsSync(temp2)) fs.rmSync(temp2, { recursive: true, force: true });
+    }
   });
 
   it('contains exactly 48 dags with IDs 101 to 148', () => {

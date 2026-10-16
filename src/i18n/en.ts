@@ -383,4 +383,38 @@ export const en: Record<TranslationKey, string> = {
   matchedSurvey: 'Matched {survey} {n}',
   searchHint: 'Search by modern BS or historical survey dag numbers',
   searchExamples: 'E.g.: 101, 103, CS 1, SA 12, RS 201',
+
+  // Polish & Demo Pass (P1-T12)
+  firstOpenHint: 'Tap any plot on the map',
+  somethingWentWrong: 'Something went wrong',
+  somethingWentWrongDesc:
+    'An unexpected issue occurred. Please tap below to reload or reset the view.',
+  tryAgain: 'Try Again',
+  pageNotFound: 'Page Not Found (404)',
+  pageNotFoundDesc: 'The page you are looking for does not exist or has been moved.',
+  backToMap: 'Back to Map',
+  plotNotFound: 'Plot #{n} not found',
+  plotNotFoundDesc: 'This mouza contains plots from 101 to 148.',
+  goToFirstDag: 'Go to Plot 101',
+  aboutSubtitle: 'Know your land family tree before buying',
+  aboutWhatIsTitle: 'What is this and why?',
+  aboutWhatIsDesc:
+    'Jomi Bongsho is a map-first PWA where land buyers tap any plot to inspect ownership history, check faraiz inheritance limits, discover authentic market values, and calculate total government registration costs. Built for LandTech 2026 (DIU) Hackathon.',
+  aboutDisclaimerTitle: 'Demo Data Notice (Not Real Records)',
+  aboutDisclaimerDesc:
+    'Every name, plot number, khatian, and deed in this app is synthetic demo data. No government portal (land.gov.bd or eporcha) was scraped or queried. This is a pre-purchase decision support prototype, not an official certificate of title.',
+  aboutSourcesTitle: 'Data Sources',
+  aboutSourcesMouza:
+    'Synthetic demo mouza: "Notun Char", Manikganj Sadar (seed: jomi-bongsho-2026)',
+  aboutSourcesMap: 'Basemap: OpenFreeMap © OpenMapTiles, data © OpenStreetMap contributors',
+  aboutSourcesFees:
+    'Statutory fee rates: Ministry of Finance & Sub-Registry gazette reports (FY2025-26 Budget)',
+  aboutAiTitle: 'AI Tools Disclosure',
+  aboutAiDesc:
+    'Google Antigravity IDE with Gemini models was used for code generation and refactoring. Claude (Anthropic) assisted in concept and ticket planning. All land domain rules (share ledger, faraiz, fraud checks) were strictly designed by our team and verified with 100% automated tests.',
+  aboutCreditsTitle: 'Open-Source Credits',
+  aboutCreditsDesc:
+    'MapLibre GL JS, Turf.js, fraction.js, Zustand, React Router, Tailwind CSS, Motion, Lucide Icons, Vite, Vitest, and @fontsource font packages.',
+  aboutVersion: 'Version: 0.1.0 (Round 1 Prototype)',
+  installedApp: 'App is installed',
 };

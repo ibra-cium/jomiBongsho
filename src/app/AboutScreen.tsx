@@ -1,6 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Download, Share2, CheckCircle2 } from 'lucide-react';
+import {
+  ArrowLeft,
+  Download,
+  Share2,
+  CheckCircle2,
+  ShieldAlert,
+  Database,
+  Cpu,
+  Layers,
+  Sparkles,
+} from 'lucide-react';
 import { useT } from '@/i18n/useT';
 import { Watermark, Button, Badge } from '@/ui';
 import { useInstallPrompt } from '@/lib/pwa';
@@ -11,45 +21,98 @@ export const AboutScreen: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-paper p-4 sm:p-8 flex flex-col items-center">
-      <div className="w-full max-w-xl space-y-6">
+      <div className="w-full max-w-2xl space-y-6">
+        {/* Navigation header */}
         <div className="flex items-center justify-between">
           <Link
             to="/"
-            className="inline-flex items-center gap-1.5 text-sm text-ink-2 hover:text-ink transition-colors"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-ink-2 hover:text-ink transition-colors cursor-pointer"
+            aria-label={t('backToMap')}
           >
             <ArrowLeft className="w-4 h-4" />
-            <span>{t('back')}</span>
+            <span>{t('backToMap')}</span>
           </Link>
           <Watermark />
         </div>
 
+        {/* Hero Card */}
         <div className="bg-paper-2 border border-line rounded-2xl p-6 sm:p-8 shadow-paper space-y-6">
           <div className="flex items-start gap-4">
             <img
               src="/logo.svg"
               alt={t('appName')}
-              className="w-16 h-16 rounded-xl border border-line shadow-sm"
+              className="w-16 h-16 rounded-xl border border-line shadow-xs shrink-0"
             />
-            <div>
-              <h1 className="font-serif text-2xl font-bold text-ink">{t('appName')}</h1>
-              <p className="text-sm font-medium text-accent">{t('appTagline')}</p>
+            <div className="space-y-1">
+              <div className="flex items-center gap-2 flex-wrap">
+                <h1 className="font-serif text-2xl sm:text-3xl font-bold text-ink">
+                  {t('appName')}
+                </h1>
+                <Badge variant="neutral" size="sm">
+                  {t('aboutVersion')}
+                </Badge>
+              </div>
+              <p className="text-sm font-semibold text-accent">{t('aboutSubtitle')}</p>
             </div>
           </div>
 
-          <p className="text-xs text-ink-2 leading-relaxed">
-            জমি বংশ — ল্যান্ডটেক ২০২৬ (DIU) হ্যাকাথনের জন্য নির্মিত একটি মানচিত্র-ভিত্তিক
-            প্রোটোটাইপ। এটি কোনো সরকারি রেকর্ড নয়, সম্পূর্ণভাবে পরীক্ষামূলক সিন্থেটিক ডেটা দিয়ে
-            চালিত।
-          </p>
+          {/* 1. What this is */}
+          <section className="space-y-2 border-t border-line/60 pt-4">
+            <h2 className="font-serif text-base font-bold text-ink flex items-center gap-2">
+              <Sparkles className="w-4 h-4 text-accent" />
+              <span>{t('aboutWhatIsTitle')}</span>
+            </h2>
+            <p className="text-xs sm:text-sm text-ink-2 leading-relaxed">{t('aboutWhatIsDesc')}</p>
+          </section>
 
-          {/* PWA Install Action */}
+          {/* 2. Demo data disclaimer */}
+          <section className="p-4 bg-warn-wash/60 border border-warn/30 rounded-xl space-y-2">
+            <h2 className="font-serif text-sm font-bold text-ink flex items-center gap-2 text-warn">
+              <ShieldAlert className="w-4 h-4 shrink-0" />
+              <span>{t('aboutDisclaimerTitle')}</span>
+            </h2>
+            <p className="text-xs text-ink-2 leading-relaxed">{t('aboutDisclaimerDesc')}</p>
+          </section>
+
+          {/* 3. Data sources */}
+          <section className="space-y-3 border-t border-line/60 pt-4">
+            <h2 className="font-serif text-base font-bold text-ink flex items-center gap-2">
+              <Database className="w-4 h-4 text-ink-2" />
+              <span>{t('aboutSourcesTitle')}</span>
+            </h2>
+            <ul className="text-xs sm:text-sm text-ink-2 space-y-2 list-disc list-inside">
+              <li>{t('aboutSourcesMouza')}</li>
+              <li>{t('aboutSourcesMap')}</li>
+              <li>{t('aboutSourcesFees')}</li>
+            </ul>
+          </section>
+
+          {/* 4. AI disclosure */}
+          <section className="space-y-2 border-t border-line/60 pt-4">
+            <h2 className="font-serif text-base font-bold text-ink flex items-center gap-2">
+              <Cpu className="w-4 h-4 text-accent" />
+              <span>{t('aboutAiTitle')}</span>
+            </h2>
+            <p className="text-xs sm:text-sm text-ink-2 leading-relaxed">{t('aboutAiDesc')}</p>
+          </section>
+
+          {/* 5. Open-source credits */}
+          <section className="space-y-2 border-t border-line/60 pt-4">
+            <h2 className="font-serif text-base font-bold text-ink flex items-center gap-2">
+              <Layers className="w-4 h-4 text-ink-2" />
+              <span>{t('aboutCreditsTitle')}</span>
+            </h2>
+            <p className="text-xs text-ink-2 leading-relaxed">{t('aboutCreditsDesc')}</p>
+          </section>
+
+          {/* 6. PWA Install action */}
           <div className="p-4 bg-paper rounded-xl border border-line space-y-3">
             <div className="flex items-center justify-between">
               <span className="text-sm font-semibold text-ink">{t('install')}</span>
               {isInstalled && (
                 <Badge variant="ok" size="sm">
                   <CheckCircle2 className="w-3 h-3 mr-1" />
-                  সংযুক্ত
+                  {t('installedApp')}
                 </Badge>
               )}
             </div>
@@ -76,9 +139,9 @@ export const AboutScreen: React.FC = () => {
             )}
           </div>
 
-          <div className="border-t border-line pt-4 text-xs text-ink-3 space-y-1">
-            <div>ওপেন সোর্স লাইসেন্স: MIT</div>
-            <div>ম্যাপ ডেটা: OpenFreeMap © OpenMapTiles · OpenStreetMap contributors</div>
+          <div className="border-t border-line pt-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-ink-3">
+            <div>ওপেন সোর্স লাইসেন্স: MIT License</div>
+            <div>LandTech 2026 (DIU) · Track: Digital Land Records</div>
           </div>
         </div>
       </div>
