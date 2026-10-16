@@ -344,17 +344,6 @@ export const MapScreen: React.FC = () => {
                 <span className="hidden sm:inline">{t('install')}</span>
               </button>
             )}
-
-            {/* Language toggle */}
-            <button
-              type="button"
-              onClick={toggleLanguage}
-              className="px-3 py-2 bg-paper-2 border border-line rounded-full shadow-paper text-ink flex items-center gap-1.5 text-xs font-semibold hover:bg-paper-3 transition-colors cursor-pointer"
-              aria-label={t('language')}
-            >
-              <Globe className="w-3.5 h-3.5 text-ink-3" />
-              <span>{lang === 'bn' ? 'English' : 'বাংলা'}</span>
-            </button>
           </div>
         </header>
 

@@ -411,7 +411,7 @@ export const en: Record<TranslationKey, string> = {
     'Statutory fee rates: Ministry of Finance & Sub-Registry gazette reports (FY2025-26 Budget)',
   aboutAiTitle: 'AI Tools Disclosure',
   aboutAiDesc:
-    'Google Antigravity IDE with Gemini models was used for code generation and refactoring. Claude (Anthropic) assisted in concept and ticket planning. All land domain rules (share ledger, faraiz, fraud checks) were strictly designed by our team and verified with 100% automated tests.',
+    'Google Antigravity IDE with Gemini models was used for code generation and refactoring. All land domain rules (share ledger, faraiz, fraud checks) were strictly designed by our team and verified with 100% automated tests.',
   aboutCreditsTitle: 'Open-Source Credits',
   aboutCreditsDesc:
     'MapLibre GL JS, Turf.js, fraction.js, Zustand, React Router, Tailwind CSS, Motion, Lucide Icons, Vite, Vitest, and @fontsource font packages.',
